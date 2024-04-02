@@ -222,8 +222,8 @@ const Footer = () => {
           <Grid item xs={12} sm={4}>
             <img
               style={{
-                width: "100px",
-                height: "100px",
+                width: "80px",
+                height: "80px",
                 marginRight: "10px",
                 marginTop: 22,
               }}
@@ -240,20 +240,27 @@ const Footer = () => {
               Contact Us
             </Typography>
             <Box display="flex" justifyContent="center" marginTop={3}>
-              <InstagramIcon
-                style={{ width: "30px", height: "30px", margin: "0 5px" }}
-              />
-              <WhatsAppIcon
-                style={{ width: "30px", height: "30px", margin: "0 5px" }}
-              />
-              <FacebookIcon
-                style={{ width: "30px", height: "30px", margin: "0 5px" }}
-              />
+              <a href="https://www.instagram.com/vanakkampdx">
+                <InstagramIcon
+                  style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                />
+              </a>
+              <a href="https://wa.me/19714548476">
+                <WhatsAppIcon
+                  style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                />
+              </a>
+
+              <a href="https://www.facebook.com/Vanakkam%20PDX">
+                <FacebookIcon
+                  style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                />
+              </a>
             </Box>
           </Grid>
         </Grid>
       </Box>
-      <Typography variant="body2" sx={{ opacity: 0.7 }}>
+      <Typography variant="body2" sx={{ opacity: 0.7, marginBottom: "-15px" }}>
         CopyRights©2024. All rights reserved by VANNAKKAM PDX.
       </Typography>
     </Box>

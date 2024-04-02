@@ -40,12 +40,12 @@ function HomePageBanner() {
               LIFE IS SO ENDLESSLY DELICIOUS.
             </Typography>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-end",
-              gap: 4,
+              gap: 2,
             }}
           >
             <Typography
@@ -57,7 +57,7 @@ function HomePageBanner() {
                 marginTop: "50px",
               }}
             >
-              CHOOSE YOUR EXPERIENCE :
+              CHOOSE YOUR EXPERIENCE
             </Typography>
             <Button
               variant="contained"
@@ -89,8 +89,8 @@ function HomePageBanner() {
             >
               Order Now
             </Button>
-          </Box>
-          ;
+          </Box> */}
+          
         </Box>
       </Grid>
     </Grid>
