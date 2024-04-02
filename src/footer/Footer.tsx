@@ -96,10 +96,10 @@ const Footer = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4}>
           <LocationIcon style={{ width: '20px', height: '20px', marginRight: '5px' }} />
-            <Typography variant="body1" sx={{fontFamily:"Itim-Regular",fontSize:"20px"}} component="p">Store Address</Typography>
-            <Typography variant="body1" sx={{fontFamily:"Itim-Regular"}} component="p">14740 Cornell Rd #160, Portland 97229</Typography>
-            <Typography variant="body1" sx={{fontFamily:"Itim-Regular"}} component="p">Store No: +1 (503) 747-2049</Typography>
-            <Typography variant="body1" sx={{fontFamily:"Itim-Regular"}} component="p">Ph No: +1 971-454-8476</Typography>
+            <Typography variant="body1" sx={{fontFamily:"Itim",fontSize:"20px"}} component="p">Store Address</Typography>
+            <Typography variant="body1" sx={{fontFamily:"Itim"}} component="p">14740 Cornell Rd #160, Portland 97229</Typography>
+            <Typography variant="body1" sx={{fontFamily:"Itim"}} component="p">Store No: +1 (503) 747-2049</Typography>
+            <Typography variant="body1" sx={{fontFamily:"Itim"}} component="p">Ph No: +1 971-454-8476</Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <img
