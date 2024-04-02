@@ -220,16 +220,26 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <img
-              style={{
-                width: "80px",
-                height: "80px",
-                marginRight: "10px",
-                marginTop: 22,
-              }}
-              src={Qrcode}
-              alt="QR Code"
-            />
+            <Typography
+              variant="body2"
+              sx={{ fontFamily: "Itim", fontSize: "20px", marginTop: 3 }}
+              component="p"
+            >
+              Join Our WhatsApp Group
+            </Typography>
+            <a href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn">
+              <img
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  marginRight: "10px",
+                  marginTop: 10,
+                  cursor: "pointer",
+                }}
+                src={Qrcode}
+                alt="QR Code"
+              />
+            </a>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography
