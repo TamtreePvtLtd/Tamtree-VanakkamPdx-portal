@@ -15,7 +15,7 @@ function Layout() {
       <Box>
         <NavBar />
       </Box>
-      <Box sx={{ paddingTop: isBelowSMScreen ? "3.5rem" : "0" }}>
+      <Box sx={{ paddingTop:"80px" }}>
         <Outlet />
       </Box>
       <Box>

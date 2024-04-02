@@ -5,6 +5,7 @@ import { paths } from "./router/paths";
 import Home from "./pages/home/Home";
 import MenuCard from "./pages/menus/MenuCard";
 import CateringPage from "./pages/catering/CateringPage";
+import AboutUs from "./pages/about us/AboutUs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path={paths.HOME} element={<Home />} />
             <Route path={paths.MENU} element={<MenuCard />} />
             <Route path={paths.CATERING} element={<CateringPage />} />
+            <Route path={paths.ABOUTUS} element={<AboutUs />} />
           </Route>
         </Routes>
       </BrowserRouter>
