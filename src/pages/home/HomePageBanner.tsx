@@ -24,20 +24,7 @@ function HomePageBanner() {
         className={classes.imageContainer}
         sx={{ position: "relative" }}
       >
-        <Box
-          py={2}
-          sx={{
-            backgroundImage: `url('src/assets/Home-right-bannerimage.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-            height: "93.5%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
+        <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
             <Typography
               variant="body1"
@@ -53,15 +40,25 @@ function HomePageBanner() {
               LIFE IS SO ENDLESSLY DELICIOUS.
             </Typography>
           </Box>
-
           <Box
             sx={{
               display: "flex",
-              gap: 4,
-              justifyContent: "flex-end",
               alignItems: "center",
+              justifyContent: "flex-end",
+              gap: 4,
             }}
           >
+            <Typography
+              variant="body1"
+              sx={{
+                color: "white",
+                zIndex: 1,
+                display: "inline-block",
+                marginTop: "50px",
+              }}
+            >
+              CHOOSE YOUR EXPERIENCE :
+            </Typography>
             <Button
               variant="contained"
               size="small"
@@ -77,7 +74,6 @@ function HomePageBanner() {
             >
               Book Table
             </Button>
-
             <Button
               variant="contained"
               size="small"
@@ -94,6 +90,7 @@ function HomePageBanner() {
               Order Now
             </Button>
           </Box>
+          ;
         </Box>
       </Grid>
     </Grid>
