@@ -36,13 +36,15 @@ export const useStyles = makeStyles(() => ({
     zIndex: 0,
     height: "100%",
   },
-  button: {
-    marginTop: "50px",
-    color: "white",
-    backgroundColor: "#6B0101",
-    "&:hover": {
-      backgroundColor: "#6B0101",
-    },
-    zIndex: 1,
+  rightImage: {
+    backgroundImage: `url("src/assets/Home-right-bannerimage.jpg")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+    height: "93.5%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
 }));
