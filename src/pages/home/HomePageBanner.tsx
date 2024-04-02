@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
   imageContainer: {
     position: "relative",
     zIndex: 0,
-    height: "80%",
+    height: "100%",
   },
 }));
 
@@ -43,7 +43,7 @@ function HomePageBanner() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={0} style={{ height: "560px" }}>
+    <Grid container spacing={0} style={{ height: "500px" }}>
       <Grid item xs={6} className={classes.imageContainer}>
         <Box className={classes.leftOverlay}></Box>
         <img
@@ -53,7 +53,6 @@ function HomePageBanner() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            // backgroundColor: "rgba(0, 0, 0, 0.7)",
           }}
         />
       </Grid>
@@ -70,7 +69,7 @@ function HomePageBanner() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
-            height: "93%",
+            height: "93.5%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
