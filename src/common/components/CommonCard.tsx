@@ -1,5 +1,4 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 interface IProps {
   product: {
@@ -21,7 +20,8 @@ function CommonProductCard(props: IProps) {
         height: "350px",
         border: "1px solid #ddd",
         boxShadow: "none",
-        margin: "50px",
+        margin: "30px",
+        padding: 0,
       }}
     >
       <Box
@@ -43,17 +43,11 @@ function CommonProductCard(props: IProps) {
         />
       </Box>
 
-      <CardContent
-        sx={{ height: "28%", overflow: "hidden", paddingTop: "3px" }}
-      >
+      <CardContent sx={{ height: "28%", overflow: "hidden", padding: "5px" }}>
         <Typography
           variant="body1"
           sx={{
             fontWeight: 600,
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-            WebkitLineClamp: 1,
             color: "#E4973C",
           }}
           component="div"
@@ -61,12 +55,9 @@ function CommonProductCard(props: IProps) {
           {product.title}
         </Typography>
         <Typography
-          variant="body1"
+          variant="body2"
           sx={{
             fontWeight: 400,
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: 1,
           }}
           component="div"
         >
