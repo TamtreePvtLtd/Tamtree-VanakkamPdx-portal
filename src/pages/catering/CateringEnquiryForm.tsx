@@ -105,7 +105,7 @@ const CateringEnquireForm: React.FC = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
-              label="Your Name*"
+              label="Full Name*"
               name="firstName"
               value={formValues.firstName}
               onChange={handleChange}
@@ -196,6 +196,7 @@ const CateringEnquireForm: React.FC = () => {
               type="submit"
               variant="contained"
               sx={{
+                marginBottom: "10px",
                 backgroundColor: "#6B0101",
                 "&:hover": {
                   backgroundColor: "#6B0101",

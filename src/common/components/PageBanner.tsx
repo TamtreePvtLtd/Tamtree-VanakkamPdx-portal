@@ -8,7 +8,8 @@ interface IProps {
   showBottomButtons?: boolean;
 }
 function PageBanner(props: IProps) {
-  const { imageUrl, content, description,showTopButtons,showBottomButtons } = props;
+  const { imageUrl, content, description, showTopButtons, showBottomButtons } =
+    props;
   return (
     <>
       <Box
@@ -32,38 +33,56 @@ function PageBanner(props: IProps) {
               gap: "10px",
             }}
           >
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#6B0101",
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                },
+              }}
+            >
               Book Table
             </Button>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#6B0101",
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                },
+              }}
+            >
               Order Now
             </Button>
           </Box>
         )}
 
         <Box className="page-banner-content">
-            <Typography
-              sx={{
-                textTransform: "uppercase",
-                marginBottom: "0 !important",
-              }}
-              variant="h2"
-              fontWeight={"medium"}
-            >
-              {content}
-            </Typography>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              marginBottom: "0 !important",
+            }}
+            variant="h2"
+            fontWeight={"medium"}
+          >
+            {content}
+          </Typography>
         </Box>
         {description && (
           <Box className="page-banner-description">
-              <Typography
-                sx={{
-                  marginBottom: "0 !important",
-                }}
-                variant="h6"
-                fontWeight={"small"}
-              >
-                {description}
-              </Typography>
+            <Typography
+              sx={{
+                marginBottom: "0 !important",
+              }}
+              variant="h6"
+              fontWeight={"small"}
+            >
+              {description}
+            </Typography>
           </Box>
         )}
         {showBottomButtons && (
@@ -75,12 +94,31 @@ function PageBanner(props: IProps) {
               justifyContent: "center",
               gap: "10px",
               width: "100%",
+              marginBottom: "20px",
             }}
           >
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#6B0101",
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                },
+              }}
+            >
               Order Catering
             </Button>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#6B0101",
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                },
+              }}
+            >
               View Menu
             </Button>
           </Box>
