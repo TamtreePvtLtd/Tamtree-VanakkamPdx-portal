@@ -5,7 +5,7 @@ import { paths } from "../../router/paths";
 
 const commonButtonStyles = {
     color: "#6B0101",
-    paddingX: 5,
+    paddingX: 8,
     "&:hover": { backgroundColor: "#e4973d" },
   };
   
