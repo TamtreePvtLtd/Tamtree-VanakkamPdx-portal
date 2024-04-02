@@ -1,15 +1,19 @@
-import Footer from './footer/Footer'
-import Navbar from './navbar/Navbar'
-import SecNavbar from './pages/home/SecNavbar'
+import "./App.css";
+import Home from "./pages/home/Home";
+
+import Footer from "./footer/Footer";
+import Navbar from "./navbar/Navbar";
+import SecNavbar from "./pages/home/SecNavbar";
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <SecNavbar/>
-      <Footer/>
+      <Navbar />
+      <Home />
+      <SecNavbar />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
