@@ -46,7 +46,11 @@ function AboutUs() {
         >
           <Typography
             variant="h4"
-            sx={{ color: "#E4973C", fontFamily: "architects Daughter",paddingTop:2 }}
+            sx={{
+              color: "#E4973C",
+              fontFamily: "architects Daughter",
+              paddingTop: 2,
+            }}
           >
             A Tapestry of
           </Typography>
@@ -86,7 +90,11 @@ function AboutUs() {
           <img
             src="src/assets/AboutUs Image1.jpg"
             alt="Vanakkam PDX"
-            style={{ width: "calc(100% - 20%)", height: "70%", borderRadius: "50%"}}
+            style={{
+              width: "calc(100% - 20%)",
+              height: "70%",
+              borderRadius: "50%",
+            }}
           />
         </Grid>
       </Grid>
@@ -94,28 +102,40 @@ function AboutUs() {
         <Typography
           variant="h4"
           gutterBottom
-          sx={{ color:"#E4973C", fontFamily: "allerta stencil",fontSize:"30px",fontWeight:500,textAlign: "center",textDecoration: "underline"}}
+          sx={{
+            color: "#E4973C",
+            fontFamily: "allerta stencil",
+            fontSize: "30px",
+            fontWeight: 500,
+            textAlign: "center",
+            textDecoration: "underline",
+          }}
         >
           THE STORY OF VANAKKAM PDX
         </Typography>
         <Typography
           variant="body1"
           paragraph
-          sx={{ color: "#333", fontFamily: "Arial, sans-serif",textAlign: "left"}}
+          sx={{
+            color: "#333",
+            fontFamily: "Arial, sans-serif",
+            textAlign: "left",
+          }}
         >
-         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian cuisine at Vanakkam PDX South Indian
-          Restaurant, located on Rare Course Road. Vanakkam PDX South Indian
-          Restaurant invites you to savor the authentic flavors of South India
-          in the heart of the east. Whether you're a seasoned aficionado of
-          Indian cuisine or a curious first-timer, Vanakkam PDX delivers a
-          tantalizing feast that will entice your senses and leave a lasting
-          impression.Here, you'll find a diverse menu that caters to both vegetarian and
-          non-vegetarian tastes. Each dish is prepared with fresh ingredients to
-          ensure an authentic Indian experience. The dedicated staff at Vanakkam
-          PDX ensures that your dining experience is both memorable and
-          satisfying. The restaurant also stands out as a top choice for
-          catering services, adept at handling functions and gatherings of all
-          types, perfectly blending flavor, culture, and comfort.
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian cuisine
+          at Vanakkam PDX South Indian Restaurant, located on Rare Course Road.
+          Vanakkam PDX South Indian Restaurant invites you to savor the
+          authentic flavors of South India in the heart of the east. Whether
+          you're a seasoned aficionado of Indian cuisine or a curious
+          first-timer, Vanakkam PDX delivers a tantalizing feast that will
+          entice your senses and leave a lasting impression.Here, you'll find a
+          diverse menu that caters to both vegetarian and non-vegetarian tastes.
+          Each dish is prepared with fresh ingredients to ensure an authentic
+          Indian experience. The dedicated staff at Vanakkam PDX ensures that
+          your dining experience is both memorable and satisfying. The
+          restaurant also stands out as a top choice for catering services,
+          adept at handling functions and gatherings of all types, perfectly
+          blending flavor, culture, and comfort.
         </Typography>
       </Box>
     </>

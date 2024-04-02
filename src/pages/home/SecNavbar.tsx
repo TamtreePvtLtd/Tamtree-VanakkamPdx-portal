@@ -14,6 +14,11 @@ const commonButtonStyles = {
     height: "30px",
   };
 
+  const handleCloverClick = () => {
+    window.open('https://www.clover.com/', '_blank');
+  };
+
+
 const SecNavbar = () => {
   const navigate = useNavigate();
 
@@ -44,10 +49,24 @@ const SecNavbar = () => {
           <Box display="flex" alignItems="center">
           <Button
             color="inherit"
-            onClick={() => navigate(paths.MENU)}
+            onClick={handleCloverClick}
             sx={commonButtonStyles}
           >
-            MENU
+            DINING MENU
+          </Button>
+          <Divider
+            sx={commonDividerStyles}
+            orientation="vertical"
+            flexItem
+          />
+          </Box>
+          <Box display="flex" alignItems="center">
+          <Button
+            color="inherit"
+            onClick={handleCloverClick}
+            sx={commonButtonStyles}
+          >
+            TAKEOUT
           </Button>
           <Divider
             sx={commonDividerStyles}

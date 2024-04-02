@@ -1,7 +1,15 @@
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
+import { paths } from "../router/paths";
 
 function Navbar() {
+    const navigate = useNavigate();
+
+    const handleLogoClick = () => {
+      navigate(paths.ROOT);
+    };
+
   return (
     <AppBar
       position="fixed"
@@ -44,6 +52,7 @@ function Navbar() {
             <img
               src={VanakkamPdxLogo}
               alt="Logo"
+              onClick={handleLogoClick}
               style={{
                 backgroundColor: "white",
                 height: 70,
@@ -73,20 +82,21 @@ function Navbar() {
             <Typography
               variant="subtitle1"
               sx={{
-                color: "#1e4e18",
+                // color: "#1e4e18",
+                color:"green",
                 fontWeight: 1000,
                 fontFamily: "alfa_slab_one",
                 display: "flex",
                 justifyContent: "center",
               }}
             >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AUTHENTIC
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AUTHENTIC
               INDIAN CUISINE
             </Typography>
           </Box>
         </Box>
         <Box marginRight={5}>
-          <Button
+          {/* <Button
             size="small"
             sx={{
               backgroundColor: "#6B0101",
@@ -108,7 +118,47 @@ function Navbar() {
             }}
           >
             Sign In
-          </Button>
+          </Button> */}
+          {/* <Button
+            size="small"
+            sx={{
+              color: "#ffffff",
+              fontFamily: "alfa_slab_one",
+              border: "1.5px solid green",
+              marginRight: 5,
+            }}
+          >
+            Order Online
+          </Button> */}
+          {/* <Typography
+            variant="h6"
+            sx={{
+              color: "#6B0101",
+              fontWeight: 600,
+              fontFamily: "alfa_slab_one",
+            }}
+          >
+            Order Online
+          </Typography> */}
+          <Typography
+      fontSize="16px"
+      color="black"
+      fontFamily="alfa_slab_one,Itim"
+      sx={{
+        cursor:"pointer",
+        textDecoration:"none",
+        '&:hover': {
+          color: "green",
+          textDecoration:"none"
+        }
+      }}
+      component="a" 
+      href="https://www.clover.com/"
+      target="_blank" 
+      rel="noopener noreferrer" 
+    >
+      ORDER ONLINE
+    </Typography>
         </Box>
       </Toolbar>
     </AppBar>
