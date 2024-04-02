@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <>
     <PageBanner
-        imageUrl="src/assets/pexels-chan-walrus-941861.jpg"
+        imageUrl="src/assets/AboutUsBanner.jpg"
         content="ABOUT US"
         description="COME ENJOY DELECIOUS FOOD AND  GREAT SERVICE AT VANAKKAM PDX"
         showTopButtons={false} 
