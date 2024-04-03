@@ -1,52 +1,53 @@
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
+import { useMediaQuery } from "@mui/material";
 
 function Navbar() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const isMobile = useMediaQuery("(max-width:600px)"); // Define isMobile based on viewport width
 
-    const handleLogoClick = () => {
-      navigate(paths.ROOT);
-    };
+  const handleLogoClick = () => {
+    navigate(paths.ROOT);
+  };
 
   return (
     <AppBar
       position="fixed"
       sx={{
         backgroundColor: "#E4973C",
-        padding: 2,
+        padding: isMobile ? 1 : 1,
         boxShadow: 0,
         margin: 0,
         width: "100%",
-        height: "80px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        height: "85px",
       }}
     >
-      <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-          paddingX: 0,
-        }}
-      >
-        <Box
+      <Toolbar>
+        <Grid
+          container
+          spacing={3}
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            width: "100%",
+            paddingY: isMobile ? 2 : 0,
+            justifyContent: isMobile ? "center" : "space-between",
+            flexDirection: "row",
           }}
         >
-          <Box
+          <Grid
+            item
+            xs={2}
+            sm={2}
+            md={2}
+            lg={2}
             sx={{
               display: "flex",
-              alignItems: "center",
+              alignItems: isMobile ? "start" : "center",
               justifyContent: "center",
-              paddingX: 6,
+              paddingLeft: 2,
             }}
           >
             <img
@@ -54,18 +55,25 @@ function Navbar() {
               alt="Logo"
               onClick={handleLogoClick}
               style={{
+                height: "auto",
+                width: "70px",
+                cursor: "pointer",
                 backgroundColor: "white",
-                height: 70,
-                borderRadius: "60%",
-                marginRight: 10,
+                borderRadius: "50%",
               }}
             />
-          </Box>
-          <Box
+          </Grid>
+          <Grid
+            item
+            xs={8}
+            sm={8}
+            md={8}
+            lg={8}
             sx={{
-              display: "-ms-flexbox",
-              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
+              alignItems: "start",
             }}
           >
             <Typography
@@ -75,6 +83,7 @@ function Navbar() {
                 color: "#ffffff",
                 fontFamily: "alfa_slab_one",
                 fontWeight: "bold",
+                textAlign: "center",
               }}
             >
               VANAKKAM PDX
@@ -82,84 +91,45 @@ function Navbar() {
             <Typography
               variant="subtitle1"
               sx={{
-                // color: "#1e4e18",
-                color:"green",
+                color: "green",
+                fontSize:isMobile ? "12px" : "none",
                 fontWeight: 1000,
                 fontFamily: "alfa_slab_one",
-                display: "flex",
-                justifyContent: "center",
+                textAlign: "center",
+                marginLeft:isMobile ? 3 : 5,
               }}
             >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AUTHENTIC
-              INDIAN CUISINE
+              -AUTHENTIC INDIAN CUISINE
             </Typography>
-          </Box>
-        </Box>
-        <Box marginRight={5}>
-          {/* <Button
-            size="small"
-            sx={{
-              backgroundColor: "#6B0101",
-              color: "#ffffff",
-              fontFamily: "alfa_slab_one",
-              "&:hover": { backgroundColor: "#6B0101" },
-              marginRight: 5,
-            }}
+          </Grid>
+          <Grid
+            item
+            xs={2}
+            sm={2}
+            md={2}
+            lg={2}
+            sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
           >
-            Explore Menu
-          </Button>
-          <Button
-            size="small"
-            sx={{
-              backgroundColor: "#6B0101",
-              color: "#ffffff",
-              fontFamily: "alfa_slab_one",
-              "&:hover": { backgroundColor: "#6B0101" },
-            }}
-          >
-            Sign In
-          </Button> */}
-          {/* <Button
-            size="small"
-            sx={{
-              color: "#ffffff",
-              fontFamily: "alfa_slab_one",
-              border: "1.5px solid green",
-              marginRight: 5,
-            }}
-          >
-            Order Online
-          </Button> */}
-          {/* <Typography
-            variant="h6"
-            sx={{
-              color: "#6B0101",
-              fontWeight: 600,
-              fontFamily: "alfa_slab_one",
-            }}
-          >
-            Order Online
-          </Typography> */}
-          <Typography
-      fontSize="16px"
-      color="black"
-      fontFamily="alfa_slab_one,Itim"
-      sx={{
-        cursor:"pointer",
-        textDecoration:"none",
-        '&:hover': {
-          color: "green",
-          textDecoration:"none"
-        }
-      }}
-      component="a" 
-      href="https://www.clover.com/"
-      target="_blank" 
-      rel="noopener noreferrer" 
-    >
-      ORDER ONLINE
-    </Typography>
-        </Box>
+            <Typography
+             
+              color="black"
+              fontFamily="alfa_slab_one,Itim"
+              sx={{
+                cursor: "pointer",
+                fontSize:isMobile ? "14px" :"16px",
+                textWrap:"nowrap",
+                textDecoration: "none",
+                "&:hover": { color: "green", textDecoration: "none" },
+              }}
+              component="a"
+              href="https://www.clover.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ORDER ONLINE
+            </Typography>
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   );

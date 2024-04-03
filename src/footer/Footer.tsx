@@ -117,11 +117,11 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
-    width="25"
-    height="25"
+    width="20"
+    height="20"
     viewBox="0 0 256 256"
     xmlSpace="preserve"
-    {...props} // Spread other props
+    {...props}
   >
     <g
       style={{
@@ -187,41 +187,38 @@ const Footer = () => {
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4}>
-            <LocationIcon
-              style={{ width: "20px", height: "20px", marginRight: "5px" }}
-            />
+            <Box display="flex" justifyContent="center">
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "Itim",
+                  fontSize: "22px",
+                  marginTop: 2.5,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                component="p"
+              >
+                <LocationIcon style={{ marginRight: 5 }} />
+                &nbsp;Store Address
+              </Typography>
+            </Box>
             <Typography
-              variant="body1"
-              sx={{ fontFamily: "Itim", fontSize: "20px" }}
-              component="p"
+              variant="body2"
+              sx={{
+                color: "white",
+                lineHeight: 1,
+              }}
             >
-              Store Address
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ fontFamily: "Itim" }}
-              component="p"
-            >
-              14740 Cornell Rd #160, Portland 97229
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ fontFamily: "Itim" }}
-              component="p"
-            >
-              Store No: +1 (503) 747-2049
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ fontFamily: "Itim" }}
-              component="p"
-            >
-              Ph No: +1 971-454-8476
+              <p> 14740 Cornell Rd #160, Portland 97229</p>
+              <p>Store No: +1 (503) 747-2049</p>
+              <p> Ph No: +1 971-454-8476</p>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography
-              variant="body2"
+              variant="body1"
               sx={{ fontFamily: "Itim", fontSize: "20px", marginTop: 3 }}
               component="p"
             >
@@ -230,8 +227,8 @@ const Footer = () => {
             <a href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn">
               <img
                 style={{
-                  width: "80px",
-                  height: "80px",
+                  width: "70px",
+                  height: "75px",
                   marginRight: "10px",
                   marginTop: 10,
                   cursor: "pointer",
@@ -241,6 +238,7 @@ const Footer = () => {
               />
             </a>
           </Grid>
+
           <Grid item xs={12} sm={4}>
             <Typography
               variant="body1"
@@ -249,7 +247,7 @@ const Footer = () => {
             >
               Contact Us
             </Typography>
-            <Box display="flex" justifyContent="center" marginTop={3}>
+            <Box display="flex" justifyContent="center" marginTop={3} gap={1}>
               <a href="https://www.instagram.com/vanakkampdx">
                 <InstagramIcon
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
@@ -257,7 +255,12 @@ const Footer = () => {
               </a>
               <a href="https://wa.me/19714548476">
                 <WhatsAppIcon
-                  style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                  style={{
+                    width: "35px",
+                    height: "35px",
+                    margin: "-2 5px",
+                    marginBottom: "20px",
+                  }}
                 />
               </a>
 

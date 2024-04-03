@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import {Grid, Typography } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 
 function AboutUs() {
@@ -11,7 +11,7 @@ function AboutUs() {
         showTopButtons={false}
         showBottomButtons={false}
       />
-      <Grid container spacing={2} height={"310px"} paddingBottom={1}>
+      <Grid container spacing={2} height={"auto"} paddingBottom={1}>
         <Grid
           item
           xs={12}
@@ -21,6 +21,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-end",
             alignItems: "start",
+            '@media (max-width: 600px)': { 
+              justifyContent: "center",
+              alignItems: "center",
+            }
           }}
         >
           <img
@@ -42,6 +46,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "center",
+            '@media (max-width: 600px)': { 
+              justifyContent: "center",
+              alignItems: "center",
+            }
           }}
         >
           <Typography
@@ -68,6 +76,7 @@ function AboutUs() {
               color: "#333",
               fontFamily: "Arial, sans-serif",
               textAlign: "center",
+              padding:2
             }}
           >
             Vanakkam pdx is the collective outcome of authentic south Indian
@@ -85,6 +94,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-end",
             alignItems: "end",
+            '@media (max-width: 600px)': {
+              justifyContent: "center",
+              alignItems: "center",
+            }
           }}
         >
           <img
@@ -98,7 +111,7 @@ function AboutUs() {
           />
         </Grid>
       </Grid>
-      <Box sx={{ padding: "20px" }}>
+      <Grid sx={{ padding: "20px" }}>
         <Typography
           variant="h4"
           gutterBottom
@@ -137,8 +150,8 @@ function AboutUs() {
           adept at handling functions and gatherings of all types, perfectly
           blending flavor, culture, and comfort.
         </Typography>
-      </Box>
-    </>
+      </Grid>
+      </>
   );
 }
 
