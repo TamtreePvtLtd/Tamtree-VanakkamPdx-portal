@@ -1,12 +1,19 @@
-import { Grid, Button, Typography, Box } from "@mui/material";
+import { Grid, Button, Typography, Box, useMediaQuery } from "@mui/material";
 import { useStyles } from "../../styles/HomePageBannerStyle";
 
 function HomePageBanner() {
   const classes = useStyles();
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
-    <Grid container spacing={0} style={{ height: "500px" }}>
-      <Grid item xs={6} className={classes.imageContainer}>
+    <Grid container style={{ height: "500px" }}>
+      <Grid
+        item
+        xs={12}
+        lg={6}
+        className={classes.imageContainer}
+        sx={{ height: isMobile ? "250px" : "500px" }}
+      >
         <Box className={classes.leftOverlay}></Box>
         <img
           src="src/assets/Home-left-bannerimage.jpg"
@@ -18,11 +25,13 @@ function HomePageBanner() {
           }}
         />
       </Grid>
-      <Grid
+     <Grid
         item
-        xs={6}
+        xs={12}
+        lg={6}
+        height={"250px"}
         className={classes.imageContainer}
-        sx={{ position: "relative" }}
+        sx={{ position: "relative", height: isMobile ? "250px" : "500px" }}
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
@@ -90,7 +99,6 @@ function HomePageBanner() {
               Order Now
             </Button>
           </Box> */}
-          
         </Box>
       </Grid>
     </Grid>
