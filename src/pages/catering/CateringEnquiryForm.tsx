@@ -41,9 +41,6 @@ const CateringEnquireForm: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
-  const isMediumScreen = useMediaQuery(
-    "(min-width: 601px) and (max-width: 960px)"
-  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
