@@ -1,4 +1,4 @@
-import { Grid, Button, Typography, Box } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { useStyles } from "../../styles/HomePageBannerStyle";
 
 function HomePageBanner() {
