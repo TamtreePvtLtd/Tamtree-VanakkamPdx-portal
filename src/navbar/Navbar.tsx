@@ -82,7 +82,7 @@ function Navbar() {
               sx={{
                 color: "#ffffff",
                 fontFamily: "alfa_slab_one",
-                fontWeight: "bold",
+                fontWeight: "950",
                 textAlign: "center",
               }}
             >
@@ -92,11 +92,11 @@ function Navbar() {
               variant="subtitle1"
               sx={{
                 color: "green",
-                fontSize:isMobile ? "12px" : "none",
-                fontWeight: 1000,
+                fontSize: isMobile ? "12px" : "none",
+                fontWeight: "950",
                 fontFamily: "alfa_slab_one",
                 textAlign: "center",
-                marginLeft:isMobile ? 3 : 5,
+                marginLeft: isMobile ? 3 : 5,
               }}
             >
               -AUTHENTIC INDIAN CUISINE
@@ -108,21 +108,24 @@ function Navbar() {
             sm={2}
             md={2}
             lg={2}
-            sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
             <Typography
-             
               color="black"
               fontFamily="alfa_slab_one,Itim"
               sx={{
                 cursor: "pointer",
-                fontSize:isMobile ? "14px" :"16px",
-                textWrap:"nowrap",
+                fontSize: isMobile ? "14px" : "16px",
+                textWrap: "nowrap",
                 textDecoration: "none",
                 "&:hover": { color: "green", textDecoration: "none" },
               }}
               component="a"
-              href="https://www.clover.com/"
+              href="http://www.clover.com/online-ordering/vanakkampdx"
               target="_blank"
               rel="noopener noreferrer"
             >
