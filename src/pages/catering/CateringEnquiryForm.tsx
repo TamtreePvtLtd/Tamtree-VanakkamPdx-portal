@@ -10,6 +10,7 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import * as yup from "yup";
 
 interface FormValues {
@@ -38,6 +39,11 @@ const CateringEnquireForm: React.FC = () => {
     Record<string, string>
   >({});
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 601px) and (max-width: 960px)"
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -73,7 +79,7 @@ const CateringEnquireForm: React.FC = () => {
 
   const handleConfirmDialog = () => {
     setIsDialogOpen(false);
-    setFormValues(initialFormValues); // Reset form values
+    setFormValues(initialFormValues);
   };
 
   const schema = yup.object().shape({
@@ -96,12 +102,19 @@ const CateringEnquireForm: React.FC = () => {
   });
 
   return (
-    <Box sx={{ maxWidth: 600, margin: "auto" }}>
-      <Typography sx={{ textAlign: "center" }}>
+    <Box sx={{
+      maxWidth: 600, margin: "auto",
+    padding:isSmallScreen?3:"unset"}}>
+      <Typography
+        sx={{
+          textAlign: "center",
+          marginBottom: isSmallScreen ? 2 :"unset",
+        }}
+      >
         <h2>Catering Enquiry Form </h2>
       </Typography>
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} >
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
