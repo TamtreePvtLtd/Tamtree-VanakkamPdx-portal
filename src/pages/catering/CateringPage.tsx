@@ -9,7 +9,7 @@ function CateringPage() {
         imageUrl="src/assets/cateringbannerimage1.jpg"
         content="CATERING"
         description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
-        showTopButtons={true}
+        showTopButtons={false}
         showBottomButtons={true}
       />
       <CateringCard />
