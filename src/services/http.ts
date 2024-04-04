@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export const axiosInstanceWithOutCredential = axios.create({
   baseURL: import.meta.env.VITE_AXIOS_BASE_URL,

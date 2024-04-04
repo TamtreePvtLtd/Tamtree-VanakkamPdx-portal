@@ -281,7 +281,6 @@ const CateringEnquireForm: React.FC = () => {
     formState: { errors },
     register,
     reset,
-    control,
   } = useForm<ICateringEnquiry>({
     defaultValues: initialFormValues,
     resolver: yupResolver(schema),
