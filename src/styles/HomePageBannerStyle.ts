@@ -22,7 +22,7 @@ export const useStyles = makeStyles(() => ({
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -37,7 +37,7 @@ export const useStyles = makeStyles(() => ({
     height: "100%",
   },
   rightImage: {
-    backgroundImage: `url("src/assets/Home-right-bannerimage.png")`,
+    backgroundImage: `url("https://as2.ftcdn.net/v2/jpg/05/33/82/33/1000_F_533823359_Fkt7O0BapHm4ykF7t6hb6Rl6bCtUhd46.jpg")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",

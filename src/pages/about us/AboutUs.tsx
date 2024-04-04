@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <>
       <PageBanner
-        imageUrl="src/assets/AboutUsBanner.jpg"
+        imageUrl="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg"
         content="ABOUT US"
         description="COME ENJOY DELECIOUS FOOD AND  GREAT SERVICE AT VANAKKAM PDX"
         showTopButtons={false}
@@ -21,10 +21,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-end",
             alignItems: "start",
-            '@media (max-width: 600px)': { 
+            "@media (max-width: 600px)": {
               justifyContent: "center",
               alignItems: "center",
-            }
+            },
           }}
         >
           <img
@@ -46,10 +46,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "center",
-            '@media (max-width: 600px)': { 
+            "@media (max-width: 600px)": {
               justifyContent: "center",
               alignItems: "center",
-            }
+            },
           }}
         >
           <Typography
@@ -65,7 +65,11 @@ function AboutUs() {
           <Typography
             variant="h4"
             gutterBottom
-            sx={{ color: "#6B0101", fontFamily: "Arial, sans-serif",textAlign:"center" }}
+            sx={{
+              color: "#6B0101",
+              fontFamily: "Arial, sans-serif",
+              textAlign: "center",
+            }}
           >
             Authentic Indian Flavors!
           </Typography>
@@ -76,7 +80,7 @@ function AboutUs() {
               color: "#333",
               fontFamily: "Arial, sans-serif",
               textAlign: "center",
-              padding:2
+              padding: 2,
             }}
           >
             Vanakkam pdx is the collective outcome of authentic south Indian
@@ -94,10 +98,10 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: "flex-end",
             alignItems: "end",
-            '@media (max-width: 600px)': {
+            "@media (max-width: 600px)": {
               justifyContent: "center",
               alignItems: "center",
-            }
+            },
           }}
         >
           <img
@@ -151,7 +155,7 @@ function AboutUs() {
           blending flavor, culture, and comfort.
         </Typography>
       </Grid>
-      </>
+    </>
   );
 }
 
