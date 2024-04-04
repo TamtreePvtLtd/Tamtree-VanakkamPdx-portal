@@ -16,7 +16,8 @@ function HomePageBanner() {
       >
         <Box className={classes.leftOverlay}>
           <img
-            src="https://i.pinimg.com/originals/97/c1/db/97c1dbd7e9a389d7e8da0525da8a4f71.png"
+            // src="https://as2.ftcdn.net/v2/jpg/05/93/18/81/1000_F_593188174_rcDMEqh1MfPPcrAiBWtLMc3QcwTNBCqV.jpg"
+            src="https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2022/04/IMG_2989-Edit-1.jpg"
             alt="restaurant"
             style={{
               width: "100%",
@@ -39,15 +40,20 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={20}
+              fontSize={25}
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
             >
-              PULL UP A CHAIR.
+              <span className="bold700">GOOD</span> <br />
+              <span className="bold600">FOOD</span> <br />
+              ----- is -----
               <br />
-              TAKE A TASTE.&nbsp; &nbsp; COME JOIN US.
+              <span> WHAT ALL</span>
+              <br />I NEED
               <br />
-              LIFE IS SO ENDLESSLY DELICIOUS.
+              ..... to .....
+              <br />
+              <span className="bold700"> BE HAPPY</span> <br />
             </Typography>
           </Box>
           {/* <Box
