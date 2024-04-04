@@ -1,24 +1,24 @@
 import NavBar from "../navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../footer/Footer";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import SecNavbar from "../pages/home/SecNavbar";
 
 function Layout() {
   return (
     <>
-      <Box>
+      <Grid>
         <NavBar />
-      </Box>
-      <Box sx={{ paddingTop:"80px" }}>
+      </Grid>
+      <Grid sx={{ paddingTop:"80px" }}>
         <Outlet />
-      </Box>
-      <Box>
+      </Grid>
+      <Grid>
         <SecNavbar/>
-      </Box>
-      <Box>
+      </Grid>
+      <Grid>
         <Footer />
-      </Box>
+      </Grid>
     </>
   );
 }
