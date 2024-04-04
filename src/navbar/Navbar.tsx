@@ -6,7 +6,7 @@ import { useMediaQuery } from "@mui/material";
 
 function Navbar() {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width:700px)"); 
+  const isMobile = useMediaQuery("(max-width:700px)");
   const handleLogoClick = () => {
     navigate(paths.ROOT);
   };
@@ -56,7 +56,7 @@ function Navbar() {
               style={{
                 height: "auto",
                 width: "70px",
-                marginRight:isMobile ? 0 : 50,
+                marginRight: isMobile ? 0 : 50,
                 cursor: "pointer",
                 backgroundColor: "white",
                 borderRadius: "50%",
@@ -73,7 +73,7 @@ function Navbar() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "start",
-              alignItems: "flex-start"
+              alignItems: "flex-start",
             }}
           >
             <Typography
@@ -86,7 +86,8 @@ function Navbar() {
                 fontWeight: "950",
                 textAlign: "center",
                 cursor: "pointer",
-                textWrap:"nowrap"
+                textWrap: "nowrap",
+                textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
               }}
             >
               VANAKKAM PDX
@@ -99,8 +100,9 @@ function Navbar() {
                 fontWeight: "950",
                 fontFamily: "alfa_slab_one",
                 textAlign: "center",
-                textWrap:"nowrap",
+                textWrap: "nowrap",
                 marginLeft: isMobile ? 3 : 5,
+                textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
               }}
             >
               - AUTHENTIC INDIAN CUISINE

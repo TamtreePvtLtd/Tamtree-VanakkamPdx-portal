@@ -15,18 +15,18 @@ function HomePageBanner() {
         sx={{ height: isMobile ? "250px" : "500px" }}
       >
         <Box className={classes.leftOverlay}>
-        <img
-          src="src/assets/Home-left-bannerimage.png"
-          alt="restaurant"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
+          <img
+            src="https://i.pinimg.com/originals/97/c1/db/97c1dbd7e9a389d7e8da0525da8a4f71.png"
+            alt="restaurant"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
         </Box>
       </Grid>
-     <Grid
+      <Grid
         item
         xs={12}
         lg={6}
