@@ -37,7 +37,7 @@ export const useStyles = makeStyles(() => ({
     height: "100%",
   },
   rightImage: {
-    backgroundImage: `url("src/assets/Home-right-bannerimage.jpg")`,
+    backgroundImage: `url("src/assets/Home-right-bannerimage.png")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",

@@ -14,9 +14,9 @@ function HomePageBanner() {
         className={classes.imageContainer}
         sx={{ height: isMobile ? "250px" : "500px" }}
       >
-        <Box className={classes.leftOverlay}></Box>
+        <Box className={classes.leftOverlay}>
         <img
-          src="src/assets/Home-left-bannerimage.jpg"
+          src="src/assets/Home-left-bannerimage.png"
           alt="restaurant"
           style={{
             width: "100%",
@@ -24,6 +24,7 @@ function HomePageBanner() {
             objectFit: "cover",
           }}
         />
+        </Box>
       </Grid>
      <Grid
         item
