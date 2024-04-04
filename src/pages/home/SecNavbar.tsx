@@ -1,4 +1,4 @@
-import { Grid, AppBar, Button, Divider, useMediaQuery } from "@mui/material";
+import { Grid, AppBar, Button, Divider, useMediaQuery, Toolbar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { paths } from "../../router/paths";
 
@@ -21,13 +21,14 @@ const handleCloverClick = () => {
 
 const SecNavbar = () => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width:900px)");
+  const isMobile = useMediaQuery("(max-width:1000px)");
 
   return (
     <AppBar
       position="relative"
       sx={{ backgroundColor: "#e4973d", height: "100%", width: "100%" }}
     >
+      <Toolbar>
       <Grid
         container
         sx={{
@@ -202,6 +203,7 @@ const SecNavbar = () => {
           </Button>
         </Grid> */}
       </Grid>
+      </Toolbar>
     </AppBar>
   );
 };
