@@ -2,6 +2,7 @@ import PageBanner from "../../common/components/PageBanner";
 import CateringCard from "./CateringCard";
 import CateringEnquireForm from "./CateringEnquiryForm";
 
+
 function CateringPage() {
   return (
     <>
