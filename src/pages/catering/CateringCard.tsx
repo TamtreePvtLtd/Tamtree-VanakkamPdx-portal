@@ -15,10 +15,10 @@ function CateringCard() {
             fontWeight: 600,
             display: "flex",
             justifyContent: "center",
-            color: "#E4973C",
+            color: "#6B0101",
           }}
         >
-          Making Your Special Events,Even MoreSpecial!
+          Making Your Special Events, Even More Special!
         </Typography>
       </Box>
       <Box
