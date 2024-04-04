@@ -6,7 +6,7 @@ function CateringPage() {
   return (
     <>
       <PageBanner
-        imageUrl="src/assets/cateringbannerimage1.jpg"
+        imageUrl="src/assets/cateringpagebanner3.jpg"
         content="CATERING"
         description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
         showTopButtons={false}

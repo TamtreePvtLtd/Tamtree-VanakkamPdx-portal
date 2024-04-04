@@ -16,6 +16,7 @@ function CateringCard() {
             display: "flex",
             justifyContent: "center",
             color: "#6B0101",
+            padding:"10px"
           }}
         >
           Making Your Special Events, Even More Special!

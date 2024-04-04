@@ -65,7 +65,7 @@ function AboutUs() {
           <Typography
             variant="h4"
             gutterBottom
-            sx={{ color: "#6B0101", fontFamily: "Arial, sans-serif" }}
+            sx={{ color: "#6B0101", fontFamily: "Arial, sans-serif",textAlign:"center" }}
           >
             Authentic Indian Flavors!
           </Typography>

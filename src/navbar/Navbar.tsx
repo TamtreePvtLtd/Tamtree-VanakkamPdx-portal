@@ -79,11 +79,13 @@ function Navbar() {
             <Typography
               variant="h5"
               component="div"
+              onClick={handleLogoClick}
               sx={{
                 color: "#ffffff",
                 fontFamily: "alfa_slab_one",
                 fontWeight: "950",
                 textAlign: "center",
+                cursor: "pointer",
               }}
             >
               VANAKKAM PDX
@@ -114,7 +116,29 @@ function Navbar() {
               alignItems: "center",
             }}
           >
-            <Typography
+            <Button
+              sx={{
+                backgroundColor: "#6B0101",
+                color: "white",
+                fontWeight: "bold",
+                cursor: "pointer",
+                lineHeight: 1.3,
+                fontSize: isMobile ? "14px" : "17px",
+                // textWrap: "wrap",
+                textDecoration: "none",
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                  color: "white",
+                },
+              }}
+              component="a"
+              href="http://www.clover.com/online-ordering/vanakkampdx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ORDER ONLINE
+            </Button>
+            {/* <Typography
               color="#6B0101"
               sx={{
                 cursor: "pointer",
@@ -130,7 +154,7 @@ function Navbar() {
               rel="noopener noreferrer"
             >
               ORDER ONLINE
-            </Typography>
+            </Typography> */}
           </Grid>
         </Grid>
       </Toolbar>

@@ -273,7 +273,15 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Box>
-      <Typography variant="body2" sx={{ opacity: 0.7, marginBottom: "-15px",textAlign:"right" }}>
+      <Typography
+        variant="body2"
+        sx={{
+          textWrap: "nowrap",
+          opacity: 0.7,
+          // marginBottom: "5px",
+          textAlign: "right",
+        }}
+      >
         CopyRights©2024. All rights reserved by VANNAKKAM PDX.
       </Typography>
     </Box>
