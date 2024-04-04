@@ -25,8 +25,8 @@ export const InstagramIcon: React.FC<IconProps> = ({ style }) => (
         r="129.502"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".09" stop-color="#fa8f21"></stop>
-        <stop offset=".78" stop-color="#d82d7e"></stop>
+        <stop offset=".09" stopColor="#fa8f21"></stop>
+        <stop offset=".78" stopColor="#d82d7e"></stop>
       </radialGradient>
       <radialGradient
         id="b"
@@ -35,8 +35,8 @@ export const InstagramIcon: React.FC<IconProps> = ({ style }) => (
         r="113.963"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".64" stop-color="#8c3aaa" stop-opacity="0"></stop>
-        <stop offset="1" stop-color="#8c3aaa"></stop>
+        <stop offset=".64" stopColor="#8c3aaa" stopOpacity="0"></stop>
+        <stop offset="1" stopColor="#8c3aaa"></stop>
       </radialGradient>
     </defs>
     <path
@@ -86,9 +86,9 @@ export const WhatsAppIcon: React.FC<IconProps> = ({ style }) => (
     ></path>
     <path
       fill="#fff"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
   </svg>
 );
@@ -106,71 +106,77 @@ export const FacebookIcon: React.FC<IconProps> = ({ style }) => (
     ></path>
     <path
       fill="#FAFAFA"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M13.5 8H11V6c0-.552.448-.5 1-.5h1V3h-2a3 3 0 0 0-3 3v2H6v2.5h2V16h3v-5.5h1.5l1-2.5z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     ></path>
   </svg>
 );
 
 export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    version="1.1"
-    width="20"
-    height="20"
-    viewBox="0 0 256 256"
-    xmlSpace="preserve"
-    {...props}
+  <a
+    href="https://www.google.com/maps/place/VANAKKAM+PDX/@45.5311376,-122.8345254,16z/data=!4m6!3m5!1s0x54950f0b925f43df:0xfe6b4e88b2dd29d8!8m2!3d45.5312428!4d-122.8305343!16s%2Fg%2F11vr4dd7jy?authuser=0&entry=ttu"
+    target="_blank"
+    rel="noopener noreferrer"
   >
-    <g
-      style={{
-        stroke: "none",
-        strokeWidth: 0,
-        strokeDasharray: "none",
-        strokeLinecap: "butt",
-        strokeLinejoin: "miter",
-        strokeMiterlimit: 10,
-        fill: "none",
-        fillRule: "nonzero",
-        opacity: 1,
-      }}
-      transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      width="20"
+      height="20"
+      viewBox="0 0 256 256"
+      xmlSpace="preserve"
+      {...props}
     >
-      <path
-        d="M 45 90 c -1.415 0 -2.725 -0.748 -3.444 -1.966 l -4.385 -7.417 C 28.167 65.396 19.664 51.02 16.759 45.189 c -2.112 -4.331 -3.175 -8.955 -3.175 -13.773 C 13.584 14.093 27.677 0 45 0 c 17.323 0 31.416 14.093 31.416 31.416 c 0 4.815 -1.063 9.438 -3.157 13.741 c -0.025 0.052 -0.053 0.104 -0.08 0.155 c -2.961 5.909 -11.41 20.193 -20.353 35.309 l -4.382 7.413 C 47.725 89.252 46.415 90 45 90 z"
+      <g
         style={{
           stroke: "none",
-          strokeWidth: 1,
+          strokeWidth: 0,
           strokeDasharray: "none",
           strokeLinecap: "butt",
           strokeLinejoin: "miter",
           strokeMiterlimit: 10,
-          fill: "rgb(4,136,219)",
+          fill: "none",
           fillRule: "nonzero",
           opacity: 1,
         }}
-        transform="matrix(1 0 0 1 0 0)"
-        strokeLinecap="round"
-      />
-      <path
-        d="M 45 45.678 c -8.474 0 -15.369 -6.894 -15.369 -15.368 S 36.526 14.941 45 14.941 c 8.474 0 15.368 6.895 15.368 15.369 S 53.474 45.678 45 45.678 z"
-        style={{
-          stroke: "none",
-          strokeWidth: 1,
-          strokeDasharray: "none",
-          strokeLinecap: "butt",
-          strokeLinejoin: "miter",
-          strokeMiterlimit: 10,
-          fill: "#fff",
-          fillRule: "nonzero",
-          opacity: 1,
-        }}
-        transform="matrix(1 0 0 1 0 0)"
-        strokeLinecap="round"
-      />
-    </g>
-  </svg>
+        transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+      >
+        <path
+          d="M 45 90 c -1.415 0 -2.725 -0.748 -3.444 -1.966 l -4.385 -7.417 C 28.167 65.396 19.664 51.02 16.759 45.189 c -2.112 -4.331 -3.175 -8.955 -3.175 -13.773 C 13.584 14.093 27.677 0 45 0 c 17.323 0 31.416 14.093 31.416 31.416 c 0 4.815 -1.063 9.438 -3.157 13.741 c -0.025 0.052 -0.053 0.104 -0.08 0.155 c -2.961 5.909 -11.41 20.193 -20.353 35.309 l -4.382 7.413 C 47.725 89.252 46.415 90 45 90 z"
+          style={{
+            stroke: "none",
+            strokeWidth: 1,
+            strokeDasharray: "none",
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
+            strokeMiterlimit: 10,
+            fill: "rgb(4,136,219)",
+            fillRule: "nonzero",
+            opacity: 1,
+          }}
+          transform="matrix(1 0 0 1 0 0)"
+          strokeLinecap="round"
+        />
+        <path
+          d="M 45 45.678 c -8.474 0 -15.369 -6.894 -15.369 -15.368 S 36.526 14.941 45 14.941 c 8.474 0 15.368 6.895 15.368 15.369 S 53.474 45.678 45 45.678 z"
+          style={{
+            stroke: "none",
+            strokeWidth: 1,
+            strokeDasharray: "none",
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
+            strokeMiterlimit: 10,
+            fill: "#fff",
+            fillRule: "nonzero",
+            opacity: 1,
+          }}
+          transform="matrix(1 0 0 1 0 0)"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+  </a>
 );
 
 const Footer = () => {
@@ -193,7 +199,7 @@ const Footer = () => {
                 sx={{
                   fontFamily: "Itim",
                   fontSize: "22px",
-                  marginTop: 2.5,
+                  marginTop: 3,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -224,13 +230,17 @@ const Footer = () => {
             >
               Join Our WhatsApp Group
             </Typography>
-            <a href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn">
+            <a
+              href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 style={{
                   width: "70px",
                   height: "75px",
                   marginRight: "10px",
-                  marginTop: 10,
+                  marginTop: 20,
                   cursor: "pointer",
                 }}
                 src={Qrcode}
@@ -242,18 +252,26 @@ const Footer = () => {
           <Grid item xs={12} sm={4}>
             <Typography
               variant="body1"
-              sx={{ fontFamily: "Itim", fontSize: "20px", marginTop: 3 }}
+              sx={{ fontFamily: "Itim", fontSize: "22px", marginTop: 3 }}
               component="p"
             >
               Contact Us
             </Typography>
-            <Box display="flex" justifyContent="center" marginTop={3} gap={1}>
-              <a href="https://www.instagram.com/vanakkampdx">
+            <Box display="flex" justifyContent="center" marginTop={2} gap={1}>
+              <a
+                href="https://www.instagram.com/vanakkampdx"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InstagramIcon
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
                 />
               </a>
-              <a href="https://wa.me/19714548476">
+              <a
+                href="https://wa.me/19714548476"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <WhatsAppIcon
                   style={{
                     width: "35px",
@@ -264,7 +282,11 @@ const Footer = () => {
                 />
               </a>
 
-              <a href="https://www.facebook.com/Vanakkam%20PDX">
+              <a
+                href="https://www.facebook.com/Vanakkam%20PDX"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FacebookIcon
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
                 />

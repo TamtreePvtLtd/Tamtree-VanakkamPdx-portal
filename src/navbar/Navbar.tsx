@@ -6,8 +6,7 @@ import { useMediaQuery } from "@mui/material";
 
 function Navbar() {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width:600px)"); // Define isMobile based on viewport width
-
+  const isMobile = useMediaQuery("(max-width:700px)"); 
   const handleLogoClick = () => {
     navigate(paths.ROOT);
   };
@@ -57,6 +56,7 @@ function Navbar() {
               style={{
                 height: "auto",
                 width: "70px",
+                marginRight:isMobile ? 0 : 50,
                 cursor: "pointer",
                 backgroundColor: "white",
                 borderRadius: "50%",
@@ -72,8 +72,8 @@ function Navbar() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "start",
+              justifyContent: "start",
+              alignItems: "flex-start"
             }}
           >
             <Typography
@@ -86,6 +86,7 @@ function Navbar() {
                 fontWeight: "950",
                 textAlign: "center",
                 cursor: "pointer",
+                textWrap:"nowrap"
               }}
             >
               VANAKKAM PDX
@@ -98,6 +99,7 @@ function Navbar() {
                 fontWeight: "950",
                 fontFamily: "alfa_slab_one",
                 textAlign: "center",
+                textWrap:"nowrap",
                 marginLeft: isMobile ? 3 : 5,
               }}
             >
@@ -142,10 +144,10 @@ function Navbar() {
               color="#6B0101"
               sx={{
                 cursor: "pointer",
-                fontWeight: "bold",
                 fontSize: isMobile ? "14px" : "17px",
-                textWrap: "nowrap",
+                textWrap: isMobile ? "wrap" :"nowrap",
                 textDecoration: "none",
+                marginLeft:isMobile ? 5 : 0,
                 "&:hover": { color: "green", textDecoration: "none" },
               }}
               component="a"
