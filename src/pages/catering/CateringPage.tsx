@@ -7,7 +7,7 @@ function CateringPage() {
   return (
     <>
       <PageBanner
-        imageUrl="src/assets/cateringbannerimage1.jpg"
+        imageUrl="https://www.shutterstock.com/image-photo/assorted-chinese-food-set-noodles-260nw-446808100.jpg"
         content="CATERING"
         description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
         showTopButtons={false}

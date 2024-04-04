@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useRef } from "react";
 
 interface IProps {
   imageUrl: string;
@@ -10,6 +11,13 @@ interface IProps {
 function PageBanner(props: IProps) {
   const { imageUrl, content, description, showTopButtons, showBottomButtons } =
     props;
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <Box
@@ -100,12 +108,13 @@ function PageBanner(props: IProps) {
             <Button
               variant="contained"
               size="medium"
+              onClick={scrollToForm}
               sx={{
-                color: "#6B0101",
-                fontWeight:550,
-                backgroundColor: "#E4973C",
+                color: "white",
+                fontWeight: 550,
+                backgroundColor: "#6B0101",
                 "&:hover": {
-                  backgroundColor: "#E4973C",
+                  backgroundColor: "#6B0101",
                 },
               }}
             >
@@ -126,6 +135,7 @@ function PageBanner(props: IProps) {
           </Box>
         )}
       </Box>
+      <div ref={formRef} id="CateringEnquireForm" />
     </>
   );
 }
