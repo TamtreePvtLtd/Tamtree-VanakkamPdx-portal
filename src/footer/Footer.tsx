@@ -114,7 +114,7 @@ export const FacebookIcon: React.FC<IconProps> = ({ style }) => (
 );
 
 export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
-  <svg
+ <a href="https://www.google.com/maps/place/VANAKKAM+PDX/@45.5311376,-122.8345254,16z/data=!4m6!3m5!1s0x54950f0b925f43df:0xfe6b4e88b2dd29d8!8m2!3d45.5312428!4d-122.8305343!16s%2Fg%2F11vr4dd7jy?authuser=0&entry=ttu" target="_blank" rel="noopener noreferrer"><svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     width="20"
@@ -171,6 +171,7 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
       />
     </g>
   </svg>
+  </a>
 );
 
 const Footer = () => {
@@ -224,7 +225,7 @@ const Footer = () => {
             >
               Join Our WhatsApp Group
             </Typography>
-            <a href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn">
+            <a href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn" target="_blank" rel="noopener noreferrer">
               <img
                 style={{
                   width: "70px",
@@ -248,12 +249,12 @@ const Footer = () => {
               Contact Us
             </Typography>
             <Box display="flex" justifyContent="center" marginTop={3} gap={1}>
-              <a href="https://www.instagram.com/vanakkampdx">
+              <a href="https://www.instagram.com/vanakkampdx" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
                 />
               </a>
-              <a href="https://wa.me/19714548476">
+              <a href="https://wa.me/19714548476" target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon
                   style={{
                     width: "35px",
@@ -264,7 +265,7 @@ const Footer = () => {
                 />
               </a>
 
-              <a href="https://www.facebook.com/Vanakkam%20PDX">
+              <a href="https://www.facebook.com/Vanakkam%20PDX" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
                 />
