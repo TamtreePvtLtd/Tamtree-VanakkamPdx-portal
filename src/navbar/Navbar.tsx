@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Grid } from "@mui/material";
+import { AppBar, Toolbar, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
@@ -101,7 +101,7 @@ function Navbar() {
                 marginLeft: isMobile ? 3 : 5,
               }}
             >
-              -AUTHENTIC INDIAN CUISINE
+              - AUTHENTIC INDIAN CUISINE
             </Typography>
           </Grid>
           <Grid
@@ -117,11 +117,10 @@ function Navbar() {
             }}
           >
             <Typography
-              color="black"
-              fontFamily="alfa_slab_one,Itim"
+              color="#6B0101"
               sx={{
                 cursor: "pointer",
-                fontSize: isMobile ? "14px" : "16px",
+                fontSize: isMobile ? "14px" : "17px",
                 textWrap: isMobile ? "wrap" :"nowrap",
                 textDecoration: "none",
                 marginLeft:isMobile ? 5 : 0,

@@ -48,7 +48,9 @@ function CommonProductCard(props: IProps) {
           variant="body1"
           sx={{
             fontWeight: 600,
-            color: "#E4973C",
+            textAlign:"center",
+            // color: "#E4973C",
+            color: "#6B0101",
           }}
           component="div"
         >
@@ -58,6 +60,8 @@ function CommonProductCard(props: IProps) {
           variant="body2"
           sx={{
             fontWeight: 400,
+            textAlign:"center",
+            marginTop:"5px",
           }}
           component="div"
         >

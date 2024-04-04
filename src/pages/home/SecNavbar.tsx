@@ -4,10 +4,10 @@ import { paths } from "../../router/paths";
 
 const commonButtonStyles = {
   color: "#6B0101",
-   display: "flex",
+  display: "flex",
   alignItems: "center",
-  fontWeight:"bold",
-  "&:hover": { backgroundColor: "#e4973d" },
+  fontWeight: "bold",
+  "&:hover": { color: "green", textDecoration: "none" },
 };
 
 const commonDividerStyles = {
@@ -173,7 +173,7 @@ const SecNavbar = () => {
             ABOUT US
           </Button>
         </Grid>
-        <Divider
+        {/* <Divider
           sx={{
             ...commonDividerStyles,
             marginTop: "5px",
@@ -181,9 +181,9 @@ const SecNavbar = () => {
           }}
           orientation="vertical"
           flexItem
-        />
+        /> */}
 
-        <Grid
+        {/* <Grid
           item
           xs={12}
           lg={1.8}
@@ -201,7 +201,7 @@ const SecNavbar = () => {
           >
             CONTACT US
           </Button>
-        </Grid>
+        </Grid> */}
       </Grid>
       </Toolbar>
     </AppBar>
