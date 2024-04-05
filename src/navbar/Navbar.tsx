@@ -23,10 +23,10 @@ function Navbar() {
         height: "85px",
       }}
     >
-      <Toolbar>
+      <Toolbar sx={{padding:isMobile ? 1 : 0,marginBottom:"20px", display:"flex",alignItems:"center",justifyContent:"space-evenly"}} >
         <Grid
           container
-          spacing={3}
+          spacing={2}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -44,9 +44,9 @@ function Navbar() {
             lg={2}
             sx={{
               display: "flex",
-              alignItems: isMobile ? "start" : "center",
+              alignItems: isMobile ? "center" : "center",
               justifyContent: "center",
-              paddingLeft: 2,
+              paddingLeft: isMobile ? 1 : 2 ,
             }}
           >
             <img
@@ -55,7 +55,7 @@ function Navbar() {
               onClick={handleLogoClick}
               style={{
                 height: "auto",
-                width: "70px",
+                width: isMobile ? "60px" : "70px",
                 marginRight: isMobile ? 0 : 50,
                 cursor: "pointer",
                 backgroundColor: "white",
@@ -72,9 +72,10 @@ function Navbar() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "start",
-              alignItems: "flex-start",
-              marginTop: 1, // Adjust the value as needed
+              justifyContent: "center",
+              alignItems: isMobile ? "center" : "flex-start",
+              textAlign:"center",
+              marginTop: 1,
             }}
           >
             <Typography
@@ -88,6 +89,7 @@ function Navbar() {
                 textAlign: "center",
                 cursor: "pointer",
                 textWrap: "nowrap",
+                marginTop: "1px",
                 textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
               }}
             >
@@ -103,7 +105,7 @@ function Navbar() {
                 textAlign: "center",
                 textWrap: "nowrap",
                 marginLeft: isMobile ? 3 : 5,
-                textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+                textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
               }}
             >
               - AUTHENTIC INDIAN CUISINE
@@ -133,7 +135,7 @@ function Navbar() {
                 // textWrap: "wrap",
                 textDecoration: "none",
                 "&:hover": {
-                  backgroundColor: "#6B0101",
+                  backgroundColor: "green",
                   color: "white",
                 },
               }}
@@ -163,7 +165,7 @@ function Navbar() {
             </Typography> */}
           </Grid>
         </Grid>
-      </Toolbar>
+        </Toolbar>
     </AppBar>
   );
 }

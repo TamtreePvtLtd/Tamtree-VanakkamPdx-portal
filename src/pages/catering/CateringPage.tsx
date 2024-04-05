@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import PageBanner from "../../common/components/PageBanner";
 import CateringCard from "./CateringCard";
 import CateringEnquiryForm from "./CateringEnquiryForm";
 
 function CateringPage() {
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    });
+
   return (
     <>
       <PageBanner

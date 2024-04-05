@@ -1,7 +1,12 @@
 import { Grid, Typography } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
+import { useEffect } from "react";
 
 function AboutUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <PageBanner

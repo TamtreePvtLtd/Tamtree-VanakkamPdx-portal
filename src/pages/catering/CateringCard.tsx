@@ -1,9 +1,10 @@
-import { Box } from "@mui/system";
+import { Box, useMediaQuery } from "@mui/system";
 import CommonProductCard from "../../common/components/CommonCard";
 import seedData from "../../seed-data/Seed-Data";
 import { Typography } from "@mui/material";
 
 function CateringCard() {
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box>
@@ -16,7 +17,8 @@ function CateringCard() {
             display: "flex",
             justifyContent: "center",
             color: "#6B0101",
-            padding:"10px"
+            padding: "10px",
+            textAlign: isMobile ? "center" : "center",
           }}
         >
           Making Your Special Events, Even More Special!
