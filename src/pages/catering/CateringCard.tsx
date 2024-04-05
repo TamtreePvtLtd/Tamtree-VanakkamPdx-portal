@@ -9,10 +9,11 @@ function CateringCard() {
     <Box>
       <Box>
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{
             marginTop: "20px",
-            fontFamily: "jacques Francois",
+            // fontFamily: "jacques Francois",
+            fontFamily:"'Berkshire Swash', cursive",
             fontWeight: 600,
             display: "flex",
             justifyContent: "center",

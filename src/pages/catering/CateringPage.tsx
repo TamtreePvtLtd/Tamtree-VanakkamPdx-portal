@@ -1,13 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import PageBanner from "../../common/components/PageBanner";
 import CateringCard from "./CateringCard";
 import CateringEnquiryForm from "./CateringEnquiryForm";
 
 function CateringPage() {
+  const enquiryFormRef = useRef<HTMLDivElement>(null); // Specify the type for useRef
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  const scrollToEnquiryForm = () => {
+    if (enquiryFormRef.current) {
+      enquiryFormRef.current.scrollIntoView({ behavior: "smooth",block:"center" });
+    }
+  };
 
   return (
     <>
@@ -17,9 +24,12 @@ function CateringPage() {
         description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
         showTopButtons={false}
         showBottomButtons={true}
+        onClickButton={scrollToEnquiryForm}
       />
       <CateringCard />
-      <CateringEnquiryForm />
+      <div ref={enquiryFormRef}>
+        <CateringEnquiryForm />
+      </div>
     </>
   );
 }

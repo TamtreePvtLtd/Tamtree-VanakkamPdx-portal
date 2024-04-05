@@ -49,6 +49,7 @@ function CommonProductCard(props: IProps) {
           sx={{
             fontWeight: 600,
             textAlign: "center",
+            fontFamily:"Berkshire Swash",
             // color: "#E4973C",
             color: "#6B0101",
           }}

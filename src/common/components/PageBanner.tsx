@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { useRef } from "react";
 
 interface IProps {
@@ -7,17 +7,31 @@ interface IProps {
   description?: string;
   showTopButtons?: boolean;
   showBottomButtons?: boolean;
+  onClickButton?: () => void; // Define the onClickButton prop
 }
 function PageBanner(props: IProps) {
-  const { imageUrl, content, description, showTopButtons, showBottomButtons } =
-    props;
+  const {
+    imageUrl,
+    content,
+    description,
+    showTopButtons,
+    showBottomButtons,
+    onClickButton,
+  } = props;
   const formRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery("(max-width:700px)");
 
-  const scrollToForm = () => {
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    const scrollToForm = () => {
+      if (formRef.current) {
+        formRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+      if (onClickButton) {
+        // Call onClickButton if it's provided
+        onClickButton();
+      }
+    };
+
+
   return (
     <>
       <Box
@@ -112,9 +126,16 @@ function PageBanner(props: IProps) {
               sx={{
                 color: "white",
                 fontWeight: 550,
+                fontFamily: "Cinzel",
+                cursor: "pointer",
+                lineHeight: 2,
+                textAlign: "center",
+                width: "13%",
+                borderRadius: "25px",
+                fontSize: isMobile ? "14px" : "17px",
                 backgroundColor: "#6B0101",
                 "&:hover": {
-                  backgroundColor: "#6B0101",
+                  backgroundColor: "green",
                 },
               }}
             >

@@ -1,4 +1,12 @@
-import { Grid, AppBar, Button, Divider, useMediaQuery, Toolbar } from "@mui/material";
+import {
+  Grid,
+  AppBar,
+  Button,
+  Divider,
+  useMediaQuery,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { paths } from "../../router/paths";
 
@@ -7,12 +15,13 @@ const commonButtonStyles = {
   display: "flex",
   alignItems: "center",
   fontWeight: "bold",
+  fontFamily: "'Acme",
   "&:hover": { color: "green", textDecoration: "none" },
+  fontSize: "16px !important", // Try using !important
 };
 
 const commonDividerStyles = {
   backgroundColor: "#fff",
- 
 };
 
 const handleCloverClick = () => {
@@ -26,154 +35,203 @@ const SecNavbar = () => {
   return (
     <AppBar
       position="relative"
-      sx={{ backgroundColor: "#e4973d", height: "100%", width: "100%" }}
+      sx={{
+        backgroundColor: "#e4973d",
+        height: "100%",
+        width: "100%",
+      }}
     >
       <Toolbar>
-      <Grid
-        container
-        sx={{
-          padding: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: isMobile ? "column" : "row",
-        }}
-      >
         <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
+          container
           sx={{
+            padding: 0,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            flexDirection: isMobile ? "column" : "row",
           }}
         >
-          <Button
-            color="inherit"
-            onClick={() => navigate(paths.HOME)}
-            sx={commonButtonStyles}
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            HOME
-          </Button>
-        </Grid>
-        <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        />
-        <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={handleCloverClick}
-            sx={commonButtonStyles}
+            <Button
+              color="inherit"
+              onClick={() => navigate(paths.HOME)}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                HOME
+              </Typography>
+            </Button>
+          </Grid>
+          <Divider
+            sx={{
+              ...commonDividerStyles,
+              marginTop: "5px",
+              height: isMobile ? "1px" : "25px",
+            }}
+            orientation="vertical"
+            flexItem
+          />
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            DINING MENU
-          </Button>
-        </Grid>
-        <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        />
+            <Button
+              color="inherit"
+              onClick={handleCloverClick}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                DINING MENU
+              </Typography>
+            </Button>
+          </Grid>
+          <Divider
+            sx={{
+              ...commonDividerStyles,
+              marginTop: "5px",
+              height: isMobile ? "1px" : "25px",
+            }}
+            orientation="vertical"
+            flexItem
+          />
 
-        <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={handleCloverClick}
-            sx={commonButtonStyles}
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            TAKEOUT
-          </Button>
-        </Grid>
-        <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        />
+            <Button
+              color="inherit"
+              onClick={handleCloverClick}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                TAKEOUT
+              </Typography>
+            </Button>
+          </Grid>
+          <Divider
+            sx={{
+              ...commonDividerStyles,
+              marginTop: "5px",
+              height: isMobile ? "1px" : "25px",
+            }}
+            orientation="vertical"
+            flexItem
+          />
 
-        <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={() => navigate(paths.CATERING)}
-            sx={commonButtonStyles}
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            CATERING
-          </Button>
-        </Grid>
-        <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        />
+            <Button
+              color="inherit"
+              onClick={() => navigate(paths.CATERING)}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                CATERING
+              </Typography>
+            </Button>
+          </Grid>
+          <Divider
+            sx={{
+              ...commonDividerStyles,
+              marginTop: "5px",
+              height: isMobile ? "1px" : "25px",
+            }}
+            orientation="vertical"
+            flexItem
+          />
 
-        <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={() => navigate(paths.ABOUTUS)}
-            sx={commonButtonStyles}
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            ABOUT US
-          </Button>
-        </Grid>
-        {/* <Divider
+            <Button
+              color="inherit"
+              onClick={() => navigate(paths.ABOUTUS)}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                ABOUT US
+              </Typography>
+            </Button>
+          </Grid>
+          {/* <Divider
           sx={{
             ...commonDividerStyles,
             marginTop: "5px",
@@ -183,7 +241,7 @@ const SecNavbar = () => {
           flexItem
         /> */}
 
-        {/* <Grid
+          {/* <Grid
           item
           xs={12}
           lg={1.8}
@@ -202,7 +260,7 @@ const SecNavbar = () => {
             CONTACT US
           </Button>
         </Grid> */}
-      </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   );

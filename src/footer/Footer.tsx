@@ -186,7 +186,7 @@ const Footer = () => {
       component="footer"
       style={{
         backgroundColor: "#6B0101",
-        color: "white",
+        color: "#e7e7e7",
         padding: "20px",
         textAlign: "center",
       }}
@@ -200,10 +200,12 @@ const Footer = () => {
                 sx={{
                   fontFamily: "Itim",
                   fontSize: "22px",
+                  fontWeight: 700,
                   marginTop: 3,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  // color: "#e7e7e7",
                 }}
                 component="p"
               >
@@ -214,8 +216,10 @@ const Footer = () => {
             <Typography
               variant="body2"
               sx={{
-                color: "white",
+                // color: "white",
                 lineHeight: 1,
+                // fontFamily: "Rubik",
+                color: "#d4d4d4",
               }}
             >
               <p> 14740 Cornell Rd #160, Portland 97229</p>
@@ -226,7 +230,12 @@ const Footer = () => {
           <Grid item xs={12} sm={4}>
             <Typography
               variant="body1"
-              sx={{ fontFamily: "Itim", fontSize: "20px", marginTop: 3 }}
+              sx={{
+                fontFamily: "Itim",
+                fontSize: "20px",
+                marginTop: 3,
+                fontWeight: 700,
+              }}
               component="p"
             >
               Join Our WhatsApp Group
@@ -253,7 +262,12 @@ const Footer = () => {
           <Grid item xs={12} sm={4}>
             <Typography
               variant="body1"
-              sx={{ fontFamily: "Itim", fontSize: "22px", marginTop: 3 }}
+              sx={{
+                fontFamily: "Itim",
+                fontSize: "22px",
+                marginTop: 3,
+                fontWeight: 700,
+              }}
               component="p"
             >
               Contact Us
@@ -301,10 +315,11 @@ const Footer = () => {
         sx={{
           textWrap: isMobile ? "wrap" : "nowrap",
           opacity: 0.7,
-          textAlign: isMobile ? "center":"right",
+          textAlign: isMobile ? "center" : "right",
         }}
       >
-        CopyRights©{new Date().getFullYear()}. All rights reserved by VANNAKKAM PDX.
+        CopyRights©{new Date().getFullYear()}. All rights reserved by VANNAKKAM
+        PDX.
       </Typography>
     </Box>
   );
