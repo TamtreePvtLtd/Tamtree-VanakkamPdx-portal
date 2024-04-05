@@ -1,7 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 import { useEffect } from "react";
-import { Container } from "@mui/system";
 
 function AboutUs() {
   useEffect(() => {
