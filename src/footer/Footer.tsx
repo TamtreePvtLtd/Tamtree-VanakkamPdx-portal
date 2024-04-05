@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
 
@@ -180,6 +180,7 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
 );
 
 const Footer = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box
       component="footer"
@@ -298,13 +299,13 @@ const Footer = () => {
       <Typography
         variant="body2"
         sx={{
-          textWrap: "nowrap",
+          textWrap: isMobile ? "wrap" : "nowrap",
           opacity: 0.7,
           // marginBottom: "5px",
-          textAlign: "right",
+          textAlign: isMobile ? "center":"right",
         }}
       >
-        CopyRights©2024. All rights reserved by VANNAKKAM PDX.
+        CopyRights©{new Date().getFullYear()}. All rights reserved by VANNAKKAM PDX.
       </Typography>
     </Box>
   );

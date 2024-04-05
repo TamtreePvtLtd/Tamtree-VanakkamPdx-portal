@@ -37,24 +37,74 @@ function HomePageBanner() {
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={25}
-              lineHeight={1.5}
-              fontFamily={"jacques Francois"}
-            >
-              <span className="bold700">GOOD</span> <br />
-              <span className="bold600">FOOD</span> <br />
-              ----- is -----
-              <br />
-              <span> WHAT ALL</span>
-              <br />I NEED
-              <br />
-              ..... to .....
-              <br />
-              <span className="bold700"> BE HAPPY</span> <br />
-            </Typography>
+          <Typography
+          paddingTop={1}
+    variant="body1"
+    textAlign="center"
+    fontSize={30}
+    fontWeight={900}
+    lineHeight={1}
+    fontFamily={"jacques Francois"}
+  >
+    <span className="bold700">GOOD</span>
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={45}
+    lineHeight={1.2}
+    fontFamily={"jacques Francois"}
+  >
+    <span className="bold600">FOOD</span>
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={20}
+    fontStyle={"italic"}
+    lineHeight={1.2}
+    fontFamily={"jacques Francois"}
+  >
+    ----- is -----
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={25}
+    lineHeight={1.5}
+    fontFamily={"jacques Francois"}
+  >
+    <span>WHAT ALL</span>
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={45}
+    lineHeight={1.2}
+    fontFamily={"jacques Francois"}
+  >
+    I NEED
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={20}
+    fontStyle={"italic"}
+    lineHeight={1}
+    fontFamily={"jacques Francois"}
+  >
+    ..... to .....
+  </Typography>
+  <Typography
+    variant="body1"
+    textAlign="center"
+    fontSize={30}
+    fontWeight={900}
+    lineHeight={1.5}
+    fontFamily={"jacques Francois"}
+  >
+    <span className="bold700">BE HAPPY</span>
+  </Typography>
           </Box>
           {/* <Box
             sx={{
