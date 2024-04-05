@@ -74,6 +74,7 @@ function Navbar() {
               flexDirection: "column",
               justifyContent: "start",
               alignItems: "flex-start",
+              marginTop: 1, // Adjust the value as needed
             }}
           >
             <Typography
@@ -127,6 +128,7 @@ function Navbar() {
                 fontWeight: "bold",
                 cursor: "pointer",
                 lineHeight: 1.3,
+                textAlign:"center",
                 fontSize: isMobile ? "14px" : "17px",
                 // textWrap: "wrap",
                 textDecoration: "none",

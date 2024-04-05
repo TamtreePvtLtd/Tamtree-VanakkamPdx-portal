@@ -9,19 +9,19 @@ const seedData = [
   },
   {
     _id: "2",
-    title: "Special Events",
-    description:
-      "Elevate your event with our exceptional catering services, delivering unforgettable menus and service for any occasion.",
-    posterURL:
-      "https://cdn0.weddingwire.in/vendor/9115/3_2/640/jpg/ideal-pair-_v1283.jpeg",
-  },
-  {
-    _id: "3",
     title: "Corporate Events",
     description:
       "Elevate your corporate events with our seamless planning and professional services, ensuring a successful and memorable experience.",
     posterURL:
       "https://hospibuz.com/wp-content/uploads/2019/03/Untitled-1-copy-97.jpg",
+  },
+  {
+    _id: "3",
+    title: "Special Events",
+    description:
+      "Elevate your event with our exceptional catering services, delivering unforgettable menus and service for any occasion.",
+    posterURL:
+      "https://cdn0.weddingwire.in/vendor/9115/3_2/640/jpg/ideal-pair-_v1283.jpeg",
   },
 ];
 

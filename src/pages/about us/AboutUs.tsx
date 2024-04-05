@@ -1,4 +1,4 @@
-import {Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 import { useEffect } from "react";
 
@@ -10,7 +10,8 @@ function AboutUs() {
   return (
     <>
       <PageBanner
-        imageUrl="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg"
+        // imageUrl="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg"
+        imageUrl="https://as1.ftcdn.net/v2/jpg/06/35/76/76/1000_F_635767696_2fpfuQhfCVGchFb4KpHMroELgzK4usZl.jpg"
         content="ABOUT US"
         description="COME ENJOY DELECIOUS FOOD AND  GREAT SERVICE AT VANAKKAM PDX"
         showTopButtons={false}
@@ -33,7 +34,7 @@ function AboutUs() {
           }}
         >
           <img
-            src="src/assets/AboutUs_Image_2-removebg-preview.png"
+            src="https://media.istockphoto.com/id/483405040/photo/south-indian-meals-on-banana-leaf.jpg?s=612x612&w=0&k=20&c=WUFvAWQgxT44QW1JHS5c_QiB_RDf2hkR2hf4Kpk_lzA="
             alt="Vanakkam PDX"
             style={{
               width: "calc(100% - 20%)",
@@ -110,12 +111,12 @@ function AboutUs() {
           }}
         >
           <img
-            src="src/assets/AboutUs Image1.jpg"
+            src="https://media.istockphoto.com/id/941615570/photo/kuzhi-paniyaram-served-with-coconut-chutney-and-sambar-south-indian-breakfast-with-black.jpg?s=170667a&w=0&k=20&c=BuyDdaUAZJxfZ915WR_Sirrnc8HZS5zC5DVa7jRYB3M="
             alt="Vanakkam PDX"
             style={{
               width: "calc(100% - 20%)",
               height: "70%",
-              borderRadius: "50%",
+              // borderRadius: "50%",
             }}
           />
         </Grid>
