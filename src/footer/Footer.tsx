@@ -300,7 +300,6 @@ const Footer = () => {
         sx={{
           textWrap: "nowrap",
           opacity: 0.7,
-          // marginBottom: "5px",
           textAlign: "right",
         }}
       >

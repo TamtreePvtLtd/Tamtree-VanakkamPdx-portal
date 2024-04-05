@@ -120,18 +120,6 @@ function PageBanner(props: IProps) {
             >
               Catering Enqiry
             </Button>
-            {/* <Button
-              variant="contained"
-              size="small"
-              sx={{
-                backgroundColor: "#6B0101",
-                "&:hover": {
-                  backgroundColor: "#6B0101",
-                },
-              }}
-            >
-              View Menu
-            </Button> */}
           </Box>
         )}
       </Box>

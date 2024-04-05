@@ -5,6 +5,6 @@ export interface ICateringEnquiry {
   typeOfEvent?: string;
   guestCount?: number;
   mobileNumber: string;
-  message?: string;
+  message: string;
   eventDate: string;
 }

@@ -3,7 +3,7 @@ const seedData = [
     _id: "1",
     title: "Social Events",
     description:
-      "Elevate your social gatherings with our customizable catering services, perfect for birthdays, anniversaries, holidays, family reunions, and graduation parties.",
+      "Crafting memorable experiences with exquisite cuisine tailored to your social gatherings. Elevate your event with our exceptional catering services.",
     posterURL:
       "https://media.istockphoto.com/id/650655146/photo/catering-food-wedding-event-table.jpg?s=612x612&w=0&k=20&c=ATGYgW8bM_559jJ5aUNO4HlJqpkOWUmNNMMflx5kajo=",
   },
@@ -11,15 +11,15 @@ const seedData = [
     _id: "2",
     title: "Corporate Events",
     description:
-      "Elevate your corporate events with our seamless planning and professional services, ensuring a successful and memorable experience.",
+      "Seamlessly cater to your corporate events with sophisticated menus and impeccable service. Let us elevate your professional gatherings with our culinary expertise.",
     posterURL:
-      "https://hospibuz.com/wp-content/uploads/2019/03/Untitled-1-copy-97.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2020/10/BZ/NO/XH/58672911/neato-foods-ambattur-corporate-canteen-250x250.jpg",
   },
   {
     _id: "3",
     title: "Special Events",
     description:
-      "Elevate your event with our exceptional catering services, delivering unforgettable menus and service for any occasion.",
+      "Let us cater your special event with delicious food and exceptional service.From elegant weddings to milestone celebrations, we ensure every bite is memorable.",
     posterURL:
       "https://cdn0.weddingwire.in/vendor/9115/3_2/640/jpg/ideal-pair-_v1283.jpeg",
   },
