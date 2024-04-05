@@ -23,7 +23,15 @@ function Navbar() {
         height: "85px",
       }}
     >
-      <Toolbar sx={{padding:isMobile ? 1 : 0,marginBottom:"20px", display:"flex",alignItems:"center",justifyContent:"space-evenly"}} >
+      <Toolbar
+        sx={{
+          padding: isMobile ? 1 : 0,
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
         <Grid
           container
           spacing={2}
@@ -46,7 +54,7 @@ function Navbar() {
               display: "flex",
               alignItems: isMobile ? "center" : "center",
               justifyContent: "center",
-              paddingLeft: isMobile ? 1 : 2 ,
+              paddingLeft: isMobile ? 1 : 2,
             }}
           >
             <img
@@ -74,7 +82,7 @@ function Navbar() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: isMobile ? "center" : "flex-start",
-              textAlign:"center",
+              textAlign: "center",
               marginTop: 1,
             }}
           >
@@ -128,9 +136,13 @@ function Navbar() {
                 backgroundColor: "#6B0101",
                 color: "white",
                 fontWeight: "bold",
+                // fontFamily: "playfair Display",
+                fontFamily: "Cinzel",
                 cursor: "pointer",
-                lineHeight: 1.3,
-                textAlign:"center",
+                lineHeight: 2,
+                textAlign: "center",
+                width: "75%",
+                borderRadius: "25px",
                 fontSize: isMobile ? "14px" : "17px",
                 // textWrap: "wrap",
                 textDecoration: "none",
@@ -165,7 +177,7 @@ function Navbar() {
             </Typography> */}
           </Grid>
         </Grid>
-        </Toolbar>
+      </Toolbar>
     </AppBar>
   );
 }

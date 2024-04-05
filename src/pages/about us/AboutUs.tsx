@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 import { useEffect } from "react";
+import { Container } from "@mui/system";
 
 function AboutUs() {
   useEffect(() => {
@@ -60,9 +61,12 @@ function AboutUs() {
           <Typography
             variant="h4"
             sx={{
-              color: "#E4973C",
-              fontFamily: "architects Daughter",
+              // color: "#E4973C",
+              color:"#e4973d",
+              // fontFamily: "architects Daughter",
+              fontFamily: "Cinzel Decorative",
               paddingTop: 2,
+              // fontSize: "30px",
             }}
           >
             A Tapestry of
@@ -72,7 +76,9 @@ function AboutUs() {
             gutterBottom
             sx={{
               color: "#6B0101",
-              fontFamily: "Arial, sans-serif",
+              // fontFamily: "Arial, sans-serif",
+              fontFamily: "Cinzel Decorative",
+              paddingTop: 0.5,
               textAlign: "center",
             }}
           >
@@ -85,7 +91,9 @@ function AboutUs() {
               color: "#333",
               fontFamily: "Arial, sans-serif",
               textAlign: "center",
-              padding: 2,
+              padding: 0,
+              fontSize: "18px",
+              lineHeight: "2rem",
             }}
           >
             Vanakkam pdx is the collective outcome of authentic south Indian
@@ -125,12 +133,14 @@ function AboutUs() {
           variant="h4"
           gutterBottom
           sx={{
-            color: "#E4973C",
-            fontFamily: "allerta stencil",
+            // color: "#E4973C",
+            color: "#6B0101",
+            // fontFamily: "allerta stencil",
+            fontFamily: "Cinzel Decorative",
             fontSize: "30px",
             fontWeight: 800,
             textAlign: "center",
-            textDecoration: "underline",
+            // textDecoration: "underline",
           }}
         >
           THE STORY OF VANAKKAM PDX
@@ -142,6 +152,8 @@ function AboutUs() {
             color: "#333",
             fontFamily: "Arial, sans-serif",
             textAlign: "left",
+            fontSize: "18px",
+            lineHeight: "2rem",
           }}
         >
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian cuisine

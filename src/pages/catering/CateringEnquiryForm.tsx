@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -64,6 +64,7 @@ function CateringEnquiryForm() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<ICateringEnquiry | null>(null);
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  const formRef = useRef<HTMLFormElement>(null); // Change useRef<HTMLDivElement> to useRef<HTMLFormElement>
   const {
     handleSubmit,
     formState: { errors },
@@ -120,12 +121,14 @@ function CateringEnquiryForm() {
           fontWeight={600}
           sx={{
             textAlign: "center",
+            fontFamily: "Berkshire Swash",
+
             marginBottom: isSmallScreen ? 2 : 2,
           }}
         >
           Catering Enquiry Form
         </Typography>
-        <form onSubmit={handleSubmit(onSubmitCateringEnquiry)}>
+        <form ref={formRef} onSubmit={handleSubmit(onSubmitCateringEnquiry)}>
           <Grid container spacing={2}>
             <Grid item xs={12} lg={6}>
               <TextField
