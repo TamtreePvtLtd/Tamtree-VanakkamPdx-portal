@@ -301,7 +301,6 @@ const Footer = () => {
         sx={{
           textWrap: isMobile ? "wrap" : "nowrap",
           opacity: 0.7,
-          // marginBottom: "5px",
           textAlign: isMobile ? "center":"right",
         }}
       >
