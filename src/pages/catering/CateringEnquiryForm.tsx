@@ -25,6 +25,19 @@ import { ICateringEnquiry } from "../../interface/types";
 import { createCateringEnquiry } from "../../services/api";
 import dayjs from "dayjs";
 import { useStyles } from "../../styles/CateringFormStyle";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 const EnquiryFormInitialValue: ICateringEnquiry = {
   fullName: "",
@@ -109,206 +122,215 @@ function CateringEnquiryForm() {
 
   return (
     <>
-      <Box
-        sx={{
-          maxWidth: 600,
-          margin: "auto",
-          padding: isSmallScreen ? 3 : 0,
-        }}
-      >
-        <Typography
-          variant="h5"
-          fontWeight={600}
-          sx={{
-            textAlign: "center",
-            fontFamily: "Berkshire Swash",
-
-            marginBottom: isSmallScreen ? 2 : 2,
-          }}
-        >
-          Catering Enquiry Form
-        </Typography>
-        <form ref={formRef} onSubmit={handleSubmit(onSubmitCateringEnquiry)}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} lg={6}>
-              <TextField
-                label="Full Name *"
-                fullWidth
-                variant="outlined"
-                {...register("fullName")}
-                error={!!errors.fullName}
-                helperText={errors.fullName ? errors.fullName.message : ""}
-                className={classes.focused}
-              />
-            </Grid>
-            <Grid item lg={6} xs={12}>
-              <TextField
-                label="Email *"
-                fullWidth
-                variant="outlined"
-                {...register("email")}
-                error={!!errors.email}
-                helperText={errors.email ? errors.email.message : ""}
-                className={classes.focused}
-              />
-            </Grid>
-            <Grid item lg={6} xs={12}>
-              <TextField
-                label="Mobile Number *"
-                fullWidth
-                variant="outlined"
-                {...register("mobileNumber")}
-                error={!!errors.mobileNumber}
-                helperText={
-                  errors.mobileNumber ? errors.mobileNumber.message : ""
-                }
-                InputProps={{
-                  startAdornment: (
-                    <Typography variant="body1">+1&nbsp;</Typography>
-                  ),
-                }}
-              />
-            </Grid>
-            <Grid item lg={6} xs={12}>
-              <TextField
-                label="Type Of Event"
-                fullWidth
-                variant="outlined"
-                {...register("typeOfEvent")}
-                className={classes.focused}
-              />
-            </Grid>
-
-            <Grid item lg={6} xs={12}>
-              <FormControl fullWidth>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <Controller
-                    name="eventDate"
-                    control={control}
-                    render={({ field }) => (
-                      <DatePicker
-                        label="Event Date *"
-                        slotProps={{
-                          textField: {
-                            error: !!errors.eventDate,
-                          },
-                        }}
-                        disablePast
-                        format="DD-MM-YYYY"
-                        value={field.value ? dayjs(field.value) : null}
-                        onChange={(date) => field.onChange(date)}
-                        className={classes.focused}
-                      />
-                    )}
-                  />
-                </LocalizationProvider>
-                {errors.eventDate && (
-                  <FormHelperText error>
-                    {errors.eventDate.message}
-                  </FormHelperText>
-                )}
-              </FormControl>
-            </Grid>
-
-            <Grid item lg={6} xs={12}>
-              <TextField
-                label="Guest Count"
-                fullWidth
-                variant="outlined"
-                type="number"
-                {...register("guestCount")}
-                error={!!errors.guestCount}
-                helperText={errors.guestCount ? errors.guestCount.message : ""}
-                className={classes.focused}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                label="Message *"
-                fullWidth
-                variant="outlined"
-                multiline
-                rows={3}
-                {...register("message")}
-                error={!!errors.message}
-                helperText={errors.message ? errors.message.message : ""}
-                className={classes.focused}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sx={{
-                marginBottom: 2,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                type="submit"
-                variant="contained"
-                sx={{
-                  boxShadow: "none",
-                  // fontFamily: "PT Sans Regular 400",
-                  backgroundColor: "#6B0101",
-                  "&:hover": {
-                    backgroundColor: "#6B0101",
-                    boxShadow: "none",
-                  },
-                }}
-              >
-                <Typography
-                  sx={{ fontWeight: "bold", fontFamily: "PT Sans Regular 400" }}
-                >
-                  SUBMIT
-                </Typography>
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
-      </Box>
-      <Dialog open={isDialogOpen} onClose={handleCloseDialog}>
+      <Animate keyframes={slideInLeft} duration={600} delay={100} triggerOnce>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            maxWidth: 600,
+            margin: "auto",
+            padding: isSmallScreen ? 3 : 0,
           }}
         >
-          <DialogTitle>Confirm Submission</DialogTitle>
+          <Typography
+            variant="h5"
+            fontWeight={600}
+            sx={{
+              textAlign: "center",
+              fontFamily: "Berkshire Swash",
+
+              marginBottom: isSmallScreen ? 2 : 2,
+            }}
+          >
+            Catering Enquiry Form
+          </Typography>
+          <form ref={formRef} onSubmit={handleSubmit(onSubmitCateringEnquiry)}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} lg={6}>
+                <TextField
+                  label="Full Name *"
+                  fullWidth
+                  variant="outlined"
+                  {...register("fullName")}
+                  error={!!errors.fullName}
+                  helperText={errors.fullName ? errors.fullName.message : ""}
+                  className={classes.focused}
+                />
+              </Grid>
+              <Grid item lg={6} xs={12}>
+                <TextField
+                  label="Email *"
+                  fullWidth
+                  variant="outlined"
+                  {...register("email")}
+                  error={!!errors.email}
+                  helperText={errors.email ? errors.email.message : ""}
+                  className={classes.focused}
+                />
+              </Grid>
+              <Grid item lg={6} xs={12}>
+                <TextField
+                  label="Mobile Number *"
+                  fullWidth
+                  variant="outlined"
+                  {...register("mobileNumber")}
+                  error={!!errors.mobileNumber}
+                  helperText={
+                    errors.mobileNumber ? errors.mobileNumber.message : ""
+                  }
+                  InputProps={{
+                    startAdornment: (
+                      <Typography variant="body1">+1&nbsp;</Typography>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item lg={6} xs={12}>
+                <TextField
+                  label="Type Of Event"
+                  fullWidth
+                  variant="outlined"
+                  {...register("typeOfEvent")}
+                  className={classes.focused}
+                />
+              </Grid>
+
+              <Grid item lg={6} xs={12}>
+                <FormControl fullWidth>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <Controller
+                      name="eventDate"
+                      control={control}
+                      render={({ field }) => (
+                        <DatePicker
+                          label="Event Date *"
+                          slotProps={{
+                            textField: {
+                              error: !!errors.eventDate,
+                            },
+                          }}
+                          disablePast
+                          format="DD-MM-YYYY"
+                          value={field.value ? dayjs(field.value) : null}
+                          onChange={(date) => field.onChange(date)}
+                          className={classes.focused}
+                        />
+                      )}
+                    />
+                  </LocalizationProvider>
+                  {errors.eventDate && (
+                    <FormHelperText error>
+                      {errors.eventDate.message}
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              </Grid>
+
+              <Grid item lg={6} xs={12}>
+                <TextField
+                  label="Guest Count"
+                  fullWidth
+                  variant="outlined"
+                  type="number"
+                  {...register("guestCount")}
+                  error={!!errors.guestCount}
+                  helperText={
+                    errors.guestCount ? errors.guestCount.message : ""
+                  }
+                  className={classes.focused}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Message *"
+                  fullWidth
+                  variant="outlined"
+                  multiline
+                  rows={3}
+                  {...register("message")}
+                  error={!!errors.message}
+                  helperText={errors.message ? errors.message.message : ""}
+                  className={classes.focused}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  marginBottom: 2,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    boxShadow: "none",
+                    // fontFamily: "PT Sans Regular 400",
+                    backgroundColor: "#6B0101",
+                    "&:hover": {
+                      backgroundColor: "#6B0101",
+                      boxShadow: "none",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontFamily: "PT Sans Regular 400",
+                    }}
+                  >
+                    SUBMIT
+                  </Typography>
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
         </Box>
-        <Divider />
-        <DialogContent>Are you sure you want to submit the form?</DialogContent>
-        <DialogActions>
-          <Button
-            onClick={handleCloseDialog(false)}
-            variant="outlined"
+        <Dialog open={isDialogOpen} onClose={handleCloseDialog}>
+          <Box
             sx={{
-              color: "#6B0101",
-              borderColor: "#6B0101",
-              "&:hover": {
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <DialogTitle>Confirm Submission</DialogTitle>
+          </Box>
+          <Divider />
+          <DialogContent>
+            Are you sure you want to submit the form?
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseDialog(false)}
+              variant="outlined"
+              sx={{
+                color: "#6B0101",
                 borderColor: "#6B0101",
-              },
-            }}
-          >
-            Cancel
-          </Button>
-          <Button
-            onClick={handleConfirmSubmit}
-            variant="contained"
-            autoFocus
-            sx={{
-              color: "white",
-              backgroundColor: "#6B0101",
-              "&:hover": {
+                "&:hover": {
+                  borderColor: "#6B0101",
+                },
+              }}
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleConfirmSubmit}
+              variant="contained"
+              autoFocus
+              sx={{
+                color: "white",
                 backgroundColor: "#6B0101",
-              },
-            }}
-          >
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
+                "&:hover": {
+                  backgroundColor: "#6B0101",
+                },
+              }}
+            >
+              Confirm
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </Animate>
     </>
   );
 }
