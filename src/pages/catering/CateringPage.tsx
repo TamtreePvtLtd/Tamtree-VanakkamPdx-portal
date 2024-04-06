@@ -4,7 +4,7 @@ import CateringCard from "./CateringCard";
 import CateringEnquiryForm from "./CateringEnquiryForm";
 
 function CateringPage() {
-  const enquiryFormRef = useRef<HTMLDivElement>(null); // Specify the type for useRef
+  const enquiryFormRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,7 +19,7 @@ function CateringPage() {
   return (
     <>
       <PageBanner
-        imageUrl="https://brownbrotherscatering.com/wp-content/uploads/Discover-5-Affordable-Wedding-Catering-Options-That-Wont-Break-the-Bank.jpg"
+        imageUrl="https://img.etimg.com/thumb/width-1600,height-900,imgsize-1554765,resizemode-75,msid-84575088/magazines/panache/no-more-altering-the-spice-these-restaurateurs-want-to-serve-real-indian-food-in-america.jpg"
         content="CATERING"
         description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
         showTopButtons={false}

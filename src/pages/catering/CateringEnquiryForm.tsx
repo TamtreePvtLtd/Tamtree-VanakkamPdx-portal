@@ -2,8 +2,9 @@ import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 import {
   TextField,
   Button,
@@ -25,19 +26,6 @@ import { ICateringEnquiry } from "../../interface/types";
 import { createCateringEnquiry } from "../../services/api";
 import dayjs from "dayjs";
 import { useStyles } from "../../styles/CateringFormStyle";
-import Animate from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const slideInLeft = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 
 const EnquiryFormInitialValue: ICateringEnquiry = {
   fullName: "",
@@ -53,31 +41,48 @@ const schema = yup.object().shape({
   fullName: yup
     .string()
     .required("Name is required")
-    .max(50, "Maximum 50 characters allowed"),
+    .max(30, "Maximum 30 characters allowed"),
   email: yup
     .string()
     .email("Invalid email address")
     .required("Email is required"),
+  typeOfEvent: yup
+    .string()
+    .required("Type of Event is required")
+    .max(30, "Maximum 30 characters allowed"),
+  guestCount: yup
+    .number()
+    .required("Guest count is required")
+    .positive("Guest count must be a positive number")
+    .integer("Guest count must be an integer"),
   mobileNumber: yup
     .string()
     .required("Mobile number is required")
-    .matches(
-      /^(\+1 )?\d{3}-\d{3}-\d{4}$/,
-      "Please enter a valid mobile number in the format +1 999-999-9999"
-    ),
+    .matches(/^\d{10}$/, {
+      message: "Mobile number must be exactly 10 digits",
+    }),
+  message: yup.string().max(250, "Message must be at most 250 characters"),
+
   eventDate: yup.string().required("Event date is required"),
-  message: yup
-    .string()
-    .required("Message is required")
-    .max(250, "Message must be at most 250 characters"),
 });
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 function CateringEnquiryForm() {
   const classes = useStyles();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<ICateringEnquiry | null>(null);
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
-  const formRef = useRef<HTMLFormElement>(null); // Change useRef<HTMLDivElement> to useRef<HTMLFormElement>
+  const formRef = useRef<HTMLFormElement>(null);
   const {
     handleSubmit,
     formState: { errors },
@@ -101,11 +106,6 @@ function CateringEnquiryForm() {
     }
   };
 
-  const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
-    setFormData(data);
-    handleOpenDialog();
-  };
-
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
@@ -120,28 +120,41 @@ function CateringEnquiryForm() {
     }
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const newValue = value.replace(/\D/g, "");
+    if (newValue.length <= 10) {
+      e.target.value = newValue;
+    }
+  };
+
+  const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
+    setFormData(data);
+    handleOpenDialog();
+  };
+
   return (
     <>
-      <Animate keyframes={slideInLeft} duration={600} delay={100} triggerOnce>
-        <Box
-          sx={{
-            maxWidth: 600,
-            margin: "auto",
-            padding: isSmallScreen ? 3 : 0,
-          }}
-        >
+      <Box
+        sx={{
+          maxWidth: 600,
+          margin: "auto",
+          padding: isSmallScreen ? 3 : 0,
+        }}
+      >
+        <Animate keyframes={slideInLeft} duration={600} delay={50}>
           <Typography
             variant="h5"
             fontWeight={600}
             sx={{
               textAlign: "center",
-              fontFamily: "Berkshire Swash",
-
+              fontFamily: " VanakkamPDX-Logo-Font",
               marginBottom: isSmallScreen ? 2 : 2,
             }}
           >
             Catering Enquiry Form
           </Typography>
+
           <form ref={formRef} onSubmit={handleSubmit(onSubmitCateringEnquiry)}>
             <Grid container spacing={2}>
               <Grid item xs={12} lg={6}>
@@ -181,18 +194,27 @@ function CateringEnquiryForm() {
                       <Typography variant="body1">+1&nbsp;</Typography>
                     ),
                   }}
+                  inputProps={{
+                    type: "tel",
+                    maxLength: 10,
+                    onChange: handleInputChange,
+                  }}
+                  className={classes.focused}
                 />
               </Grid>
               <Grid item lg={6} xs={12}>
                 <TextField
-                  label="Type Of Event"
+                  label="Type Of Event*"
                   fullWidth
                   variant="outlined"
                   {...register("typeOfEvent")}
+                  error={!!errors.typeOfEvent}
+                  helperText={
+                    errors.typeOfEvent ? errors.typeOfEvent.message : ""
+                  }
                   className={classes.focused}
                 />
               </Grid>
-
               <Grid item lg={6} xs={12}>
                 <FormControl fullWidth>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -208,7 +230,7 @@ function CateringEnquiryForm() {
                             },
                           }}
                           disablePast
-                          format="DD-MM-YYYY"
+                          format="MM-DD-YYYY"
                           value={field.value ? dayjs(field.value) : null}
                           onChange={(date) => field.onChange(date)}
                           className={classes.focused}
@@ -223,7 +245,6 @@ function CateringEnquiryForm() {
                   )}
                 </FormControl>
               </Grid>
-
               <Grid item lg={6} xs={12}>
                 <TextField
                   label="Guest Count"
@@ -231,23 +252,31 @@ function CateringEnquiryForm() {
                   variant="outlined"
                   type="number"
                   {...register("guestCount")}
-                  error={!!errors.guestCount}
-                  helperText={
-                    errors.guestCount ? errors.guestCount.message : ""
-                  }
+                  InputProps={{ inputProps: { min: 0 } }}
                   className={classes.focused}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  label="Message *"
+                  label="Message"
                   fullWidth
                   variant="outlined"
                   multiline
                   rows={3}
                   {...register("message")}
-                  error={!!errors.message}
-                  helperText={errors.message ? errors.message.message : ""}
+                  error={
+                    !!errors.message ||
+                    (formData?.message === "" &&
+                      formRef.current?.reportValidity())
+                  }
+                  helperText={
+                    errors.message
+                      ? errors.message.message
+                      : formData?.message === "" &&
+                        formRef.current?.reportValidity()
+                      ? "Message is required"
+                      : ""
+                  }
                   className={classes.focused}
                 />
               </Grid>
@@ -265,7 +294,6 @@ function CateringEnquiryForm() {
                   variant="contained"
                   sx={{
                     boxShadow: "none",
-                    // fontFamily: "PT Sans Regular 400",
                     backgroundColor: "#6B0101",
                     "&:hover": {
                       backgroundColor: "#6B0101",
@@ -273,66 +301,56 @@ function CateringEnquiryForm() {
                     },
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontWeight: "bold",
-                      fontFamily: "PT Sans Regular 400",
-                    }}
-                  >
-                    SUBMIT
-                  </Typography>
+                  Submit
                 </Button>
               </Grid>
             </Grid>
           </form>
+        </Animate>
+      </Box>
+      <Dialog open={isDialogOpen} onClose={handleCloseDialog}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <DialogTitle>Confirm Submission</DialogTitle>
         </Box>
-        <Dialog open={isDialogOpen} onClose={handleCloseDialog}>
-          <Box
+        <Divider />
+        <DialogContent>Are you sure you want to submit the form?</DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseDialog(false)}
+            variant="outlined"
             sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
+              color: "#6B0101",
+              borderColor: "#6B0101",
+              "&:hover": {
+                borderColor: "#6B0101",
+              },
             }}
           >
-            <DialogTitle>Confirm Submission</DialogTitle>
-          </Box>
-          <Divider />
-          <DialogContent>
-            Are you sure you want to submit the form?
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={handleCloseDialog(false)}
-              variant="outlined"
-              sx={{
-                color: "#6B0101",
-                borderColor: "#6B0101",
-                "&:hover": {
-                  borderColor: "#6B0101",
-                },
-              }}
-            >
-              Cancel
-            </Button>
-            <Button
-              onClick={handleConfirmSubmit}
-              variant="contained"
-              autoFocus
-              sx={{
-                color: "white",
+            Cancel
+          </Button>
+          <Button
+            onClick={handleConfirmSubmit}
+            variant="contained"
+            autoFocus
+            sx={{
+              color: "white",
+              backgroundColor: "#6B0101",
+              "&:hover": {
                 backgroundColor: "#6B0101",
-                "&:hover": {
-                  backgroundColor: "#6B0101",
-                },
-              }}
-            >
-              Confirm
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </Animate>
+              },
+            }}
+          >
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
-
 export default CateringEnquiryForm;

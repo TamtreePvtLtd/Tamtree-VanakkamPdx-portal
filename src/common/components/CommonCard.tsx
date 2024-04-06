@@ -17,7 +17,7 @@ function CommonProductCard(props: IProps) {
   const fadeInUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(160px);
   }
   100% {
     opacity: 1;
@@ -26,7 +26,7 @@ function CommonProductCard(props: IProps) {
 `;
 
   return (
-    <Animate keyframes={fadeInUp} duration={600} delay={100} triggerOnce>
+    <Animate keyframes={fadeInUp} duration={600} delay={50} >
       <Card
         sx={{
           mr: 2,
