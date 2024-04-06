@@ -1,8 +1,9 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 import { useEffect } from "react";
 
 function AboutUs() {
+  const isMobile = useMediaQuery("(max-width:600px)");
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -16,7 +17,13 @@ function AboutUs() {
         showTopButtons={false}
         showBottomButtons={false}
       />
-      <Grid container spacing={2} height={"auto"} paddingBottom={1}>
+      <Grid
+        container
+        spacing={2}
+        height={"auto"}
+        paddingBottom={1}
+        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5 }}
+      >
         <Grid
           item
           xs={12}
@@ -24,20 +31,16 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
-            alignItems: "start",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
+            justifyContent: isMobile ? "center" : "flex-end",
+            alignItems: isMobile ? "center" : "start",
           }}
         >
           <img
-            src="https://media.istockphoto.com/id/483405040/photo/south-indian-meals-on-banana-leaf.jpg?s=612x612&w=0&k=20&c=WUFvAWQgxT44QW1JHS5c_QiB_RDf2hkR2hf4Kpk_lzA="
+            src="https://www.pngall.com/wp-content/uploads/12/Indian-Cuisine-PNG-Photos.png"
             alt="Vanakkam PDX"
             style={{
               width: "80%",
-              height: "70%",
+              height: "80%",
               position: "relative",
             }}
           />
@@ -49,23 +52,16 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent: isMobile ? "center" : "flex-start",
             alignItems: "center",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
           }}
         >
           <Typography
             variant="h4"
             sx={{
-              // color: "#E4973C",
-              color:"#e4973d",
-              // fontFamily: "architects Daughter",
+              color: "#e4973d",
               fontFamily: "Cinzel Decorative",
               paddingTop: 2,
-              // fontSize: "30px",
             }}
           >
             A Tapestry of
@@ -75,8 +71,7 @@ function AboutUs() {
             gutterBottom
             sx={{
               color: "#6B0101",
-              // fontFamily: "Arial, sans-serif",
-              fontFamily: "Cinzel Decorative",
+              fontFamily: "VanakkamPDX-Logo-Font",
               paddingTop: 0.5,
               textAlign: "center",
             }}
@@ -108,38 +103,30 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
-            alignItems: "end",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
+            justifyContent: isMobile ? "center" : "flex-end",
+            alignItems: isMobile ? "center" : "end",
           }}
         >
           <img
-            src="https://t3.ftcdn.net/jpg/04/02/47/32/360_F_402473222_SZsxaK6DewFRYHbpgXnWd9nbnejRUxan.jpg"
+            src="https://sambarcafe.com/wp-content/uploads/2022/10/Appam_500x500.png"
             alt="Vanakkam PDX"
             style={{
               width: "80%",
-              height: "70%",
-              // borderRadius: "50%",
+              height: "80%",
             }}
           />
         </Grid>
       </Grid>
-      <Grid sx={{ padding: "20px" }}>
+      <Grid padding={2} paddingX={4}>
         <Typography
           variant="h4"
           gutterBottom
           sx={{
-            // color: "#E4973C",
             color: "#6B0101",
-            // fontFamily: "allerta stencil",
             fontFamily: "Cinzel Decorative",
             fontSize: "30px",
             fontWeight: 800,
             textAlign: "center",
-            // textDecoration: "underline",
           }}
         >
           THE STORY OF VANAKKAM PDX
