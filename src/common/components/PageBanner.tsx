@@ -21,16 +21,15 @@ function PageBanner(props: IProps) {
   const formRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery("(max-width:700px)");
 
-    const scrollToForm = () => {
-      if (formRef.current) {
-        formRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-      if (onClickButton) {
-        // Call onClickButton if it's provided
-        onClickButton();
-      }
-    };
-
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (onClickButton) {
+      // Call onClickButton if it's provided
+      onClickButton();
+    }
+  };
 
   return (
     <>
@@ -87,9 +86,10 @@ function PageBanner(props: IProps) {
             sx={{
               textTransform: "uppercase",
               marginBottom: "0 !important",
+              fontFamily: "VanakkamPDX-Logo-Font",
             }}
             variant="h2"
-            fontWeight={"medium"}
+            // fontWeight={"medium"}
           >
             {content}
           </Typography>
@@ -99,6 +99,7 @@ function PageBanner(props: IProps) {
             <Typography
               sx={{
                 marginBottom: "0 !important",
+                fontFamily: "cursive !important",
               }}
               variant="h6"
               fontWeight={"small"}
@@ -126,7 +127,7 @@ function PageBanner(props: IProps) {
               sx={{
                 color: "white",
                 fontWeight: 550,
-                fontFamily: "Cinzel",
+                fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
                 lineHeight: 2,
                 textAlign: "center",
