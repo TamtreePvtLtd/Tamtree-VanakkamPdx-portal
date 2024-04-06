@@ -8,7 +8,7 @@ import { keyframes } from "@emotion/react";
 const slideInLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;
