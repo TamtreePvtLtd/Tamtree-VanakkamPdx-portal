@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
 
@@ -192,20 +192,25 @@ const Footer = () => {
       }}
     >
       <Box display="flex" flexDirection="row" justifyContent="center">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={4}>
+        <Grid
+          container
+          spacing={2}
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+        >
+          <Grid item xs={12} sm={3.5}>
             <Box display="flex" justifyContent="center">
               <Typography
                 variant="body1"
                 sx={{
-                  fontFamily: "Itim",
+                  fontFamily: "VanakkamPDX-Logo-Font",
                   fontSize: "22px",
                   fontWeight: 700,
                   marginTop: 3,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  // color: "#e7e7e7",
                 }}
                 component="p"
               >
@@ -220,18 +225,41 @@ const Footer = () => {
                 lineHeight: 1,
                 // fontFamily: "Rubik",
                 color: "#d4d4d4",
+                textDecoration: "none",
               }}
             >
               <p> 14740 Cornell Rd #160, Portland 97229</p>
-              <p>Store No: +1 (503) 747-2049</p>
-              <p> Ph No: +1 971-454-8476</p>
+              <a
+                style={{ color: "inherit", textDecoration: "none" }}
+                href="tel:+15037472049"
+              >
+                <p>Store No: +1 (503) 747-2049</p>
+              </a>
+              <a
+                style={{ color: "inherit", textDecoration: "none" }}
+                href="tel:+19714548476"
+              >
+                <p> Ph No: +1 971-454-8476</p>
+              </a>
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {isMobile ? null : (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          )}
+          <Grid item xs={12} sm={3.5}>
             <Typography
               variant="body1"
               sx={{
-                fontFamily: "Itim",
+                fontFamily: "VanakkamPDX-Logo-Font",
                 fontSize: "20px",
                 marginTop: 3,
                 fontWeight: 700,
@@ -258,12 +286,23 @@ const Footer = () => {
               />
             </a>
           </Grid>
-
-          <Grid item xs={12} sm={4}>
+          {isMobile ? null : (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          )}
+          <Grid item xs={12} sm={3.5}>
             <Typography
               variant="body1"
               sx={{
-                fontFamily: "Itim",
+                fontFamily: "VanakkamPDX-Logo-Font",
                 fontSize: "22px",
                 marginTop: 3,
                 fontWeight: 700,
