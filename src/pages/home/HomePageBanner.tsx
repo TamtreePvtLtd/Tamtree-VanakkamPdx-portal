@@ -14,10 +14,9 @@ function HomePageBanner() {
         className={classes.imageContainer}
         sx={{ height: isMobile ? "250px" : "500px" }}
       >
-        <Box className={classes.leftOverlay}>
+        <Box className={classes.leftOverlay} style={{ position: "relative" }}>
           <img
-            // src="https://as2.ftcdn.net/v2/jpg/05/93/18/81/1000_F_593188174_rcDMEqh1MfPPcrAiBWtLMc3QcwTNBCqV.jpg"
-            src="https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2022/04/IMG_2989-Edit-1.jpg"
+            src="https://uploads-ssl.webflow.com/62a9784d11caeb4189dca308/62a97a5dc2ab74633fe7d8d5_home-banner.png"
             alt="restaurant"
             style={{
               width: "100%",
@@ -25,6 +24,22 @@ function HomePageBanner() {
               objectFit: "cover",
             }}
           />
+          <div
+            style={{
+              position: "absolute",
+              top: isMobile ? "30%" : "40%",
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+          >
+            <h1 style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
+              Looking for authentic food flavours?
+            </h1>
+            <p style={{ fontFamily: "VanakkamPDX-Logo-Font"}}>
+              Order & celebrate with your loved ones.
+            </p>
+          </div>
         </Box>
       </Grid>
       <Grid
@@ -37,74 +52,74 @@ function HomePageBanner() {
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
-          <Typography
-          paddingTop={1}
-    variant="body1"
-    textAlign="center"
-    fontSize={30}
-    fontWeight={900}
-    lineHeight={1}
-    fontFamily={"jacques Francois"}
-  >
-    <span className="bold700">GOOD</span>
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={45}
-    lineHeight={1.2}
-    fontFamily={"jacques Francois"}
-  >
-    <span className="bold600">FOOD</span>
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={20}
-    fontStyle={"italic"}
-    lineHeight={1.2}
-    fontFamily={"jacques Francois"}
-  >
-    ----- is -----
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={25}
-    lineHeight={1.5}
-    fontFamily={"jacques Francois"}
-  >
-    <span>WHAT ALL</span>
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={45}
-    lineHeight={1.2}
-    fontFamily={"jacques Francois"}
-  >
-    I NEED
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={20}
-    fontStyle={"italic"}
-    lineHeight={1}
-    fontFamily={"jacques Francois"}
-  >
-    ..... to .....
-  </Typography>
-  <Typography
-    variant="body1"
-    textAlign="center"
-    fontSize={30}
-    fontWeight={900}
-    lineHeight={1.5}
-    fontFamily={"jacques Francois"}
-  >
-    <span className="bold700">BE HAPPY</span>
-  </Typography>
+            <Typography
+              paddingTop={1}
+              variant="body1"
+              textAlign="center"
+              fontSize={30}
+              fontWeight={900}
+              lineHeight={1}
+              fontFamily={"jacques Francois"}
+            >
+              <span className="bold700">GOOD</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={45}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              <span className="bold600">FOOD</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={20}
+              fontStyle={"italic"}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              ----- is -----
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={25}
+              lineHeight={1.5}
+              fontFamily={"jacques Francois"}
+            >
+              <span>WHAT ALL</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={45}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              I NEED
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={20}
+              fontStyle={"italic"}
+              lineHeight={1}
+              fontFamily={"jacques Francois"}
+            >
+              ..... to .....
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={30}
+              fontWeight={900}
+              lineHeight={1.5}
+              fontFamily={"jacques Francois"}
+            >
+              <span className="bold700">BE HAPPY</span>
+            </Typography>
           </Box>
           {/* <Box
             sx={{
