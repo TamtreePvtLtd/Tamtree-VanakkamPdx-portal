@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
-import { Box } from "@mui/system";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ function Navbar() {
       <Toolbar
         sx={{
           padding: isMobile ? 1 : 0,
-          marginBottom: "20px",
+          marginBottom: "5px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -83,50 +82,50 @@ function Navbar() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: isMobile ? "center" : "start",
+              // textAlign: "center",
               marginTop: 1,
             }}
           >
-            <Box
+             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems:"center",
               }}
             >
-              <Typography
-                variant="h5"
-                component="div"
-                onClick={handleLogoClick}
-                sx={{
-                  color: "#ffffff",
-                  fontFamily: "alfa_slab_one",
-                  fontWeight: "950",
-                  textAlign: "center",
-                  cursor: "pointer",
-                  textWrap: "nowrap",
-                  marginTop: "1px",
-                  textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
-                }}
-              >
-                VANAKKAM PDX
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  color: "green",
-                  fontSize: isMobile ? "12px" : "none",
-                  fontWeight: "950",
-                  fontFamily: "alfa_slab_one",
-                  textAlign: "center",
-                  textWrap: "nowrap",
-                  marginLeft: isMobile ? 3 : 0,
-                  textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
-                }}
-              >
-                - AUTHENTIC INDIAN CUISINE
-              </Typography>
-            </Box>
+            <Typography
+              variant="h5"
+              component="div"
+              onClick={handleLogoClick}
+              sx={{
+                color: "#ffffff",
+                fontFamily: "alfa_slab_one",
+                fontWeight: "950",
+                textAlign: "center",
+                cursor: "pointer",
+                textWrap: "nowrap",
+                marginTop: "1px",
+                textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
+              }}
+            >
+              VANAKKAM PDX
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                color: "green",
+                fontSize: isMobile ? "12px" : "none",
+                fontWeight: "950",
+                fontFamily: "alfa_slab_one",
+                textAlign: "center",
+                textWrap: "nowrap",
+                marginLeft: isMobile ? 3 : 0,
+                textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
+              }}
+            >
+              - AUTHENTIC INDIAN CUISINE
+            </Typography>
           </Grid>
           <Grid
             item
@@ -138,6 +137,7 @@ function Navbar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              paddingRight: "5px",
             }}
           >
             <Button
@@ -146,13 +146,14 @@ function Navbar() {
                 color: "white",
                 fontWeight: "bold",
                 // fontFamily: "playfair Display",
-                fontFamily: "Cinzel",
+                fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
-                lineHeight: 2,
+                lineHeight: isMobile ? 1.8 : 2,
                 textAlign: "center",
                 width: "75%",
-                borderRadius: "25px",
-                fontSize: isMobile ? "14px" : "17px",
+                // paddingTop: "2px",
+                borderRadius: isMobile ? "10px" : "25px",
+                fontSize: isMobile ? "12px" : "17px",
                 // textWrap: "wrap",
                 textDecoration: "none",
                 "&:hover": {
