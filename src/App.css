@@ -24,11 +24,6 @@
 .page-banner-content h2 {
   color: "white";
   margin-bottom: 20px;
-  /* font-family: "jacques Francois"; */
-  font-family: "Rubik Bold Italic";
-
-  /* font-family: "Rubik "; */
-
   font-size: 30px;
   line-height: 1;
 }
@@ -46,6 +41,5 @@
 }
 .page-banner-description {
   text-align: center;
-    font-family: "'Berkshire Swash', cursive";
-
+  font-family: "'Berkshire Swash', cursive";
 }

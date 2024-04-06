@@ -17,7 +17,7 @@ const commonButtonStyles = {
   fontWeight: "bold",
   fontFamily: "'Acme",
   "&:hover": { color: "green", textDecoration: "none" },
-  fontSize: "16px !important", // Try using !important
+  fontSize: "16px !important",
 };
 
 const commonDividerStyles = {

@@ -249,6 +249,7 @@ function CateringEnquiryForm() {
                 variant="contained"
                 sx={{
                   boxShadow: "none",
+                  // fontFamily: "PT Sans Regular 400",
                   backgroundColor: "#6B0101",
                   "&:hover": {
                     backgroundColor: "#6B0101",
@@ -256,7 +257,11 @@ function CateringEnquiryForm() {
                   },
                 }}
               >
-                Submit
+                <Typography
+                  sx={{ fontWeight: "bold", fontFamily: "PT Sans Regular 400" }}
+                >
+                  SUBMIT
+                </Typography>
               </Button>
             </Grid>
           </Grid>

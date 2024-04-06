@@ -1,3 +1,4 @@
+@import "./theme/fonts/font.css";
 html {
   scroll-behavior: smooth;
 }

@@ -137,7 +137,7 @@ function Navbar() {
                 color: "white",
                 fontWeight: "bold",
                 // fontFamily: "playfair Display",
-                fontFamily: "Cinzel",
+                fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
                 lineHeight: 2,
                 textAlign: "center",
