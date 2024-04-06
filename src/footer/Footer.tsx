@@ -1,6 +1,39 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const slideInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const fadeInUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
 
 interface IconProps {
   style?: React.CSSProperties;
@@ -192,46 +225,75 @@ const Footer = () => {
       }}
     >
       <Box display="flex" flexDirection="row" justifyContent="center">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={4}>
-            <Box display="flex" justifyContent="center">
+        <Grid
+          container
+          spacing={2}
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+        >
+          <Grid item xs={12} sm={3.5}>
+            <Animate keyframes={slideInLeft}>
+              <Box display="flex" justifyContent="center">
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontFamily: "VanakkamPDX-Logo-Font",
+                    fontSize: "22px",
+                    marginTop: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  component="p"
+                >
+                  Contact Us
+                </Typography>
+              </Box>
               <Typography
-                variant="body1"
+                variant="body2"
                 sx={{
-                  fontFamily: "Itim",
-                  fontSize: "22px",
-                  fontWeight: 700,
-                  marginTop: 3,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  // color: "#e7e7e7",
+                  // color: "white",
+                  lineHeight: 1,
+                  // fontFamily: "Rubik",
+                  color: "#d4d4d4",
+                  textDecoration: "none",
                 }}
-                component="p"
               >
-                <LocationIcon style={{ marginRight: 5 }} />
-                &nbsp;Store Address
+                <p> 14740 Cornell Rd #160, Portland 97229</p>
+                <a
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  href="tel:+15037472049"
+                >
+                  <p>Store No: +1 (503) 747-2049</p>
+                </a>
+                <a
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  href="tel:+19714548476"
+                >
+                  <p> Ph No: +1 971-454-8476</p>
+                </a>
               </Typography>
-            </Box>
-            <Typography
-              variant="body2"
-              sx={{
-                // color: "white",
-                lineHeight: 1,
-                // fontFamily: "Rubik",
-                color: "#d4d4d4",
-              }}
-            >
-              <p> 14740 Cornell Rd #160, Portland 97229</p>
-              <p>Store No: +1 (503) 747-2049</p>
-              <p> Ph No: +1 971-454-8476</p>
-            </Typography>
+            </Animate>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {isMobile ? null : (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          )}
+          <Grid item xs={12} sm={3.5}>
+            <Animate keyframes={fadeInUp}>
             <Typography
               variant="body1"
               sx={{
-                fontFamily: "Itim",
+                fontFamily: "VanakkamPDX-Logo-Font",
                 fontSize: "20px",
                 marginTop: 3,
                 fontWeight: 700,
@@ -256,14 +318,27 @@ const Footer = () => {
                 src={Qrcode}
                 alt="QR Code"
               />
-            </a>
+              </a>
+              </Animate>
           </Grid>
-
-          <Grid item xs={12} sm={4}>
+          {isMobile ? null : (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          )}
+          <Grid item xs={12} sm={3.5}>
+            <Animate keyframes={slideInRight}>
             <Typography
               variant="body1"
               sx={{
-                fontFamily: "Itim",
+                fontFamily: "VanakkamPDX-Logo-Font",
                 fontSize: "22px",
                 marginTop: 3,
                 fontWeight: 700,
@@ -306,7 +381,8 @@ const Footer = () => {
                   style={{ width: "30px", height: "30px", margin: "0 5px" }}
                 />
               </a>
-            </Box>
+              </Box>
+              </Animate>
           </Grid>
         </Grid>
       </Box>

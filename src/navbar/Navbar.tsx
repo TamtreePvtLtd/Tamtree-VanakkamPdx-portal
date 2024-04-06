@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Grid, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Grid, Button,Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
@@ -26,7 +26,7 @@ function Navbar() {
       <Toolbar
         sx={{
           padding: isMobile ? 1 : 0,
-          marginBottom: "20px",
+          marginBottom: "5px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -81,11 +81,19 @@ function Navbar() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              alignItems: isMobile ? "center" : "flex-start",
-              textAlign: "center",
+              alignItems: isMobile ? "center" : "start",
+              // textAlign: "center",
               marginTop: 1,
             }}
           >
+             <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems:"center",
+              }}
+            >
             <Typography
               variant="h5"
               component="div"
@@ -112,12 +120,13 @@ function Navbar() {
                 fontFamily: "alfa_slab_one",
                 textAlign: "center",
                 textWrap: "nowrap",
-                marginLeft: isMobile ? 3 : 5,
+                marginLeft: isMobile ? 3 : 0,
                 textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
               }}
             >
               - AUTHENTIC INDIAN CUISINE
-            </Typography>
+              </Typography>
+              </Box>
           </Grid>
           <Grid
             item
@@ -129,22 +138,25 @@ function Navbar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              paddingRight: "5px",
             }}
           >
             <Button
               sx={{
                 backgroundColor: "#6B0101",
                 color: "white",
+                marginLeft:2,
                 fontWeight: "bold",
                 // fontFamily: "playfair Display",
                 fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
-                lineHeight: 2,
+                lineHeight: isMobile ? 1.8 : 2,
                 textAlign: "center",
-                width: "75%",
-                borderRadius: "25px",
-                fontSize: isMobile ? "14px" : "17px",
-                // textWrap: "wrap",
+                width: "90%",
+                // paddingTop: "2px",
+                borderRadius: isMobile ? "10px" : "25px",
+                fontSize: isMobile ? "12px" : "17px",
+                 textWrap: isMobile ? "wrap":"nowrap",
                 textDecoration: "none",
                 "&:hover": {
                   backgroundColor: "green",

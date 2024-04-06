@@ -1,8 +1,22 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import PageBanner from "../../common/components/PageBanner";
 import { useEffect } from "react";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const fadeInUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
 
 function AboutUs() {
+  const isMobile = useMediaQuery("(max-width:600px)");
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -16,7 +30,13 @@ function AboutUs() {
         showTopButtons={false}
         showBottomButtons={false}
       />
-      <Grid container spacing={2} height={"auto"} paddingBottom={1}>
+      <Grid
+        container
+        spacing={2}
+        height={"auto"}
+        paddingBottom={1}
+        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5 }}
+      >
         <Grid
           item
           xs={12}
@@ -24,20 +44,16 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
-            alignItems: "start",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
+            justifyContent: isMobile ? "center" : "flex-end",
+            alignItems: isMobile ? "center" : "start",
           }}
         >
           <img
-            src="https://media.istockphoto.com/id/483405040/photo/south-indian-meals-on-banana-leaf.jpg?s=612x612&w=0&k=20&c=WUFvAWQgxT44QW1JHS5c_QiB_RDf2hkR2hf4Kpk_lzA="
+            src="https://www.pngall.com/wp-content/uploads/12/Indian-Cuisine-PNG-Photos.png"
             alt="Vanakkam PDX"
             style={{
               width: "80%",
-              height: "70%",
+              height: "80%",
               position: "relative",
             }}
           />
@@ -49,58 +65,53 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent: isMobile ? "center" : "flex-start",
             alignItems: "center",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{
-              // color: "#E4973C",
-              color:"#e4973d",
-              // fontFamily: "architects Daughter",
-              fontFamily: "Cinzel Decorative",
-              paddingTop: 2,
-              // fontSize: "30px",
-            }}
-          >
-            A Tapestry of
-          </Typography>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              color: "#6B0101",
-              // fontFamily: "Arial, sans-serif",
-              fontFamily: "Cinzel Decorative",
-              paddingTop: 0.5,
-              textAlign: "center",
-            }}
-          >
-            Authentic Indian Flavors!
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{
-              color: "#333",
-              fontFamily: "Arial, sans-serif",
-              textAlign: "center",
-              padding: 0,
-              fontSize: "18px",
-              lineHeight: "2rem",
-            }}
-          >
-            Vanakkam pdx is the collective outcome of authentic south Indian
-            cuisine and the passion to create an exciting fine dining
-            experience. We believe in creating an interesting and unique place
-            for you to enjoy our simple and great tasting 'south Indian' food.
-          </Typography>
+          <Animate keyframes={fadeInUp}>
+            <Typography
+              variant="h4"
+              sx={{
+                color: "#e4973d",
+                fontFamily: "Cinzel Decorative",
+                paddingTop: 2,
+              }}
+            >
+              A Tapestry of
+            </Typography>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                color: "#6B0101",
+                fontFamily: "VanakkamPDX-Logo-Font",
+                paddingTop: 0.5,
+                textAlign: "center",
+              }}
+            >
+              Authentic Indian Flavors!
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              sx={{
+                color: "#333",
+                fontFamily: "Arial, sans-serif",
+                textAlign: "center",
+                padding: 0,
+                fontSize: "18px",
+                lineHeight: "2rem",
+              }}
+            >
+              Vanakkam pdx is the collective outcome of authentic south Indian
+              cuisine and the passion to create an exciting fine dining
+              experience. We believe in creating an interesting and unique place
+              for you to enjoy our simple and great tasting 'south Indian' food.
+            </Typography>
+          </Animate>
         </Grid>
+
         <Grid
           item
           xs={12}
@@ -108,68 +119,62 @@ function AboutUs() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
-            alignItems: "end",
-            "@media (max-width: 600px)": {
-              justifyContent: "center",
-              alignItems: "center",
-            },
+            justifyContent: isMobile ? "center" : "flex-end",
+            alignItems: isMobile ? "center" : "end",
           }}
         >
           <img
-            src="https://t3.ftcdn.net/jpg/04/02/47/32/360_F_402473222_SZsxaK6DewFRYHbpgXnWd9nbnejRUxan.jpg"
+            src="https://sambarcafe.com/wp-content/uploads/2022/10/Appam_500x500.png"
             alt="Vanakkam PDX"
             style={{
               width: "80%",
-              height: "70%",
-              // borderRadius: "50%",
+              height: "80%",
             }}
           />
         </Grid>
       </Grid>
-      <Grid sx={{ padding: "20px" }}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{
-            // color: "#E4973C",
-            color: "#6B0101",
-            // fontFamily: "allerta stencil",
-            fontFamily: "Cinzel Decorative",
-            fontSize: "30px",
-            fontWeight: 800,
-            textAlign: "center",
-            // textDecoration: "underline",
-          }}
-        >
-          THE STORY OF VANAKKAM PDX
-        </Typography>
-        <Typography
-          variant="body1"
-          paragraph
-          sx={{
-            color: "#333",
-            fontFamily: "Arial, sans-serif",
-            textAlign: "left",
-            fontSize: "18px",
-            lineHeight: "2rem",
-          }}
-        >
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian cuisine
-          at Vanakkam PDX South Indian Restaurant, located on Rare Course Road.
-          Vanakkam PDX South Indian Restaurant invites you to savor the
-          authentic flavors of South India in the heart of the east. Whether
-          you're a seasoned aficionado of Indian cuisine or a curious
-          first-timer, Vanakkam PDX delivers a tantalizing feast that will
-          entice your senses and leave a lasting impression.Here, you'll find a
-          diverse menu that caters to both vegetarian and non-vegetarian tastes.
-          Each dish is prepared with fresh ingredients to ensure an authentic
-          Indian experience. The dedicated staff at Vanakkam PDX ensures that
-          your dining experience is both memorable and satisfying. The
-          restaurant also stands out as a top choice for catering services,
-          adept at handling functions and gatherings of all types, perfectly
-          blending flavor, culture, and comfort.
-        </Typography>
+      <Grid padding={2} paddingX={4}>
+        <Animate keyframes={fadeInUp}>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              color: "#6B0101",
+              fontFamily: "Cinzel Decorative",
+              fontSize: "30px",
+              fontWeight: 800,
+              textAlign: "center",
+            }}
+          >
+            THE STORY OF VANAKKAM PDX
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              color: "#333",
+              fontFamily: "Arial, sans-serif",
+              textAlign: "left",
+              fontSize: "18px",
+              lineHeight: "2rem",
+            }}
+          >
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian
+            cuisine at Vanakkam PDX South Indian Restaurant, located on Rare
+            Course Road. Vanakkam PDX South Indian Restaurant invites you to
+            savor the authentic flavors of South India in the heart of the east.
+            Whether you're a seasoned aficionado of Indian cuisine or a curious
+            first-timer, Vanakkam PDX delivers a tantalizing feast that will
+            entice your senses and leave a lasting impression.Here, you'll find
+            a diverse menu that caters to both vegetarian and non-vegetarian
+            tastes. Each dish is prepared with fresh ingredients to ensure an
+            authentic Indian experience. The dedicated staff at Vanakkam PDX
+            ensures that your dining experience is both memorable and
+            satisfying. The restaurant also stands out as a top choice for
+            catering services, adept at handling functions and gatherings of all
+            types, perfectly blending flavor, culture, and comfort.
+          </Typography>
+        </Animate>
       </Grid>
     </>
   );

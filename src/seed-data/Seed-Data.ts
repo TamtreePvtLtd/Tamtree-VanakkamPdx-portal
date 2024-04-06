@@ -1,7 +1,7 @@
 const seedData = [
   {
     _id: "1",
-    title: "Social Events",
+    title: "Social Gatherings",
     description:
       "Crafting memorable experiences with exquisite cuisine tailored to your social gatherings. Elevate your event with our exceptional catering services.",
     posterURL:
@@ -9,7 +9,7 @@ const seedData = [
   },
   {
     _id: "2",
-    title: "Corporate Events",
+    title: "Business Functions",
     description:
       "Seamlessly cater to your corporate events with sophisticated menus and impeccable service. Let us elevate your professional gatherings with our culinary expertise.",
     posterURL:
@@ -17,7 +17,7 @@ const seedData = [
   },
   {
     _id: "3",
-    title: "Special Events",
+    title: "Occasions",
     description:
       "Let us cater your special event with delicious food and exceptional service.From elegant weddings to milestone celebrations, we ensure every bite is memorable.",
     posterURL:
