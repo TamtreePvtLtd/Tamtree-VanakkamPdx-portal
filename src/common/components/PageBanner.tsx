@@ -156,16 +156,16 @@ function PageBanner(props: IProps) {
                 cursor: "pointer",
                 lineHeight: 2,
                 textAlign: "center",
-                width: "13%",
                 borderRadius: "25px",
                 fontSize: isMobile ? "14px" : "17px",
+                textWrap: isMobile ? "wrap" : "nowrap",
                 backgroundColor: "#6B0101",
                 "&:hover": {
                   backgroundColor: "green",
                 },
               }}
             >
-              Catering Enqiry
+              Catering Enquiry
             </Button>
           </Box>
         )}

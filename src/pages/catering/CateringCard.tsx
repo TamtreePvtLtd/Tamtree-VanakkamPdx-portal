@@ -26,8 +26,7 @@ function CateringCard() {
             variant="h4"
             sx={{
               marginTop: "20px",
-              // fontFamily: "jacques Francois",
-              fontFamily: "'Berkshire Swash', cursive",
+              fontFamily: "VanakkamPDX-Logo-Font",
               fontWeight: 600,
               display: "flex",
               justifyContent: "center",

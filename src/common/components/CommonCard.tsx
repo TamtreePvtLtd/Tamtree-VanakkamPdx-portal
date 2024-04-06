@@ -63,10 +63,9 @@ function CommonProductCard(props: IProps) {
           <Typography
             variant="body1"
             sx={{
-              fontWeight: 600,
+              fontWeight: 900,
               textAlign: "center",
-              fontFamily: "Berkshire Swash",
-              // color: "#E4973C",
+              fontFamily: "VanakkamPDX-Logo-Font",
               color: "#6B0101",
             }}
             component="div"

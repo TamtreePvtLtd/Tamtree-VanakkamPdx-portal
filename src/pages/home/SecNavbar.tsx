@@ -37,12 +37,6 @@ const commonDividerStyles = {
   backgroundColor: "#fff",
 };
 
-const hoverStyle = {
-  "&:hover": {
-    backgroundColor: "transparent !important",
-  },
-};
-
 const handleCloverClick = () => {
   window.open("http://www.clover.com/online-ordering/vanakkampdx");
 };
