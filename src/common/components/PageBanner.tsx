@@ -131,7 +131,7 @@ function PageBanner(props: IProps) {
                 cursor: "pointer",
                 lineHeight: 2,
                 textAlign: "center",
-                width: "13%",
+                width: isMobile ? "40%" : "13%",
                 borderRadius: "25px",
                 fontSize: isMobile ? "14px" : "17px",
                 backgroundColor: "#6B0101",
