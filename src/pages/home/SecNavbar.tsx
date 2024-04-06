@@ -9,6 +9,16 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { paths } from "../../router/paths";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  button: {
+    backgroundColor: "transparent", // Set the background color to transparent
+    "&:hover": {
+      backgroundColor: "transparent !important", // Set the background color to transparent on hover
+    },
+  },
+});
 
 const commonButtonStyles = {
   color: "#6B0101",
@@ -16,12 +26,21 @@ const commonButtonStyles = {
   alignItems: "center",
   fontWeight: "bold",
   fontFamily: "'Acme",
-  "&:hover": { color: "green", textDecoration: "none" },
-  fontSize: "16px !important",
+  "&:hover": {
+    color: "green",
+    textDecoration: "none",
+  },
+  fontSize: "16px !important", // Try using !important
 };
 
 const commonDividerStyles = {
   backgroundColor: "#fff",
+};
+
+const hoverStyle = {
+  "&:hover": {
+    backgroundColor: "transparent !important",
+  },
 };
 
 const handleCloverClick = () => {
@@ -31,6 +50,7 @@ const handleCloverClick = () => {
 const SecNavbar = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:1000px)");
+  const classes = useStyles();
 
   return (
     <AppBar
@@ -66,7 +86,10 @@ const SecNavbar = () => {
             <Button
               color="inherit"
               onClick={() => navigate(paths.HOME)}
-              sx={commonButtonStyles}
+              className={classes.button}
+              sx={{
+                ...commonButtonStyles,
+              }}
             >
               <Typography
                 sx={{
@@ -102,6 +125,7 @@ const SecNavbar = () => {
           >
             <Button
               color="inherit"
+              className={classes.button}
               onClick={handleCloverClick}
               sx={commonButtonStyles}
             >
@@ -140,6 +164,7 @@ const SecNavbar = () => {
           >
             <Button
               color="inherit"
+              className={classes.button}
               onClick={handleCloverClick}
               sx={commonButtonStyles}
             >
@@ -178,6 +203,7 @@ const SecNavbar = () => {
           >
             <Button
               color="inherit"
+              className={classes.button}
               onClick={() => navigate(paths.CATERING)}
               sx={commonButtonStyles}
             >
@@ -216,6 +242,7 @@ const SecNavbar = () => {
           >
             <Button
               color="inherit"
+              className={classes.button}
               onClick={() => navigate(paths.ABOUTUS)}
               sx={commonButtonStyles}
             >

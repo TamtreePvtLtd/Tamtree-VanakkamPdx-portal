@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
+import { Box } from "@mui/system";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -81,43 +82,51 @@ function Navbar() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              alignItems: isMobile ? "center" : "flex-start",
-              textAlign: "center",
+              alignItems: isMobile ? "center" : "start",
               marginTop: 1,
             }}
           >
-            <Typography
-              variant="h5"
-              component="div"
-              onClick={handleLogoClick}
+            <Box
               sx={{
-                color: "#ffffff",
-                fontFamily: "alfa_slab_one",
-                fontWeight: "950",
-                textAlign: "center",
-                cursor: "pointer",
-                textWrap: "nowrap",
-                marginTop: "1px",
-                textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              VANAKKAM PDX
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{
-                color: "green",
-                fontSize: isMobile ? "12px" : "none",
-                fontWeight: "950",
-                fontFamily: "alfa_slab_one",
-                textAlign: "center",
-                textWrap: "nowrap",
-                marginLeft: isMobile ? 3 : 5,
-                textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
-              }}
-            >
-              - AUTHENTIC INDIAN CUISINE
-            </Typography>
+              <Typography
+                variant="h5"
+                component="div"
+                onClick={handleLogoClick}
+                sx={{
+                  color: "#ffffff",
+                  fontFamily: "alfa_slab_one",
+                  fontWeight: "950",
+                  textAlign: "center",
+                  cursor: "pointer",
+                  textWrap: "nowrap",
+                  marginTop: "1px",
+                  textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                }}
+              >
+                VANAKKAM PDX
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: "green",
+                  fontSize: isMobile ? "12px" : "none",
+                  fontWeight: "950",
+                  fontFamily: "alfa_slab_one",
+                  textAlign: "center",
+                  textWrap: "nowrap",
+                  marginLeft: isMobile ? 3 : 0,
+                  textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                }}
+              >
+                - AUTHENTIC INDIAN CUISINE
+              </Typography>
+            </Box>
           </Grid>
           <Grid
             item
@@ -137,7 +146,7 @@ function Navbar() {
                 color: "white",
                 fontWeight: "bold",
                 // fontFamily: "playfair Display",
-                fontFamily: "PT Sans Regular 400",
+                fontFamily: "Cinzel",
                 cursor: "pointer",
                 lineHeight: 2,
                 textAlign: "center",

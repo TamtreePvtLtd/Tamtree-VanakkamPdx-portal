@@ -2,28 +2,43 @@ import { Box, useMediaQuery } from "@mui/system";
 import CommonProductCard from "../../common/components/CommonCard";
 import seedData from "../../seed-data/Seed-Data";
 import { Typography } from "@mui/material";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 function CateringCard() {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box>
-        <Typography
-          variant="h4"
-          sx={{
-            marginTop: "20px",
-            // fontFamily: "jacques Francois",
-            fontFamily:"'Berkshire Swash', cursive",
-            fontWeight: 600,
-            display: "flex",
-            justifyContent: "center",
-            color: "#6B0101",
-            padding: "10px",
-            textAlign: isMobile ? "center" : "center",
-          }}
-        >
-          Making Your Special Events, Even More Special!
-        </Typography>
+        <Animate keyframes={slideInLeft}>
+          <Typography
+            variant="h4"
+            sx={{
+              marginTop: "20px",
+              // fontFamily: "jacques Francois",
+              fontFamily: "'Berkshire Swash', cursive",
+              fontWeight: 600,
+              display: "flex",
+              justifyContent: "center",
+              color: "#6B0101",
+              padding: "10px",
+              textAlign: isMobile ? "center" : "center",
+            }}
+          >
+            Elevating Every Event with Our Exquisite Cuisine!
+          </Typography>
+        </Animate>
       </Box>
       <Box
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}

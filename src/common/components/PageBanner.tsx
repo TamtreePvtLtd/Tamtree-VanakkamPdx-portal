@@ -1,5 +1,28 @@
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { useRef } from "react";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const slideInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 interface IProps {
   imageUrl: string;
@@ -7,7 +30,7 @@ interface IProps {
   description?: string;
   showTopButtons?: boolean;
   showBottomButtons?: boolean;
-  onClickButton?: () => void; // Define the onClickButton prop
+  onClickButton?: () => void;
 }
 function PageBanner(props: IProps) {
   const {
@@ -26,7 +49,6 @@ function PageBanner(props: IProps) {
       formRef.current.scrollIntoView({ behavior: "smooth" });
     }
     if (onClickButton) {
-      // Call onClickButton if it's provided
       onClickButton();
     }
   };
@@ -82,30 +104,33 @@ function PageBanner(props: IProps) {
         )}
 
         <Box className="page-banner-content">
-          <Typography
-            sx={{
-              textTransform: "uppercase",
-              marginBottom: "0 !important",
-              fontFamily: "VanakkamPDX-Logo-Font",
-            }}
-            variant="h2"
-            // fontWeight={"medium"}
-          >
-            {content}
-          </Typography>
+          <Animate keyframes={slideInLeft}>
+            <Typography
+              sx={{
+                textTransform: "uppercase",
+                marginBottom: "0 !important",
+                fontFamily: "VanakkamPDX-Logo-Font",
+              }}
+              variant="h2"
+            >
+              {content}
+            </Typography>
+          </Animate>
         </Box>
         {description && (
           <Box className="page-banner-description">
-            <Typography
-              sx={{
-                marginBottom: "0 !important",
-                fontFamily: "cursive !important",
-              }}
-              variant="h6"
-              fontWeight={"small"}
-            >
-              {description}
-            </Typography>
+            <Animate keyframes={slideInRight}>
+              <Typography
+                sx={{
+                  marginBottom: "0 !important",
+                  fontFamily: "cursive !important",
+                }}
+                variant="h6"
+                fontWeight={"small"}
+              >
+                {description}
+              </Typography>
+            </Animate>
           </Box>
         )}
         {showBottomButtons && (
