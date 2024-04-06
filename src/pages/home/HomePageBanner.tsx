@@ -27,7 +27,7 @@ function HomePageBanner() {
           <div
             style={{
               position: "absolute",
-              top: "40%",
+              top: isMobile ? "30%" : "40%",
               left: 0,
               right: 0,
               bottom: 0,
@@ -36,7 +36,9 @@ function HomePageBanner() {
             <h1 style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
               Looking for authentic food flavours?
             </h1>
-            <p style={{fontFamily:"VanakkamPDX-Logo-Font"}}>Order & celebrate with your loved ones.</p>
+            <p style={{ fontFamily: "VanakkamPDX-Logo-Font"}}>
+              Order & celebrate with your loved ones.
+            </p>
           </div>
         </Box>
       </Grid>
