@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Grid, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Grid, Button,Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
@@ -125,7 +125,8 @@ function Navbar() {
               }}
             >
               - AUTHENTIC INDIAN CUISINE
-            </Typography>
+              </Typography>
+              </Box>
           </Grid>
           <Grid
             item
