@@ -159,7 +159,7 @@ function PageBanner(props: IProps) {
                 borderRadius: "25px",
                 fontSize: isMobile ? "14px" : "17px",
                 textWrap: isMobile ? "wrap" : "nowrap",
-                backgroundColor: "#6B0101",
+                backgroundColor: "green",
                 "&:hover": {
                   backgroundColor: "green",
                 },
