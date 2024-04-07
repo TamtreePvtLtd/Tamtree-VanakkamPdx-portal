@@ -3,8 +3,6 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import Animate from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
 import {
   TextField,
   Button,
@@ -26,7 +24,8 @@ import { ICateringEnquiry } from "../../interface/types";
 import { createCateringEnquiry } from "../../services/api";
 import dayjs from "dayjs";
 import { useStyles } from "../../styles/CateringFormStyle";
-
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 const EnquiryFormInitialValue: ICateringEnquiry = {
   fullName: "",
   email: "",
@@ -42,27 +41,19 @@ const schema = yup.object().shape({
     .string()
     .required("Name is required")
     .max(30, "Maximum 30 characters allowed"),
+
   email: yup
     .string()
     .email("Invalid email address")
     .required("Email is required"),
-  typeOfEvent: yup
-    .string()
-    .required("Type of Event is required")
-    .max(30, "Maximum 30 characters allowed"),
-  guestCount: yup
-    .number()
-    .required("Guest count is required")
-    .positive("Guest count must be a positive number")
-    .integer("Guest count must be an integer"),
+  typeOfEvent: yup.string().max(30, "Maximum 30 characters allowed"),
+  guestCount: yup.number(),
+
   mobileNumber: yup
     .string()
     .required("Mobile number is required")
-    .matches(/^\d{10}$/, {
-      message: "Mobile number must be exactly 10 digits",
-    }),
-  message: yup.string().max(250, "Message must be at most 250 characters"),
-
+    .max(10, "Maximum 10 characters allowed"),
+  message: yup.string().max(250, "Message Maximum 250 characters allowed"),
   eventDate: yup.string().required("Event date is required"),
 });
 
@@ -142,7 +133,7 @@ function CateringEnquiryForm() {
           padding: isSmallScreen ? 3 : 0,
         }}
       >
-        <Animate keyframes={slideInLeft} duration={600} delay={50}>
+        <Animate keyframes={slideInLeft} duration={600} delay={100} triggerOnce>
           <Typography
             variant="h5"
             fontWeight={600}
@@ -166,8 +157,10 @@ function CateringEnquiryForm() {
                   error={!!errors.fullName}
                   helperText={errors.fullName ? errors.fullName.message : ""}
                   className={classes.focused}
+                  inputProps={{ maxLength: 31 }}
                 />
               </Grid>
+
               <Grid item lg={6} xs={12}>
                 <TextField
                   label="Email *"
@@ -196,7 +189,7 @@ function CateringEnquiryForm() {
                   }}
                   inputProps={{
                     type: "tel",
-                    maxLength: 10,
+                    maxLength: 11,
                     onChange: handleInputChange,
                   }}
                   className={classes.focused}
@@ -204,7 +197,7 @@ function CateringEnquiryForm() {
               </Grid>
               <Grid item lg={6} xs={12}>
                 <TextField
-                  label="Type Of Event*"
+                  label="Type Of Event"
                   fullWidth
                   variant="outlined"
                   {...register("typeOfEvent")}
@@ -212,6 +205,7 @@ function CateringEnquiryForm() {
                   helperText={
                     errors.typeOfEvent ? errors.typeOfEvent.message : ""
                   }
+                  inputProps={{ maxLength: 31 }}
                   className={classes.focused}
                 />
               </Grid>
@@ -264,20 +258,10 @@ function CateringEnquiryForm() {
                   multiline
                   rows={3}
                   {...register("message")}
-                  error={
-                    !!errors.message ||
-                    (formData?.message === "" &&
-                      formRef.current?.reportValidity())
-                  }
-                  helperText={
-                    errors.message
-                      ? errors.message.message
-                      : formData?.message === "" &&
-                        formRef.current?.reportValidity()
-                      ? "Message is required"
-                      : ""
-                  }
+                  error={!!errors.message}
+                  helperText={errors.message ? errors.message.message : ""}
                   className={classes.focused}
+                  inputProps={{ maxLength: 251 }}
                 />
               </Grid>
               <Grid
@@ -294,10 +278,12 @@ function CateringEnquiryForm() {
                   variant="contained"
                   sx={{
                     boxShadow: "none",
-                    backgroundColor: "#6B0101",
+                    backgroundColor: "green",
+                    borderRadius: "20px",
                     "&:hover": {
-                      backgroundColor: "#6B0101",
+                      backgroundColor: "green",
                       boxShadow: "none",
+                      borderRadius: "20px",
                     },
                   }}
                 >
@@ -325,10 +311,10 @@ function CateringEnquiryForm() {
             onClick={handleCloseDialog(false)}
             variant="outlined"
             sx={{
-              color: "#6B0101",
-              borderColor: "#6B0101",
+              color: "green",
+              borderColor: "green",
               "&:hover": {
-                borderColor: "#6B0101",
+                borderColor: "green",
               },
             }}
           >
@@ -340,9 +326,9 @@ function CateringEnquiryForm() {
             autoFocus
             sx={{
               color: "white",
-              backgroundColor: "#6B0101",
+              backgroundColor: "green",
               "&:hover": {
-                backgroundColor: "#6B0101",
+                backgroundColor: "green",
               },
             }}
           >
@@ -353,4 +339,5 @@ function CateringEnquiryForm() {
     </>
   );
 }
+
 export default CateringEnquiryForm;

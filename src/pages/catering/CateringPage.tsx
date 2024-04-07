@@ -8,7 +8,7 @@ function CateringPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  },[]);
 
   const scrollToEnquiryForm = () => {
     if (enquiryFormRef.current) {
