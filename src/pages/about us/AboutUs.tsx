@@ -26,16 +26,20 @@ function AboutUs() {
       <PageBanner
         imageUrl="https://as1.ftcdn.net/v2/jpg/06/35/76/76/1000_F_635767696_2fpfuQhfCVGchFb4KpHMroELgzK4usZl.jpg"
         content="ABOUT US"
-        description="COME ENJOY DELECIOUS FOOD AND  GREAT SERVICE AT VANAKKAM PDX"
+        description="come enjoy delicious food and great service at vanakkam pdx"
         showTopButtons={false}
         showBottomButtons={false}
       />
+
       <Grid
         container
         spacing={2}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
         height={"auto"}
         paddingBottom={1}
-        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5 }}
+        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5}}
       >
         <Grid
           item
@@ -46,6 +50,7 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: isMobile ? "center" : "flex-end",
             alignItems: isMobile ? "center" : "start",
+            marginTop:"15px"
           }}
         >
           <img
@@ -144,6 +149,7 @@ function AboutUs() {
               fontSize: "30px",
               fontWeight: 800,
               textAlign: "center",
+              paddingBottom:2
             }}
           >
             THE STORY OF VANAKKAM PDX

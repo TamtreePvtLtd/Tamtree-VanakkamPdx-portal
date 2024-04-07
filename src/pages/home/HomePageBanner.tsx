@@ -30,7 +30,6 @@ function HomePageBanner() {
 
   return (
     <Grid container style={{ height: "500px" }}>
-      
       <Grid
         item
         xs={12}
@@ -52,24 +51,34 @@ function HomePageBanner() {
           <div
             style={{
               position: "absolute",
-              top: isMobile ? "30%" : "40%",
+              top: isMobile ? "34%" : "37%",
               left: 0,
               right: 0,
               bottom: 0,
             }}
           >
             <Animate keyframes={slideInLeft} duration={600} delay={50}>
-            <h1 style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
-              Looking for authentic food flavours?
-            </h1>
-            <p style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
-              Order & celebrate with your loved ones.
-            </p>
+              <p
+                style={{
+                  fontFamily: "VanakkamPDX-Logo-Font",
+                  fontSize: isMobile ? "20px" : "35px",
+                }}
+              >
+                Looking for authentic food flavours?
+              </p>
+              <p
+                style={{
+                  fontFamily: "VanakkamPDX-Logo-Font",
+                  fontSize: isMobile ? "15px" : "20px",
+                }}
+              >
+                Order & celebrate with your loved ones.
+              </p>
             </Animate>
           </div>
         </Box>
       </Grid>
-     
+
       <Grid
         item
         xs={12}
@@ -80,64 +89,64 @@ function HomePageBanner() {
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
-          <Animate keyframes={slideInRight} duration={600} delay={50}>
-            <Typography
-              paddingTop={1}
-              variant="body1"
-              textAlign="center"
-              fontSize={30}
-              fontWeight={900}
-              lineHeight={1}
-              fontFamily={"jacques Francois"}
-            >
-              <span className="bold700">GOOD</span>
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={45}
-              lineHeight={1.2}
-              fontFamily={"jacques Francois"}
-            >
-              <span className="bold600">FOOD</span>
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={20}
-              fontStyle={"italic"}
-              lineHeight={1.2}
-              fontFamily={"jacques Francois"}
-            >
-              BRINGS
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={45}
-              lineHeight={1.5}
-              fontFamily={"jacques Francois"}
-            >
-              HAPPINESS
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={25}
-              lineHeight={1.5}
-              fontFamily={"jacques Francois"}
-            >
-              <span>EVERY</span>
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={25}
-              lineHeight={1}
-              fontFamily={"jacques Francois"}
-            >
-              <span>TIME</span>
-            </Typography>
+            <Animate keyframes={slideInRight} duration={600} delay={50}>
+              <Typography
+                paddingTop={1}
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 20 : 30}
+                fontWeight={900}
+                lineHeight={isMobile ? 1.5 : 1.2}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                <span className="bold700">GOOD</span>
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 23 : 45}
+                lineHeight={isMobile ? 1.5 : 1.2}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                <span className="bold600">FOOD</span>
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 15 : 20}
+                fontStyle={"italic"}
+                lineHeight={isMobile ? 1.5 : 1.2}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                BRINGS
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 25 : 40}
+                lineHeight={1.5}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                HAPPINESS
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 20 : 25}
+                lineHeight={1.5}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                <span>EVERY</span>
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign="center"
+                fontSize={isMobile ? 20 : 25}
+                lineHeight={isMobile ? 1.5 : 1.2}
+                fontFamily={"VanakkamPDX-Logo-Font"}
+              >
+                <span>TIME</span>
+              </Typography>
             </Animate>
             {/* <Typography
               variant="body1"
@@ -203,7 +212,6 @@ function HomePageBanner() {
           </Box>
         </Box>
       </Grid>
-      
     </Grid>
   );
 }

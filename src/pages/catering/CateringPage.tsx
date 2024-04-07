@@ -21,7 +21,7 @@ function CateringPage() {
       <PageBanner
         imageUrl="https://img.etimg.com/thumb/width-1600,height-900,imgsize-1554765,resizemode-75,msid-84575088/magazines/panache/no-more-altering-the-spice-these-restaurateurs-want-to-serve-real-indian-food-in-america.jpg"
         content="CATERING"
-        description="PERFECTLY PORTIONED INDIVIDUAL MEALS AND EASY-TO-ORDER PACKAGES YOUR GUESTS WILL LOVE"
+        description="perfectly portioned individual meals and easy-to-order packages your guests will love"
         showTopButtons={false}
         showBottomButtons={true}
         onClickButton={scrollToEnquiryForm}

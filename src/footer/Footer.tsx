@@ -7,7 +7,7 @@ import { keyframes } from "@emotion/react";
 const slideInLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-80px);
+    transform: translateX(-120px);
   }
   to {
     opacity: 1;
@@ -17,7 +17,7 @@ const slideInLeft = keyframes`
 const slideInRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(80px);
+    transform: translateX(120px);
   }
   to {
     opacity: 1;
@@ -27,7 +27,7 @@ const slideInRight = keyframes`
 const fadeInUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(180px);
   }
   100% {
     opacity: 1;
@@ -253,7 +253,7 @@ const Footer = () => {
                   &nbsp;Store Address
                 </Typography>
               </Box>
-              <Box sx={{marginTop:"20px"}}>
+              <Box sx={{ marginTop: "20px" }}>
                 <Typography
                   variant="body2"
                   sx={{
@@ -311,7 +311,7 @@ const Footer = () => {
             />
           )}
           <Grid item xs={12} sm={3.5}>
-            <Animate keyframes={fadeInUp}>
+            <Animate keyframes={slideInRight}>
               <Typography
                 variant="body1"
                 sx={{
@@ -356,7 +356,7 @@ const Footer = () => {
             />
           )}
           <Grid item xs={12} sm={3.5}>
-            <Animate keyframes={slideInRight}>
+            <Animate keyframes={slideInLeft}>
               <Typography
                 variant="body1"
                 sx={{
