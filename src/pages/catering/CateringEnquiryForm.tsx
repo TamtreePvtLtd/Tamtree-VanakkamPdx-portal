@@ -232,7 +232,7 @@ function CateringEnquiryForm() {
                       )}
                     />
                   </LocalizationProvider>
-                  {errors.eventDate && (
+                 {errors.eventDate && (
                     <FormHelperText error>
                       {errors.eventDate.message}
                     </FormHelperText>

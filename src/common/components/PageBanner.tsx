@@ -123,10 +123,13 @@ function PageBanner(props: IProps) {
               <Typography
                 sx={{
                   marginBottom: "0 !important",
-                  fontFamily: "cursive !important",
+                  fontFamily: "VanakkamPDX-Logo-Font !important",
+                  marginLeft: "17px",
+                  marginRight: "10px",
+              
                 }}
                 variant="h6"
-                fontWeight={"small"}
+                // fontWeight={"small"}
               >
                 {description}
               </Typography>

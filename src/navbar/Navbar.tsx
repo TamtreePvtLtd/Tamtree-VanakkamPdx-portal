@@ -46,14 +46,14 @@ function Navbar() {
         >
           <Grid
             item
-            xs={2}
+            xs={1}
             sm={2}
             md={2}
-            lg={2}
+            lg={1.5}
             sx={{
               display: "flex",
-              alignItems: isMobile ? "center" : "center",
-              justifyContent: "center",
+              alignItems: isMobile ? "start" : "end",
+              justifyContent: "start",
               paddingLeft: isMobile ? 1 : 2,
             }}
           >
@@ -68,20 +68,21 @@ function Navbar() {
                 cursor: "pointer",
                 backgroundColor: "white",
                 borderRadius: "50%",
+                marginTop: 5,
               }}
             />
           </Grid>
           <Grid
             item
-            xs={8}
+            xs={9}
             sm={8}
             md={8}
-            lg={8}
+            lg={8.5}
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              alignItems: isMobile ? "center" : "start",
+              alignItems: isMobile ? "end" : "start",
               // textAlign: "center",
               marginTop: 1,
             }}
@@ -120,8 +121,8 @@ function Navbar() {
                   fontFamily: "alfa_slab_one",
                   textAlign: "center",
                   textWrap: "nowrap",
-                  marginLeft: isMobile ? 3 : 0,
-                  textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                  marginLeft: isMobile ? 0: 0,
+                  textShadow: "1px 1px 1px rgba(0, 0, 0, 0.9)",
                 }}
               >
                 - AUTHENTIC INDIAN CUISINE
@@ -151,11 +152,11 @@ function Navbar() {
                 cursor: "pointer",
                 // lineHeight: isMobile ? 1.8 : 2,
                 textAlign: "center",
-                width: "70%",
-                boxSizing: "unset",
+                width: "65%",
+                // boxSizing: "unset",
                 // paddingTop: "2px",
                 borderRadius: isMobile ? "10px" : "25px",
-                padding: isMobile ? "4px" : "7px",
+                padding: isMobile ? "3px" : "7px",
                 textDecoration: "none",
                 textWrap: isMobile ? "nowrap" : "nowrap",
                 "&:hover": {
@@ -170,7 +171,7 @@ function Navbar() {
             >
               <Typography
                 sx={{
-                  fontSize: isMobile ? "9px" : "17px",
+                  fontSize: isMobile ? "8px" : "17px",
                   fontFamily: "PT Sans Regular 400",
                   fontWeight: "bold",
                 }}
