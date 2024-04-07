@@ -1,5 +1,28 @@
 import { Grid, Typography, Box, useMediaQuery } from "@mui/material";
 import { useStyles } from "../../styles/HomePageBannerStyle";
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const slideInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 function HomePageBanner() {
   const classes = useStyles();
@@ -7,6 +30,7 @@ function HomePageBanner() {
 
   return (
     <Grid container style={{ height: "500px" }}>
+      
       <Grid
         item
         xs={12}
@@ -34,15 +58,18 @@ function HomePageBanner() {
               bottom: 0,
             }}
           >
+            <Animate keyframes={slideInLeft} duration={600} delay={50}>
             <h1 style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
               Looking for authentic food flavours?
             </h1>
             <p style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
               Order & celebrate with your loved ones.
             </p>
+            </Animate>
           </div>
         </Box>
       </Grid>
+     
       <Grid
         item
         xs={12}
@@ -53,6 +80,7 @@ function HomePageBanner() {
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
+          <Animate keyframes={slideInRight} duration={600} delay={50}>
             <Typography
               paddingTop={1}
               variant="body1"
@@ -110,6 +138,7 @@ function HomePageBanner() {
             >
               <span>TIME</span>
             </Typography>
+            </Animate>
             {/* <Typography
               variant="body1"
               textAlign="center"
@@ -119,7 +148,7 @@ function HomePageBanner() {
               fontFamily={"jacques Francois"}
             >
               <span className="bold700">BE HAPPY</span>
-            </Typography> */}
+            </Typography>
           </Box>
           {/* <Box
             sx={{
@@ -171,8 +200,10 @@ function HomePageBanner() {
               Order Now
             </Button>
           </Box> */}
+          </Box>
         </Box>
       </Grid>
+      
     </Grid>
   );
 }
