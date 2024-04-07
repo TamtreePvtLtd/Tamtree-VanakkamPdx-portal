@@ -151,11 +151,11 @@ function Navbar() {
                 cursor: "pointer",
                 // lineHeight: isMobile ? 1.8 : 2,
                 textAlign: "center",
-                width: "80%",
+                width: "70%",
                 boxSizing: "unset",
                 // paddingTop: "2px",
                 borderRadius: isMobile ? "10px" : "25px",
-                padding:isMobile? "4px":"6px",
+                padding: isMobile ? "4px" : "7px",
                 textDecoration: "none",
                 textWrap: isMobile ? "nowrap" : "nowrap",
                 "&:hover": {
@@ -168,7 +168,13 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Typography sx={{ fontSize: isMobile ? "9px" : "17px" }}>
+              <Typography
+                sx={{
+                  fontSize: isMobile ? "9px" : "17px",
+                  fontFamily: "PT Sans Regular 400",
+                  fontWeight: "bold",
+                }}
+              >
                 ORDER ONLINE
               </Typography>
             </Button>
