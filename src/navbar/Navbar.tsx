@@ -46,14 +46,14 @@ function Navbar() {
         >
           <Grid
             item
-            xs={1}
+            xs={2}
             sm={2}
             md={2}
-            lg={1.5}
+            lg={2}
             sx={{
               display: "flex",
-              alignItems: isMobile ? "start" : "end",
-              justifyContent: "start",
+              alignItems: isMobile ? "center" : "center",
+              justifyContent: "center",
               paddingLeft: isMobile ? 1 : 2,
             }}
           >
@@ -74,16 +74,16 @@ function Navbar() {
           </Grid>
           <Grid
             item
-            xs={9}
+            xs={8}
             sm={8}
             md={8}
-            lg={8.5}
+            lg={8}
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              alignItems: isMobile ? "end" : "start",
-              // textAlign: "center",
+              alignItems: isMobile ? "center" : "flex-start",
+              textAlign: "center",
               marginTop: 1,
             }}
           >
@@ -121,7 +121,7 @@ function Navbar() {
                   fontFamily: "alfa_slab_one",
                   textAlign: "center",
                   textWrap: "nowrap",
-                  marginLeft: isMobile ? 0: 0,
+                  marginLeft: isMobile ? 0 : 0,
                   textShadow: "1px 1px 1px rgba(0, 0, 0, 0.9)",
                 }}
               >
@@ -179,23 +179,6 @@ function Navbar() {
                 ORDER ONLINE
               </Typography>
             </Button>
-            {/* <Typography
-              color="#6B0101"
-              sx={{
-                cursor: "pointer",
-                fontSize: isMobile ? "14px" : "17px",
-                textWrap: isMobile ? "wrap" :"nowrap",
-                textDecoration: "none",
-                marginLeft:isMobile ? 5 : 0,
-                "&:hover": { color: "green", textDecoration: "none" },
-              }}
-              component="a"
-              href="http://www.clover.com/online-ordering/vanakkampdx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ORDER ONLINE
-            </Typography> */}
           </Grid>
         </Grid>
       </Toolbar>
