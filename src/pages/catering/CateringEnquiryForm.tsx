@@ -311,10 +311,10 @@ function CateringEnquiryForm() {
             onClick={handleCloseDialog(false)}
             variant="outlined"
             sx={{
-              color: "#6B0101",
-              borderColor: "#6B0101",
+              color: "green",
+              borderColor: "green",
               "&:hover": {
-                borderColor: "#6B0101",
+                borderColor: "green",
               },
             }}
           >
@@ -326,9 +326,9 @@ function CateringEnquiryForm() {
             autoFocus
             sx={{
               color: "white",
-              backgroundColor: "#6B0101",
+              backgroundColor: "green",
               "&:hover": {
-                backgroundColor: "#6B0101",
+                backgroundColor: "green",
               },
             }}
           >
