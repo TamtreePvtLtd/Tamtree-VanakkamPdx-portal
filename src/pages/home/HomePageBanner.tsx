@@ -98,8 +98,11 @@ function HomePageBanner() {
               lineHeight={1}
               fontFamily={"jacques Francois"}
             >
-              <span className="bold700">GOOD</span>
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span className="bold700">GOOD</span>
+              </Animate>
             </Typography>
+
             <Typography
               variant="body1"
               textAlign="center"
@@ -107,7 +110,9 @@ function HomePageBanner() {
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
-              <span className="bold600">FOOD</span>
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span className="bold600">FOOD</span>
+              </Animate>
             </Typography>
             <Typography
               variant="body1"
@@ -117,7 +122,9 @@ function HomePageBanner() {
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
-              ----- is -----
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span>----- is -----</span>
+              </Animate>
             </Typography>
             <Typography
               variant="body1"
@@ -126,7 +133,9 @@ function HomePageBanner() {
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
             >
-              <span>WHAT ALL</span>
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span>WHAT ALL</span>
+              </Animate>
             </Typography>
             <Typography
               variant="body1"
@@ -135,7 +144,9 @@ function HomePageBanner() {
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
-              NEED
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span>NEED</span>
+              </Animate>
             </Typography>
             <Typography
               variant="body1"
@@ -145,7 +156,9 @@ function HomePageBanner() {
               lineHeight={1}
               fontFamily={"jacques Francois"}
             >
-              ..... to .....
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span>..... to .....</span>
+              </Animate>
             </Typography>
             <Typography
               variant="body1"
@@ -155,9 +168,12 @@ function HomePageBanner() {
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
             >
-              <span className="bold700">BE HAPPY</span>
+              <Animate keyframes={slideInRight} duration={600} delay={50}>
+                <span className="bold700">BE HAPPY</span>
+              </Animate>
             </Typography>
           </Box>
+
           {/* <Box
             sx={{
               display: "flex",
