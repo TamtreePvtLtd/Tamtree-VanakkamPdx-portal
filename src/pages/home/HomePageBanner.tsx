@@ -24,6 +24,7 @@ function HomePageBanner() {
               objectFit: "cover",
             }}
           />
+
           <div
             style={{
               position: "absolute",
@@ -36,7 +37,7 @@ function HomePageBanner() {
             <h1 style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
               Looking for authentic food flavours?
             </h1>
-            <p style={{ fontFamily: "VanakkamPDX-Logo-Font"}}>
+            <p style={{ fontFamily: "VanakkamPDX-Logo-Font" }}>
               Order & celebrate with your loved ones.
             </p>
           </div>
@@ -80,7 +81,16 @@ function HomePageBanner() {
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
-              ----- is -----
+              BRINGS
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={45}
+              lineHeight={1.5}
+              fontFamily={"jacques Francois"}
+            >
+              HAPPINESS
             </Typography>
             <Typography
               variant="body1"
@@ -89,28 +99,18 @@ function HomePageBanner() {
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
             >
-              <span>WHAT ALL</span>
+              <span>EVERY</span>
             </Typography>
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={45}
-              lineHeight={1.2}
-              fontFamily={"jacques Francois"}
-            >
-              I NEED
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              fontSize={20}
-              fontStyle={"italic"}
+              fontSize={25}
               lineHeight={1}
               fontFamily={"jacques Francois"}
             >
-              ..... to .....
+              <span>TIME</span>
             </Typography>
-            <Typography
+            {/* <Typography
               variant="body1"
               textAlign="center"
               fontSize={30}
@@ -119,7 +119,7 @@ function HomePageBanner() {
               fontFamily={"jacques Francois"}
             >
               <span className="bold700">BE HAPPY</span>
-            </Typography>
+            </Typography> */}
           </Box>
           {/* <Box
             sx={{

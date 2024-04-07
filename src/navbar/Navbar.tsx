@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Grid, Button,Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
@@ -86,47 +86,47 @@ function Navbar() {
               marginTop: 1,
             }}
           >
-             <Box
+            <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems:"center",
+                alignItems: "center",
               }}
             >
-            <Typography
-              variant="h5"
-              component="div"
-              onClick={handleLogoClick}
-              sx={{
-                color: "#ffffff",
-                fontFamily: "alfa_slab_one",
-                fontWeight: "950",
-                textAlign: "center",
-                cursor: "pointer",
-                textWrap: "nowrap",
-                marginTop: "1px",
-                textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
-              }}
-            >
-              VANAKKAM PDX
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{
-                color: "green",
-                fontSize: isMobile ? "12px" : "none",
-                fontWeight: "950",
-                fontFamily: "alfa_slab_one",
-                textAlign: "center",
-                textWrap: "nowrap",
-                marginLeft: isMobile ? 3 : 0,
-                textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
-              }}
-            >
-              - AUTHENTIC INDIAN CUISINE
+              <Typography
+                variant="h5"
+                component="div"
+                onClick={handleLogoClick}
+                sx={{
+                  color: "#ffffff",
+                  fontFamily: "alfa_slab_one",
+                  fontWeight: "950",
+                  textAlign: "center",
+                  cursor: "pointer",
+                  textWrap: "nowrap",
+                  marginTop: "1px",
+                  textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                }}
+              >
+                VANAKKAM PDX
               </Typography>
-              </Box>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: "green",
+                  fontSize: isMobile ? "12px" : "none",
+                  fontWeight: "950",
+                  fontFamily: "alfa_slab_one",
+                  textAlign: "center",
+                  textWrap: "nowrap",
+                  marginLeft: isMobile ? 3 : 0,
+                  textShadow: "1px 1.5px 1px rgba(0, 0, 0, 0.9)",
+                }}
+              >
+                - AUTHENTIC INDIAN CUISINE
+              </Typography>
+            </Box>
           </Grid>
           <Grid
             item
@@ -143,21 +143,21 @@ function Navbar() {
           >
             <Button
               sx={{
-                backgroundColor: "#6B0101",
+                backgroundColor: "green",
                 color: "white",
-                marginLeft:2,
+                marginLeft: 1,
                 fontWeight: "bold",
-                // fontFamily: "playfair Display",
                 fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
-                lineHeight: isMobile ? 1.8 : 2,
+                // lineHeight: isMobile ? 1.8 : 2,
                 textAlign: "center",
-                width: "90%",
+                width: "80%",
+                boxSizing: "unset",
                 // paddingTop: "2px",
                 borderRadius: isMobile ? "10px" : "25px",
-                fontSize: isMobile ? "12px" : "17px",
-                 textWrap: isMobile ? "wrap":"nowrap",
+                padding:isMobile? "4px":"6px",
                 textDecoration: "none",
+                textWrap: isMobile ? "nowrap" : "nowrap",
                 "&:hover": {
                   backgroundColor: "green",
                   color: "white",
@@ -168,7 +168,9 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              ORDER ONLINE
+              <Typography sx={{ fontSize: isMobile ? "9px" : "17px" }}>
+                ORDER ONLINE
+              </Typography>
             </Button>
             {/* <Typography
               color="#6B0101"
