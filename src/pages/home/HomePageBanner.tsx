@@ -89,66 +89,65 @@ function HomePageBanner() {
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
-            <Animate keyframes={slideInRight} duration={600} delay={50}>
-              <Typography
-                paddingTop={1}
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 20 : 30}
-                fontWeight={900}
-                lineHeight={isMobile ? 1.5 : 1.2}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                <span className="bold700">GOOD</span>
-              </Typography>
-              <Typography
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 23 : 45}
-                lineHeight={isMobile ? 1.5 : 1.2}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                <span className="bold600">FOOD</span>
-              </Typography>
-              <Typography
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 15 : 20}
-                fontStyle={"italic"}
-                lineHeight={isMobile ? 1.5 : 1.2}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                BRINGS
-              </Typography>
-              <Typography
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 25 : 40}
-                lineHeight={1.5}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                HAPPINESS
-              </Typography>
-              <Typography
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 20 : 25}
-                lineHeight={1.5}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                <span>EVERY</span>
-              </Typography>
-              <Typography
-                variant="body1"
-                textAlign="center"
-                fontSize={isMobile ? 20 : 25}
-                lineHeight={isMobile ? 1.5 : 1.2}
-                fontFamily={"VanakkamPDX-Logo-Font"}
-              >
-                <span>TIME</span>
-              </Typography>
-            </Animate>
-            {/* <Typography
+            <Typography
+              paddingTop={1}
+              variant="body1"
+              textAlign="center"
+              fontSize={30}
+              fontWeight={900}
+              lineHeight={1}
+              fontFamily={"jacques Francois"}
+            >
+              <span className="bold700">GOOD</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={45}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              <span className="bold600">FOOD</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={20}
+              fontStyle={"italic"}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              ----- is -----
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={25}
+              lineHeight={1.5}
+              fontFamily={"jacques Francois"}
+            >
+              <span>WHAT ALL</span>
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={45}
+              lineHeight={1.2}
+              fontFamily={"jacques Francois"}
+            >
+              NEED
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              fontSize={20}
+              fontStyle={"italic"}
+              lineHeight={1}
+              fontFamily={"jacques Francois"}
+            >
+              ..... to .....
+            </Typography>
+            <Typography
               variant="body1"
               textAlign="center"
               fontSize={30}
@@ -209,7 +208,6 @@ function HomePageBanner() {
               Order Now
             </Button>
           </Box> */}
-          </Box>
         </Box>
       </Grid>
     </Grid>

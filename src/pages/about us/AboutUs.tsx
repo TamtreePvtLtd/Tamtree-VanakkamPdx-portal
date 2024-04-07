@@ -26,7 +26,7 @@ function AboutUs() {
       <PageBanner
         imageUrl="https://as1.ftcdn.net/v2/jpg/06/35/76/76/1000_F_635767696_2fpfuQhfCVGchFb4KpHMroELgzK4usZl.jpg"
         content="ABOUT US"
-        description="come enjoy delicious food and great service at vanakkam pdx"
+        description="come enjoy our delicious food and great service"
         showTopButtons={false}
         showBottomButtons={false}
       />
