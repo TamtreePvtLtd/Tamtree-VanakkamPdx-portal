@@ -41,7 +41,7 @@ export const useStyles = makeStyles(() => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
-    height: "93.5%",
+    height: "95%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
