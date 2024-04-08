@@ -37,7 +37,7 @@ export const useStyles = makeStyles(() => ({
     height: "100%",
   },
   rightImage: {
-    backgroundImage: `url("https://as2.ftcdn.net/v2/jpg/05/33/82/33/1000_F_533823359_Fkt7O0BapHm4ykF7t6hb6Rl6bCtUhd46.jpg")`,
+    backgroundImage: `url("https://t3.ftcdn.net/jpg/06/08/60/44/240_F_608604453_G5BQ8FUAXLBZV3K7jUmKqEaBTIUxh2qM.jpg")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
