@@ -1,4 +1,15 @@
-import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
 import Animate from "react-awesome-reveal";
@@ -6,6 +17,12 @@ import { keyframes } from "@emotion/react";
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
 
+const ourTimingStyles = {
+  borderBottom: "none",
+  p: 0.3,
+  color: "white",
+  fontSize: "14px",
+};
 const slideInLeft = keyframes`
   from {
     opacity: 0;
@@ -204,27 +221,40 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
   </a>
 );
 
+const openingHours = [
+  { day: "Monday", timing: "11AM - 9PM" },
+  { day: "Tuesday", timing: "Closed" },
+  { day: "Wednesday", timing: "11AM - 9PM" },
+  { day: "Thursday", timing: "11AM - 10PM" },
+  { day: "Friday", timing: "11AM - 10PM" },
+  { day: "Saturday", timing: "11AM - 10PM" },
+  { day: "Sunday", timing: "11AM - 9PM" },
+];
+
 const Footer = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const isMedium = useMediaQuery("(max-width:1024px)");
+
   return (
     <Box
-      component="footer"
       style={{
         backgroundColor: "#6B0101",
         color: "#e7e7e7",
-        padding: "20px",
         textAlign: "center",
       }}
     >
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Grid
           container
+          rowSpacing={0}
           spacing={2}
           display="flex"
           flexDirection="row"
           justifyContent="center"
+          alignItems="center"
+          sx={{ marginTop: isMedium ? "20px" : 0 }}
         >
-          <Grid item xs={12} sm={3.5}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInLeft}>
               <Box display="flex" justifyContent="center">
                 <Typography
@@ -233,11 +263,10 @@ const Footer = () => {
                     fontFamily: "VanakkamPDX-Logo-Font",
                     fontSize: "22px",
                     fontWeight: 700,
-                    marginTop: 3,
+                    marginTop: isMobile ? 5 : -3,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    // color: "#e7e7e7",
                   }}
                   component="p"
                 >
@@ -255,8 +284,6 @@ const Footer = () => {
                     <PlaceIcon sx={{ color: "#0077dd" }} />
                     &nbsp; Store Address
                   </a>
-                  {/* <LocationIcon style={{ marginRight: 5 }} />
-                  &nbsp;Store Address */}
                 </Typography>
               </Box>
               <Box sx={{ marginTop: "20px" }}>
@@ -264,7 +291,6 @@ const Footer = () => {
                   variant="body2"
                   sx={{
                     lineHeight: 0.5,
-                    // fontFamily: "Rubik",
                     color: "#d4d4d4",
                     textDecoration: "none",
                   }}
@@ -316,7 +342,18 @@ const Footer = () => {
               </Box>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile ? null : isMedium ? (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          ) : (
             <Divider
               orientation="vertical"
               flexItem
@@ -328,14 +365,14 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={3.5}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInRight}>
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: "VanakkamPDX-Logo-Font",
                   fontSize: "20px",
-                  marginTop: 3,
+                  marginTop: isMobile ? 5 : -4.5,
                   fontWeight: 700,
                 }}
                 component="p"
@@ -352,7 +389,7 @@ const Footer = () => {
                     width: "70px",
                     height: "75px",
                     marginRight: "10px",
-                    marginTop: 20,
+                    marginTop: "20px",
                     cursor: "pointer",
                   }}
                   src={Qrcode}
@@ -361,7 +398,7 @@ const Footer = () => {
               </a>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile ? null : isMedium ? null : (
             <Divider
               orientation="vertical"
               flexItem
@@ -373,14 +410,14 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={3.5}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInLeft}>
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: "VanakkamPDX-Logo-Font",
                   fontSize: "22px",
-                  marginTop: 3,
+                  marginTop: isMobile ? 5 : -8,
                   fontWeight: 700,
                 }}
                 component="p"
@@ -424,6 +461,84 @@ const Footer = () => {
               </Box>
             </Animate>
           </Grid>
+          {isMobile ? null : isMedium ? (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          ) : (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          )}
+
+          <Grid
+            item
+            sm={5.5}
+            xs={12}
+            lg={2.5}
+            sx={{
+              textAlign: "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box sx={{ my: 1 }}>
+              <Animate>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontFamily: "VanakkamPDX-Logo-Font",
+                    fontSize: "22px",
+                    fontWeight: 700,
+                    marginTop: 4,
+                    color: "#fff",
+                  }}
+                >
+                  Our Timing
+                </Typography>
+
+                <TableContainer>
+                  <Table>
+                    <TableBody>
+                      {openingHours.map((item) => (
+                        <TableRow key={item.day}>
+                          <TableCell
+                            sx={{ ...ourTimingStyles, color: "#d4d4d4" }}
+                          >
+                            {item.day}
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              ...ourTimingStyles,
+                              paddingLeft: "15px",
+                              color: "#d4d4d4",
+                            }}
+                          >
+                            {item.timing}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Animate>
+            </Box>
+          </Grid>
         </Grid>
       </Box>
       <Typography
@@ -431,7 +546,8 @@ const Footer = () => {
         sx={{
           textWrap: isMobile ? "wrap" : "nowrap",
           opacity: 0.7,
-          textAlign: isMobile ? "center" : "right",
+          textAlign: isMobile ? "center" : "center",
+          padding: "10px",
         }}
       >
         CopyRights©{new Date().getFullYear()}. All rights reserved by VANAKKAM
