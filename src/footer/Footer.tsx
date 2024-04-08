@@ -237,24 +237,24 @@ const Footer = () => {
 
   return (
     <Box
-      // component="footer"
       style={{
         backgroundColor: "#6B0101",
         color: "#e7e7e7",
-        // padding: "10px",
         textAlign: "center",
       }}
     >
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Grid
           container
+          rowSpacing={0}
           spacing={2}
           display="flex"
           flexDirection="row"
           justifyContent="center"
           alignItems="center"
+          sx={{ marginTop: isMedium ? "20px" : 0 }}
         >
-          <Grid item xs={12} sm={2.5}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInLeft}>
               <Box display="flex" justifyContent="center">
                 <Typography
@@ -263,11 +263,10 @@ const Footer = () => {
                     fontFamily: "VanakkamPDX-Logo-Font",
                     fontSize: "22px",
                     fontWeight: 700,
-                    marginTop: -3,
+                    marginTop: isMobile ? 5 : -3,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    // color: "#e7e7e7",
                   }}
                   component="p"
                 >
@@ -285,8 +284,6 @@ const Footer = () => {
                     <PlaceIcon sx={{ color: "#0077dd" }} />
                     &nbsp; Store Address
                   </a>
-                  {/* <LocationIcon style={{ marginRight: 5 }} />
-                  &nbsp;Store Address */}
                 </Typography>
               </Box>
               <Box sx={{ marginTop: "20px" }}>
@@ -294,7 +291,6 @@ const Footer = () => {
                   variant="body2"
                   sx={{
                     lineHeight: 0.5,
-                    // fontFamily: "Rubik",
                     color: "#d4d4d4",
                     textDecoration: "none",
                   }}
@@ -346,7 +342,18 @@ const Footer = () => {
               </Box>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile ? null : isMedium ? (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          ) : (
             <Divider
               orientation="vertical"
               flexItem
@@ -358,14 +365,14 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={2.4}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInRight}>
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: "VanakkamPDX-Logo-Font",
                   fontSize: "20px",
-                  marginTop: -4.5,
+                  marginTop: isMobile ? 5 : -4.5,
                   fontWeight: 700,
                 }}
                 component="p"
@@ -391,7 +398,7 @@ const Footer = () => {
               </a>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile ? null : isMedium ? null : (
             <Divider
               orientation="vertical"
               flexItem
@@ -403,14 +410,14 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInLeft}>
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: "VanakkamPDX-Logo-Font",
                   fontSize: "22px",
-                  marginTop: -8,
+                  marginTop: isMobile ? 5 : -8,
                   fontWeight: 700,
                 }}
                 component="p"
@@ -454,7 +461,18 @@ const Footer = () => {
               </Box>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile ? null : isMedium ? (
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{
+                backgroundColor: "#fff",
+                height: "100px",
+                alignSelf: "center",
+                marginTop: "30px",
+              }}
+            />
+          ) : (
             <Divider
               orientation="vertical"
               flexItem
@@ -469,8 +487,9 @@ const Footer = () => {
 
           <Grid
             item
-            lg={3}
+            sm={5.5}
             xs={12}
+            lg={2.5}
             sx={{
               textAlign: "center",
               display: "flex",
