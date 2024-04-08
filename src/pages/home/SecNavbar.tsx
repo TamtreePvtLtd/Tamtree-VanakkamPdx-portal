@@ -100,7 +100,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: "5px",
+              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -138,7 +138,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: "5px",
+              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -177,7 +177,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: "5px",
+              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -216,7 +216,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: "5px",
+              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"

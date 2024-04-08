@@ -26,16 +26,19 @@ const slideInRight = keyframes`
 
 function HomePageBanner() {
   const classes = useStyles();
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:1000px)");
 
   return (
-    <Grid container style={{ height: "500px" }}>
+    <Grid
+      container
+      style={{ height: { xs: "500px", md: "1000px", lg: "500px" } }}
+    >
       <Grid
         item
         xs={12}
         lg={6}
         className={classes.imageContainer}
-        sx={{ height: isMobile ? "250px" : "500px" }}
+        sx={{ height: { xs: "250px", md: "650px", lg: "500px" } }}
       >
         <Box className={classes.leftOverlay} style={{ position: "relative" }}>
           <img
@@ -85,7 +88,10 @@ function HomePageBanner() {
         lg={6}
         height={"250px"}
         className={classes.imageContainer}
-        sx={{ position: "relative", height: isMobile ? "250px" : "500px" }}
+        sx={{
+          position: "relative",
+          height: { xs: "250px", md: "600px", lg: "500px" },
+        }}
       >
         <Box className={classes.rightImage} py={2}>
           <Box className={classes.rightOverlay}>
