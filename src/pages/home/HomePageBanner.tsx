@@ -31,18 +31,14 @@ function HomePageBanner() {
   return (
     <Grid
       container
-      style={{
-        height: { xs: "500px", md: "1000px", lg: "500px" } as Height<
-          string | number
-        >,
-      }}
+      style={{ height: { xs: "500px", md: "1000px", lg: "500px" } as any }}
     >
       <Grid
         item
         xs={12}
         lg={6}
         className={classes.imageContainer}
-        sx={{ height: { xs: "250px", md: "650px", lg: "500px" } }}
+        sx={{ height: { xs: "250px", md: "650px", lg: "500px" } as any }}
       >
         <Box className={classes.leftOverlay} style={{ position: "relative" }}>
           <img
@@ -94,7 +90,7 @@ function HomePageBanner() {
         className={classes.imageContainer}
         sx={{
           position: "relative",
-          height: { xs: "250px", md: "600px", lg: "500px" },
+          height: { xs: "250px", md: "600px", lg: "500px" } as any,
         }}
       >
         <Box className={classes.rightImage} py={2}>
