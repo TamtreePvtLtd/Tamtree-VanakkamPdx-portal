@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import VanakkamPdxLogo from "/src/assets/Vanakkam Pdx Logo.png";
+import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
 
@@ -39,14 +39,14 @@ function Navbar() {
             display: "flex",
             alignItems: "center",
             width: "100%",
-            paddingY: isMobile ? 2 : 0,
+            paddingY: isMobile ? "18px" : 0,
             justifyContent: isMobile ? "center" : "space-between",
             flexDirection: "row",
           }}
         >
           <Grid
             item
-            xs={2}
+            xs={1.5}
             sm={2}
             md={2}
             lg={2}
@@ -74,8 +74,8 @@ function Navbar() {
           </Grid>
           <Grid
             item
-            xs={8}
-            sm={8}
+            xs={8.5}
+            sm={7}
             md={8}
             lg={8}
             sx={{
@@ -125,40 +125,35 @@ function Navbar() {
                   textShadow: "1px 1px 1px rgba(0, 0, 0, 0.9)",
                 }}
               >
-                - AUTHENTIC INDIAN CUISINE
+                AUTHENTIC INDIAN CUISINE
               </Typography>
             </Box>
           </Grid>
           <Grid
             item
             xs={2}
-            sm={2}
+            sm={3}
             md={2}
             lg={2}
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              paddingRight: "5px",
+              // paddingRight: "5px",
             }}
           >
             <Button
               sx={{
                 backgroundColor: "green",
                 color: "white",
-                marginLeft: 1,
                 fontWeight: "bold",
                 fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
-                // lineHeight: isMobile ? 1.8 : 2,
-                textAlign: "center",
-                width: "65%",
-                // boxSizing: "unset",
-                // paddingTop: "2px",
                 borderRadius: isMobile ? "10px" : "25px",
-                padding: isMobile ? "3px" : "7px",
+                // padding: isMobile ? "3px" : "7px",
                 textDecoration: "none",
-                textWrap: isMobile ? "nowrap" : "nowrap",
+
+                textWrap: "nowrap",
                 "&:hover": {
                   backgroundColor: "green",
                   color: "white",

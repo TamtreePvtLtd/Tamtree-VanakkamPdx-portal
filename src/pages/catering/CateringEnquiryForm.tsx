@@ -227,8 +227,9 @@ function CateringEnquiryForm() {
                           }}
                           disablePast
                           format="MM-DD-YYYY"
-                          value={field.value||null}
+                          value={field.value || null}
                           onChange={(date) => field.onChange(date)}
+                          className={classes.focused}
                         />
                       )}
                     />
