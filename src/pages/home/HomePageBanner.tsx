@@ -31,7 +31,11 @@ function HomePageBanner() {
   return (
     <Grid
       container
-      style={{ height: { xs: "500px", md: "1000px", lg: "500px" } }}
+      style={{
+        height: { xs: "500px", md: "1000px", lg: "500px" } as Height<
+          string | number
+        >,
+      }}
     >
       <Grid
         item
