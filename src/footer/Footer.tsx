@@ -204,8 +204,249 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
   </a>
 );
 
+// const Footer = () => {
+//   const isMobile = useMediaQuery("(max-width:600px)");
+//   return (
+//     <Box
+//       component="footer"
+//       style={{
+//         backgroundColor: "#6B0101",
+//         color: "#e7e7e7",
+//         padding: "20px",
+//         textAlign: "center",
+//       }}
+//     >
+//       <Box display="flex" flexDirection="row" justifyContent="center">
+//         <Grid
+//           container
+//           spacing={2}
+//           display="flex"
+//           flexDirection="row"
+//           justifyContent="center"
+//         >
+//           <Grid item xs={12} sm={3.5}>
+//             <Animate keyframes={slideInLeft}>
+//               <Box display="flex" justifyContent="center">
+//                 <Typography
+//                   variant="body1"
+//                   sx={{
+//                     fontFamily: "VanakkamPDX-Logo-Font",
+//                     fontSize: "22px",
+//                     fontWeight: 700,
+//                     marginTop: 3,
+//                     display: "flex",
+//                     alignItems: "center",
+//                     justifyContent: "center",
+//                     // color: "#e7e7e7",
+//                   }}
+//                   component="p"
+//                 >
+//                   <a
+//                     href={"https://maps.app.goo.gl/fvMD1uMmsUV5DVHM9"}
+//                     target="_blank"
+//                     style={{
+//                       textDecoration: "none",
+//                       color: "white",
+//                       display: "flex",
+//                       justifyContent: "center",
+//                       alignItems: "center",
+//                     }}
+//                   >
+//                     <PlaceIcon sx={{ color: "#0077dd" }} />
+//                     &nbsp; Store Address
+//                   </a>
+//                   {/* <LocationIcon style={{ marginRight: 5 }} />
+//                   &nbsp;Store Address */}
+//                 </Typography>
+//               </Box>
+//               <Box sx={{ marginTop: "20px" }}>
+//                 <Typography
+//                   variant="body2"
+//                   sx={{
+//                     lineHeight: 0.5,
+//                     // fontFamily: "Rubik",
+//                     color: "#d4d4d4",
+//                     textDecoration: "none",
+//                   }}
+//                 >
+//                   <p> 14740 Cornell Rd #160, Portland 97229</p>
+//                   <div
+//                     style={{
+//                       display: "flex",
+//                       justifyContent: "center",
+//                       alignItems: "center",
+//                     }}
+//                   >
+//                     <a
+//                       style={{ color: "inherit", textDecoration: "none" }}
+//                       href="tel:+15037472049"
+//                     >
+//                       <PhoneIcon sx={{ color: "#E4973C" }} />
+//                     </a>
+//                     <p>&nbsp;Store No:</p>
+//                     <a
+//                       style={{ color: "inherit", textDecoration: "none" }}
+//                       href="tel:+15037472049"
+//                     >
+//                       <p> &nbsp;&nbsp;+1 (503) 747-2049</p>
+//                     </a>
+//                   </div>
+//                   <div
+//                     style={{
+//                       display: "flex",
+//                       justifyContent: "center",
+//                       alignItems: "center",
+//                     }}
+//                   >
+//                     <a
+//                       style={{ color: "inherit", textDecoration: "none" }}
+//                       href="tel:+19714548476"
+//                     >
+//                       <PhoneIcon sx={{ color: "#E4973C" }} />
+//                     </a>
+//                     <p>&nbsp;Ph No:</p>
+//                     <a
+//                       style={{ color: "inherit", textDecoration: "none" }}
+//                       href="tel:+19714548476"
+//                     >
+//                       <p>&nbsp;&nbsp; +1 (971) 454-8476</p>
+//                     </a>
+//                   </div>
+//                 </Typography>
+//               </Box>
+//             </Animate>
+//           </Grid>
+//           {isMobile ? null : (
+//             <Divider
+//               orientation="vertical"
+//               flexItem
+//               style={{
+//                 backgroundColor: "#fff",
+//                 height: "100px",
+//                 alignSelf: "center",
+//                 marginTop: "30px",
+//               }}
+//             />
+//           )}
+//           <Grid item xs={12} sm={3.5}>
+//             <Animate keyframes={slideInRight}>
+//               <Typography
+//                 variant="body1"
+//                 sx={{
+//                   fontFamily: "VanakkamPDX-Logo-Font",
+//                   fontSize: "20px",
+//                   marginTop: 3,
+//                   fontWeight: 700,
+//                 }}
+//                 component="p"
+//               >
+//                 Join Our WhatsApp Group
+//               </Typography>
+//               <a
+//                 href="https://chat.whatsapp.com/FMUJCqwPjPK636Z23FYWnn"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//               >
+//                 <img
+//                   style={{
+//                     width: "70px",
+//                     height: "75px",
+//                     marginRight: "10px",
+//                     marginTop: 20,
+//                     cursor: "pointer",
+//                   }}
+//                   src={Qrcode}
+//                   alt="QR Code"
+//                 />
+//               </a>
+//             </Animate>
+//           </Grid>
+//           {isMobile ? null : (
+//             <Divider
+//               orientation="vertical"
+//               flexItem
+//               style={{
+//                 backgroundColor: "#fff",
+//                 height: "100px",
+//                 alignSelf: "center",
+//                 marginTop: "30px",
+//               }}
+//             />
+//           )}
+//           <Grid item xs={12} sm={3.5}>
+//             <Animate keyframes={slideInLeft}>
+//               <Typography
+//                 variant="body1"
+//                 sx={{
+//                   fontFamily: "VanakkamPDX-Logo-Font",
+//                   fontSize: "22px",
+//                   marginTop: 3,
+//                   fontWeight: 700,
+//                 }}
+//                 component="p"
+//               >
+//                 Contact Us
+//               </Typography>
+//               <Box display="flex" justifyContent="center" marginTop={2} gap={1}>
+//                 <a
+//                   href="https://www.instagram.com/vanakkampdx"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <InstagramIcon
+//                     style={{ width: "30px", height: "30px", margin: "0 5px" }}
+//                   />
+//                 </a>
+//                 <a
+//                   href="https://wa.me/19714548476"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <WhatsAppIcon
+//                     style={{
+//                       width: "35px",
+//                       height: "35px",
+//                       margin: "-2 5px",
+//                       marginBottom: "20px",
+//                     }}
+//                   />
+//                 </a>
+
+//                 <a
+//                   href="https://www.facebook.com/people/Vanakkam-PDX/61558011470925/?mibextid=LQQJ4d"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <FacebookIcon
+//                     style={{ width: "30px", height: "30px", margin: "0 5px" }}
+//                   />
+//                 </a>
+//               </Box>
+//             </Animate>
+//           </Grid>
+//         </Grid>
+//       </Box>
+//       <Typography
+//         variant="body2"
+//         sx={{
+//           textWrap: isMobile ? "wrap" : "nowrap",
+//           opacity: 0.7,
+//           textAlign: isMobile ? "center" : "right",
+//         }}
+//       >
+//         CopyRights©{new Date().getFullYear()}. All rights reserved by VANAKKAM
+//         PDX.
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// export default Footer;
+
 const Footer = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(max-width:960px)");
+
   return (
     <Box
       component="footer"
@@ -224,8 +465,9 @@ const Footer = () => {
           flexDirection="row"
           justifyContent="center"
         >
-          <Grid item xs={12} sm={3.5}>
+          <Grid item xs={12} sm={isTablet ? 6 : 3.5}>
             <Animate keyframes={slideInLeft}>
+              {/* Content for first column */}
               <Box display="flex" justifyContent="center">
                 <Typography
                   variant="body1"
@@ -237,7 +479,6 @@ const Footer = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    // color: "#e7e7e7",
                   }}
                   component="p"
                 >
@@ -255,8 +496,6 @@ const Footer = () => {
                     <PlaceIcon sx={{ color: "#0077dd" }} />
                     &nbsp; Store Address
                   </a>
-                  {/* <LocationIcon style={{ marginRight: 5 }} />
-                  &nbsp;Store Address */}
                 </Typography>
               </Box>
               <Box sx={{ marginTop: "20px" }}>
@@ -264,7 +503,6 @@ const Footer = () => {
                   variant="body2"
                   sx={{
                     lineHeight: 0.5,
-                    // fontFamily: "Rubik",
                     color: "#d4d4d4",
                     textDecoration: "none",
                   }}
@@ -316,7 +554,7 @@ const Footer = () => {
               </Box>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile || isTablet ? null : (
             <Divider
               orientation="vertical"
               flexItem
@@ -328,8 +566,9 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={3.5}>
+          <Grid item xs={12} sm={isTablet ? 6 : 3.5}>
             <Animate keyframes={slideInRight}>
+              {/* Content for second column */}
               <Typography
                 variant="body1"
                 sx={{
@@ -361,7 +600,7 @@ const Footer = () => {
               </a>
             </Animate>
           </Grid>
-          {isMobile ? null : (
+          {isMobile || isTablet ? null : (
             <Divider
               orientation="vertical"
               flexItem
@@ -373,65 +612,72 @@ const Footer = () => {
               }}
             />
           )}
-          <Grid item xs={12} sm={3.5}>
-            <Animate keyframes={slideInLeft}>
-              <Typography
-                variant="body1"
-                sx={{
-                  fontFamily: "VanakkamPDX-Logo-Font",
-                  fontSize: "22px",
-                  marginTop: 3,
-                  fontWeight: 700,
-                }}
-                component="p"
-              >
-                Contact Us
-              </Typography>
-              <Box display="flex" justifyContent="center" marginTop={2} gap={1}>
-                <a
-                  href="https://www.instagram.com/vanakkampdx"
-                  target="_blank"
-                  rel="noopener noreferrer"
+          {!isTablet && (
+            <Grid item xs={12} sm={3.5}>
+              <Animate keyframes={slideInLeft}>
+                {/* Content for third column */}
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontFamily: "VanakkamPDX-Logo-Font",
+                    fontSize: "22px",
+                    marginTop: 3,
+                    fontWeight: 700,
+                  }}
+                  component="p"
                 >
-                  <InstagramIcon
-                    style={{ width: "30px", height: "30px", margin: "0 5px" }}
-                  />
-                </a>
-                <a
-                  href="https://wa.me/19714548476"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  Contact Us
+                </Typography>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  marginTop={2}
+                  gap={1}
                 >
-                  <WhatsAppIcon
-                    style={{
-                      width: "35px",
-                      height: "35px",
-                      margin: "-2 5px",
-                      marginBottom: "20px",
-                    }}
-                  />
-                </a>
-
-                <a
-                  href="https://www.facebook.com/people/Vanakkam-PDX/61558011470925/?mibextid=LQQJ4d"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FacebookIcon
-                    style={{ width: "30px", height: "30px", margin: "0 5px" }}
-                  />
-                </a>
-              </Box>
-            </Animate>
-          </Grid>
+                  <a
+                    href="https://www.instagram.com/vanakkampdx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon
+                      style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                    />
+                  </a>
+                  <a
+                    href="https://wa.me/19714548476"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WhatsAppIcon
+                      style={{
+                        width: "35px",
+                        height: "35px",
+                        margin: "-2 5px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/people/Vanakkam-PDX/61558011470925/?mibextid=LQQJ4d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FacebookIcon
+                      style={{ width: "30px", height: "30px", margin: "0 5px" }}
+                    />
+                  </a>
+                </Box>
+              </Animate>
+            </Grid>
+          )}
         </Grid>
       </Box>
       <Typography
         variant="body2"
         sx={{
-          textWrap: isMobile ? "wrap" : "nowrap",
+          textWrap: isMobile || isTablet ? "wrap" : "nowrap",
           opacity: 0.7,
-          textAlign: isMobile ? "center" : "right",
+          textAlign: isMobile || isTablet ? "center" : "right",
         }}
       >
         CopyRights©{new Date().getFullYear()}. All rights reserved by VANAKKAM
