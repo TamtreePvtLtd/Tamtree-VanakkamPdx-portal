@@ -22,7 +22,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
 import { ICateringEnquiry } from "../../interface/types";
 import { createCateringEnquiry } from "../../services/api";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
@@ -120,6 +120,8 @@ function CateringEnquiryForm() {
   };
 
   const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
+    // Format the date using date-fns
+    data.eventDate = format(new Date(data.eventDate), "dd-MM-yyyy");
     setFormData(data);
     handleOpenDialog();
   };
@@ -225,14 +227,14 @@ function CateringEnquiryForm() {
                           }}
                           disablePast
                           format="MM-DD-YYYY"
-                          value={field.value ? dayjs(field.value) : null}
+                          value={field.value || null}
                           onChange={(date) => field.onChange(date)}
                           className={classes.focused}
                         />
                       )}
                     />
                   </LocalizationProvider>
-                 {errors.eventDate && (
+                  {errors.eventDate && (
                     <FormHelperText error>
                       {errors.eventDate.message}
                     </FormHelperText>
