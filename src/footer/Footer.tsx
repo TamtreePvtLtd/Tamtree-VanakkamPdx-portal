@@ -3,6 +3,8 @@ import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import PlaceIcon from "@mui/icons-material/Place";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 const slideInLeft = keyframes`
   from {
@@ -239,8 +241,22 @@ const Footer = () => {
                   }}
                   component="p"
                 >
-                  <LocationIcon style={{ marginRight: 5 }} />
-                  &nbsp;Store Address
+                  <a
+                    href={"https://maps.app.goo.gl/fvMD1uMmsUV5DVHM9"}
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PlaceIcon sx={{ color: "#0077dd" }} />
+                    &nbsp; Store Address
+                  </a>
+                  {/* <LocationIcon style={{ marginRight: 5 }} />
+                  &nbsp;Store Address */}
                 </Typography>
               </Box>
               <Box sx={{ marginTop: "20px" }}>
@@ -261,12 +277,18 @@ const Footer = () => {
                       alignItems: "center",
                     }}
                   >
-                    <p>Store No:</p>
                     <a
                       style={{ color: "inherit", textDecoration: "none" }}
                       href="tel:+15037472049"
                     >
-                      <p> +1 (503) 747-2049</p>
+                      <PhoneIcon sx={{ color: "#E4973C" }} />
+                    </a>
+                    <p>&nbsp;Store No:</p>
+                    <a
+                      style={{ color: "inherit", textDecoration: "none" }}
+                      href="tel:+15037472049"
+                    >
+                      <p> &nbsp;&nbsp;+1 (503) 747-2049</p>
                     </a>
                   </div>
                   <div
@@ -276,12 +298,18 @@ const Footer = () => {
                       alignItems: "center",
                     }}
                   >
-                    <p>Ph No:</p>
                     <a
                       style={{ color: "inherit", textDecoration: "none" }}
                       href="tel:+19714548476"
                     >
-                      <p> +1 971-454-8476</p>
+                      <PhoneIcon sx={{ color: "#E4973C" }} />
+                    </a>
+                    <p>&nbsp;Ph No:</p>
+                    <a
+                      style={{ color: "inherit", textDecoration: "none" }}
+                      href="tel:+19714548476"
+                    >
+                      <p>&nbsp;&nbsp; +1 (971) 454-8476</p>
                     </a>
                   </div>
                 </Typography>
@@ -385,7 +413,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/Vanakkam%20PDX"
+                  href="https://www.facebook.com/people/Vanakkam-PDX/61558011470925/?mibextid=LQQJ4d"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -406,7 +434,7 @@ const Footer = () => {
           textAlign: isMobile ? "center" : "right",
         }}
       >
-        CopyRights©{new Date().getFullYear()}. All rights reserved by VANNAKKAM
+        CopyRights©{new Date().getFullYear()}. All rights reserved by VANAKKAM
         PDX.
       </Typography>
     </Box>

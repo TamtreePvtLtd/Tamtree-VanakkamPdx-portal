@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
+import VanakkamPdxLogo from "/src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
 
