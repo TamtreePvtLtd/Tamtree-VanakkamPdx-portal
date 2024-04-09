@@ -7,7 +7,8 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 function Navbar() {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width:700px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMedium = useMediaQuery("(max-width:1024px)");
   const handleLogoClick = () => {
     navigate(paths.ROOT);
   };
@@ -135,7 +136,7 @@ function Navbar() {
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "row",
-                marginLeft: isMobile ? 0 : 2,
+                marginLeft: isMobile ? 0 : (isMedium ? "120px" : "270px"),
                 marginTop: isMobile ? 0 : 2.5,
               }}
             >
@@ -143,7 +144,7 @@ function Navbar() {
                 variant="body1"
                 sx={{
                   lineHeight: 0.2,
-                  color: "#6B0101",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: isMobile ? "12px" : "18px",
                   display: "flex",
