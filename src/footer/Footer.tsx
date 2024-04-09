@@ -222,13 +222,13 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
 );
 
 const openingHours = [
-  { day: "Monday", timing: "11AM - 9PM" },
-  { day: "Tuesday", timing: "Closed" },
-  { day: "Wednesday", timing: "11AM - 9PM" },
-  { day: "Thursday", timing: "11AM - 10PM" },
-  { day: "Friday", timing: "11AM - 10PM" },
-  { day: "Saturday", timing: "11AM - 10PM" },
-  { day: "Sunday", timing: "11AM - 9PM" },
+  { day: "Monday", timing: "11 AM - 9.30 PM" },
+  { day: "Tuesday", timing: "11 AM - 9.30 PM" },
+  { day: "Wednesday", timing: "11 AM - 9.30 PM" },
+  { day: "Thursday", timing: "11 AM - 9.30 PM" },
+  { day: "Friday", timing: "11 AM - 12 AM" },
+  { day: "Saturday", timing: "11 AM - 12 AM" },
+  { day: "Sunday", timing: "11 AM - 9.30 PM" },
 ];
 
 const Footer = () => {
