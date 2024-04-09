@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
 import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -80,8 +81,8 @@ function Navbar() {
             lg={8}
             sx={{
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
+              flexDirection: isMobile ? "column" : "row",
+              justifyContent: "flex-start",
               alignItems: isMobile ? "center" : "flex-start",
               textAlign: "center",
               marginTop: 1,
@@ -126,6 +127,56 @@ function Navbar() {
                 }}
               >
                 AUTHENTIC INDIAN CUISINE
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
+                marginLeft: isMobile ? 0 : 2,
+                marginTop: isMobile ? 0 : 2.5,
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  lineHeight: 0.2,
+                  color: "#6B0101",
+                  textDecoration: "none",
+                  fontSize: isMobile ? "12px" : "18px",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: isMobile ? 700 : "bold",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: isMobile ? "center" : "flex-start",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    textAlign: "center",
+                    textWrap: "nowrap",
+                  }}
+                >
+                  <a
+                    style={{ color: "inherit", textDecoration: "none" }}
+                    href="tel:+19714548476"
+                  >
+                    <PhoneIcon
+                      sx={{
+                        color: "#6B0101",
+                        fontSize: isMobile ? "12px" : "18px",
+                      }}
+                    />
+                    <span>&nbsp;Ph No:</span>
+                    <span>&nbsp;&nbsp; +1 (971) 454-8476</span>
+                  </a>
+                </div>
               </Typography>
             </Box>
           </Grid>

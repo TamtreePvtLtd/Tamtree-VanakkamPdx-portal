@@ -100,7 +100,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
+              marginTop: { xs: "5px", sm: "5px", md: "5px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -115,6 +115,7 @@ const SecNavbar = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              marginX:2
             }}
           >
             <Button
@@ -128,6 +129,7 @@ const SecNavbar = () => {
                   fontSize: "19px",
                   fontWeight: "bold",
                   fontFamily: "Acme",
+                  textWrap:"nowrap",
                   "&:hover": { color: "green", textDecoration: "none" },
                 }}
               >
@@ -138,7 +140,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
+              marginTop: { xs: "5px", sm: "5px", md: "5px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -177,7 +179,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
+              marginTop: { xs: "5px", sm: "5px", md: "5px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"
@@ -216,7 +218,7 @@ const SecNavbar = () => {
           <Divider
             sx={{
               ...commonDividerStyles,
-              marginTop: { xs: "5px", sm: "5px", md: "20px", lg: "5px" },
+              marginTop: { xs: "5px", sm: "5px", md: "5px", lg: "5px" },
               height: isMobile ? "1px" : "25px",
             }}
             orientation="vertical"

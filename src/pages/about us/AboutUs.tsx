@@ -24,7 +24,7 @@ function AboutUs() {
   return (
     <>
       <PageBanner
-        imageUrl="https://as1.ftcdn.net/v2/jpg/06/35/76/76/1000_F_635767696_2fpfuQhfCVGchFb4KpHMroELgzK4usZl.jpg"
+        imageUrl="https://t4.ftcdn.net/jpg/06/78/31/35/240_F_678313575_fGs0oNoFVTzJV4fM1duyo1qqWqf1Yr0Y.jpg"
         content="ABOUT US"
         description="come enjoy our delicious food and great service"
         showTopButtons={false}
