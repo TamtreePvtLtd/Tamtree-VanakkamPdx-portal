@@ -39,7 +39,7 @@ function AboutUs() {
         alignItems={"center"}
         height={"auto"}
         paddingBottom={1}
-        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5}}
+        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5 }}
       >
         <Grid
           item
@@ -50,7 +50,7 @@ function AboutUs() {
             flexDirection: "column",
             justifyContent: isMobile ? "center" : "flex-end",
             alignItems: isMobile ? "center" : "start",
-            marginTop:"15px"
+            marginTop: "15px",
           }}
         >
           <img
@@ -109,10 +109,12 @@ function AboutUs() {
                 lineHeight: "2rem",
               }}
             >
-              Vanakkam pdx is the collective outcome of authentic south Indian
-              cuisine and the passion to create an exciting fine dining
-              experience. We believe in creating an interesting and unique place
-              for you to enjoy our simple and great tasting 'south Indian' food.
+              Welcome to Vanakkam PDX where we bring the vibrant flavors and
+              rich culinary heritage of India to Portland, Oregon. At Vanakkam
+              Pdx, we are passionate about creating an authentic Indian Cuisine
+              experience that tantalizes the taste buds and transports you to
+              the bustling streets of Chennai, the royal courts of Lucknow, or
+              the serene backwaters of Kerala, right here in Portland, Oregon.
             </Typography>
           </Animate>
         </Grid>
@@ -149,7 +151,7 @@ function AboutUs() {
               fontSize: "30px",
               fontWeight: 800,
               textAlign: "center",
-              paddingBottom:2
+              paddingBottom: 2,
             }}
           >
             THE STORY OF VANAKKAM PDX
@@ -165,20 +167,25 @@ function AboutUs() {
               lineHeight: "2rem",
             }}
           >
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Experience authentic Indian
-            cuisine at Vanakkam PDX South Indian Restaurant, located on Rare
-            Course Road. Vanakkam PDX South Indian Restaurant invites you to
-            savor the authentic flavors of South India in the heart of the east.
-            Whether you're a seasoned aficionado of Indian cuisine or a curious
-            first-timer, Vanakkam PDX delivers a tantalizing feast that will
-            entice your senses and leave a lasting impression.Here, you'll find
-            a diverse menu that caters to both vegetarian and non-vegetarian
-            tastes. Each dish is prepared with fresh ingredients to ensure an
-            authentic Indian experience. The dedicated staff at Vanakkam PDX
-            ensures that your dining experience is both memorable and
-            satisfying. The restaurant also stands out as a top choice for
-            catering services, adept at handling functions and gatherings of all
-            types, perfectly blending flavor, culture, and comfort.
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Our journey began with a vision to
+            share the diverse and colorful tapestry of Indian cuisine with our
+            community. Drawing inspiration from the myriad regional cuisines of
+            India, our chefs craft each dish with care and attention to detail,
+            using traditional spices, fresh ingredients, and time-honored
+            cooking techniques. From aromatic biryanis to fiery curries, from
+            crispy dosas to decadent desserts, our menu showcases the best of
+            Indian gastronomy, curated to cater to every palate and preference.
+            Whether you're a fan of the fiery heat of South Indian cuisine or
+            the delicate flavors of North Indian cuisine, there's something for
+            everyone at Vanakkam PDX. But it's not just about the food; it's
+            about the entire dining experience. Our warm and inviting ambiance,
+            attentive service, and commitment to excellence ensure that every
+            visit to Vanakkam PDX is a memorable one. Whether you're celebrating
+            a special occasion, enjoying a meal with family and friends, or
+            simply craving a taste of India, we invite you to join us on a
+            culinary journey like no other. Thank you for choosing Vanakkam PDX.
+            We look forward to serving you and sharing the flavors
+            of India with you.
           </Typography>
         </Animate>
       </Grid>
