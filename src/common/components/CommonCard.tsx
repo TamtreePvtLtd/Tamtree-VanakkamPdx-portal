@@ -36,7 +36,6 @@ function CommonProductCard(props: IProps) {
           boxShadow: "none",
           margin: "30px",
           padding: 0,
-          // borderRadius: "10%",
         }}
       >
         <Box
