@@ -32,7 +32,6 @@ function CateringCard() {
               justifyContent: "center",
               color: "#6B0101",
               padding: "10px",
-              textAlign: isMobile ? "center" : "center",
             }}
           >
             Elevating Every Event with Our Exquisite Cuisine!

@@ -109,7 +109,6 @@ function PageBanner(props: IProps) {
               sx={{
                 textTransform: "uppercase",
                 marginBottom: "0 !important",
-                // fontFamily: "VanakkamPDX-Logo-Font",
               }}
               variant="h2"
             >
@@ -129,7 +128,6 @@ function PageBanner(props: IProps) {
               
                 }}
                 variant="h6"
-                // fontWeight={"small"}
               >
                 {description}
               </Typography>
