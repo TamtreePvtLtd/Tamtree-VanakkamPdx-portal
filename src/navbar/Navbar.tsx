@@ -60,15 +60,15 @@ function Navbar() {
             }}
           >
             <img
-              src={VanakkamPdxLogo}
+              src={"/src/assets/Vanakkam pdx  logo 2.png"}
               alt="Logo"
               onClick={handleLogoClick}
               style={{
                 height: "auto",
-                width: isMobile ? "60px" : "70px",
+                width: isMobile ? "60px" : "85px",
                 marginRight: isMobile ? 0 : 50,
                 cursor: "pointer",
-                backgroundColor: "white",
+                // backgroundColor: "white",
                 borderRadius: "50%",
                 marginTop: 5,
               }}
@@ -117,7 +117,7 @@ function Navbar() {
               <Typography
                 variant="subtitle1"
                 sx={{
-                  color: "green",
+                  color: "#6ebe44",
                   fontSize: isMobile ? "12px" : "none",
                   fontWeight: "950",
                   fontFamily: "alfa_slab_one",
