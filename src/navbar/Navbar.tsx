@@ -51,7 +51,7 @@ function Navbar() {
             xs={1.5}
             sm={2}
             md={2}
-            lg={2}
+            lg={1.5}
             sx={{
               display: "flex",
               alignItems: isMobile ? "center" : "center",
@@ -79,7 +79,7 @@ function Navbar() {
             xs={8.5}
             sm={7}
             md={8}
-            lg={8}
+            lg={8.5}
             sx={{
               display: "flex",
               flexDirection: isMobile ? "column" : "row",
@@ -166,7 +166,7 @@ function Navbar() {
                 >
                   <a
                     style={{ color: "inherit", textDecoration: "none" }}
-                    href="tel:+19714548476"
+                    href="tel:+15037472049"
                   >
                     <PhoneIcon
                       sx={{
@@ -174,8 +174,8 @@ function Navbar() {
                         fontSize: isMobile ? "12px" : "18px",
                       }}
                     />
-                    <span>&nbsp;Ph No:</span>
-                    <span>&nbsp;&nbsp; +1 (971) 454-8476</span>
+                    <span>&nbsp;Call Us:</span>
+                    <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
                   </a>
                 </div>
               </Typography>
