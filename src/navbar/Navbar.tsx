@@ -83,7 +83,7 @@ function Navbar() {
             sx={{
               display: "flex",
               flexDirection: isMobile ? "column" : "row",
-              justifyContent: "flex-start",
+              justifyContent: "space-between",
               alignItems: isMobile ? "center" : "flex-start",
               textAlign: "center",
               marginTop: 1,
@@ -136,48 +136,31 @@ function Navbar() {
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "row",
-                marginLeft: isMobile ? 0 : (isMedium ? "120px" : "270px"),
-                marginTop: isMobile ? 0 : 2.5,
+                marginLeft: isMobile ? 0 : isMedium ? "120px" : "270px",
+                marginTop: isMobile ? 0 : 2,
               }}
             >
               <Typography
                 variant="body1"
                 sx={{
-                  lineHeight: 0.2,
                   color: "black",
-                  textDecoration: "none",
                   fontSize: isMobile ? "12px" : "18px",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
                   fontWeight: isMobile ? 700 : "bold",
                 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: isMobile ? "center" : "flex-start",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    textAlign: "center",
-                    textWrap: "nowrap",
-                  }}
+                <a
+                  style={{ color: "inherit", textDecoration: "none",display:"flex",justifyContent:"center",alignItems:"center" }}
+                  href="tel:+15037472049"
                 >
-                  <a
-                    style={{ color: "inherit", textDecoration: "none" }}
-                    href="tel:+15037472049"
-                  >
-                    <PhoneIcon
-                      sx={{
-                        color: "#6B0101",
-                        fontSize: isMobile ? "12px" : "18px",
-                      }}
-                    />
-                    <span>&nbsp;Call Us:</span>
-                    <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
-                  </a>
-                </div>
+                  <PhoneIcon
+                    sx={{
+                      color: "#6B0101",
+                      fontSize: isMobile ? "12px" : "18px",
+                    }}
+                  />
+                  <span>&nbsp;Call Us:</span>
+                  <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
+                </a>
               </Typography>
             </Box>
           </Grid>
