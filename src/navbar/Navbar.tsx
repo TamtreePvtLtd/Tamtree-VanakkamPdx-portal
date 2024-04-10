@@ -117,7 +117,7 @@ function Navbar() {
               <Typography
                 variant="subtitle1"
                 sx={{
-                  color: "#6ebe44",
+                  color: "green",
                   fontSize: isMobile ? "12px" : "none",
                   fontWeight: "950",
                   fontFamily: "alfa_slab_one",
@@ -218,7 +218,7 @@ function Navbar() {
             >
               <Typography
                 sx={{
-                  fontSize: isMobile ? "8px" : "17px",
+                  fontSize: isMobile ? "7px" : "17px",
                   fontFamily: "PT Sans Regular 400",
                   fontWeight: "bold",
                 }}

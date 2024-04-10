@@ -282,7 +282,7 @@ const Footer = () => {
                     }}
                   >
                     <PlaceIcon sx={{ color: "#0077dd" }} />
-                    &nbsp; Store Address
+                    &nbsp; Address
                   </a>
                 </Typography>
               </Box>
