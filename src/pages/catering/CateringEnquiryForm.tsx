@@ -49,10 +49,7 @@ const schema = yup.object().shape({
   typeOfEvent: yup.string().max(30, "Maximum 30 characters allowed"),
   guestCount: yup.number(),
 
-  mobileNumber: yup
-    .string()
-    .required("Mobile number is required")
-    .max(10, "Maximum 10 characters allowed"),
+  mobileNumber: yup.string().required("Mobile number is required").max(10),
   message: yup.string().max(250, "Message Maximum 250 characters allowed"),
   eventDate: yup.string().required("Event date is required"),
 });
@@ -191,7 +188,7 @@ function CateringEnquiryForm() {
                   }}
                   inputProps={{
                     type: "tel",
-                    maxLength: 11,
+                    maxLength: 10,
                     onChange: handleInputChange,
                   }}
                   className={classes.focused}
