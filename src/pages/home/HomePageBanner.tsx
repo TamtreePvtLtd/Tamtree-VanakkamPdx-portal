@@ -140,7 +140,7 @@ function HomePageBanner() {
               fontFamily={"jacques Francois"}
             >
               <Animate keyframes={slideInRight} duration={600} delay={50}>
-                <span>WHAT ALL</span>
+                <span>ALL</span>
               </Animate>
             </Typography>
             <Typography

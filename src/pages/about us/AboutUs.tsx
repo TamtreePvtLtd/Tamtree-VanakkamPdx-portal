@@ -178,8 +178,9 @@ function AboutUs() {
             the best of Indian gastronomy, curated to cater to every palate and
             preference. Whether you're a fan of the fiery heat of South Indian
             cuisine or the delicate flavors of North Indian cuisine, there's
-            something for everyone at Vanakkam PDX. But it's not just about the
-            food; it's about the entire dining experience. Our warm and inviting
+            something for everyone at Vanakkam PDX.<br></br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;But it's not just about the food;
+            it's about the entire dining experience. Our warm and inviting
             ambiance, attentive service, and commitment to excellence ensure
             that every visit to Vanakkam PDX is a memorable one. Whether you're
             celebrating a special occasion, enjoying a meal with family and
