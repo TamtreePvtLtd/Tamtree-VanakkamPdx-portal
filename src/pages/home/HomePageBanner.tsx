@@ -99,7 +99,7 @@ function HomePageBanner() {
               paddingTop={1}
               variant="body1"
               textAlign="center"
-              fontSize={30}
+              sx={{fontSize:isMobile ? 25 : 30}}
               fontWeight={900}
               lineHeight={1}
               fontFamily={"jacques Francois"}
@@ -112,7 +112,7 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={45}
+              sx={{fontSize:isMobile ? 40 : 45}}
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
@@ -123,7 +123,7 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={20}
+              sx={{fontSize:isMobile ? 15 : 20}}
               fontStyle={"italic"}
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
@@ -135,7 +135,7 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={25}
+              sx={{fontSize:isMobile ? 20 : 25}}
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
             >
@@ -146,7 +146,7 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={45}
+              sx={{fontSize:isMobile ? 40 : 45}}
               lineHeight={1.2}
               fontFamily={"jacques Francois"}
             >
@@ -157,7 +157,7 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={20}
+              sx={{fontSize:isMobile ? 15 : 20}}
               fontStyle={"italic"}
               lineHeight={1}
               fontFamily={"jacques Francois"}
@@ -169,7 +169,8 @@ function HomePageBanner() {
             <Typography
               variant="body1"
               textAlign="center"
-              fontSize={30}
+              sx={{fontSize:isMobile ? 25 : 30}}
+              paddingBottom={2}
               fontWeight={900}
               lineHeight={1.5}
               fontFamily={"jacques Francois"}
