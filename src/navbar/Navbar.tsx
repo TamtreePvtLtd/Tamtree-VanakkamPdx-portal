@@ -245,8 +245,8 @@ function Navbar() {
               sx={{
                 marginRight: isMobile ? "2px" : "10px",
                 backgroundColor: "green",
-                height: isMobile ? "22px" : "40px",
-                width: isMobile ? "80px" : "155px",
+                height: isMobile ? "22px" : "45px",
+                width: isMobile ? "80px" : "150px",
                 color: "white",
                 fontWeight: "bold",
                 fontFamily: "PT Sans Regular 400",
@@ -254,11 +254,12 @@ function Navbar() {
                 borderRadius: isMobile ? "10px" : "25px",
                 // padding: isMobile ? "3px" : "7px",
                 textDecoration: "none",
-                marginTop: isMobile ? "8px" : "5px",
+                marginTop: isMobile ? "8px" : "4px",
                 textWrap: "nowrap",
                 "&:hover": {
-                  backgroundColor: "green",
-                  color: "white",
+                  backgroundColor: "white",
+                  color: "#6B0101",
+                  boxShadow: "0px 4px 8px rgba(0.1, 0.1, 0.1, 0.5)"
                 },
               }}
               component="a"
