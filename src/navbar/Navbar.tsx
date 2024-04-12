@@ -8,7 +8,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 function Navbar() {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:600px)");
-  const isMedium = useMediaQuery("(max-width:1024px)");
+  const isMedium = useMediaQuery("(max-width:1200px)");
   const handleLogoClick = () => {
     navigate(paths.ROOT);
   };
@@ -18,16 +18,16 @@ function Navbar() {
       position="fixed"
       sx={{
         backgroundColor: "#E4973C",
-        padding: isMobile ? 1 : 1,
+        padding: isMobile ? "1px" : 0,
         boxShadow: 0,
         margin: 0,
         width: "100%",
-        height: "85px",
+        height: isMedium ? "85px" : "80px",
       }}
     >
       <Toolbar
         sx={{
-          padding: isMobile ? 1 : 0,
+          padding: isMobile ? 1 : (isMedium ? 1 : 0),
           marginBottom: "5px",
           display: "flex",
           alignItems: "center",
@@ -36,7 +36,7 @@ function Navbar() {
       >
         <Grid
           container
-          spacing={2}
+          spacing={1}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -76,25 +76,32 @@ function Navbar() {
           </Grid>
           <Grid
             item
-            xs={8.5}
+            xs={7.5}
             sm={7}
             md={8}
             lg={8.5}
             sx={{
               display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              justifyContent: "space-between",
+              flexDirection: isMobile ? "column" : isMedium ? "column" : "row",
+              justifyContent: isMedium ? "center" : "space-between",
               alignItems: isMobile ? "center" : "flex-start",
               textAlign: "center",
               marginTop: 1,
+              width: "auto",
             }}
           >
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: isMobile
+                  ? "center"
+                  : (isMedium
+                  ? "center"
+                  : "start"),
                 alignItems: "center",
+                marginRight: isMobile ? 0 : (isMedium ? 0 : "20%"),
+                width: "50%",
               }}
             >
               <Typography
@@ -129,44 +136,101 @@ function Navbar() {
               >
                 AUTHENTIC INDIAN CUISINE
               </Typography>
+              {
+                isMedium ? <Typography
+                variant="body1"
+                sx={{
+                  color: "black",
+                  fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
+                  fontWeight: isMobile ? 700 : "bold",
+                  textAlign: "center",
+                  textWrap: "nowrap",
+                  wordWrap: "normal",
+                  wordBreak: "normal",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: isMedium ? "5px" : 0,
+                }}
+              >
+                <a
+                  style={{
+                    color: "inherit",
+                    textDecoration: "none",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  href="tel:+15037472049"
+                >
+                  <PhoneIcon
+                    sx={{
+                      color: "#6B0101",
+                      fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
+                    }}
+                  />
+                  <span>&nbsp;Call Us:</span>
+                  <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
+                </a>
+              </Typography>  : null
+              }
             </Box>
+            { isMedium ? null :
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: isMobile
+                  ? "center"
+                  : isMedium
+                  ? "center"
+                  : "center",
                 flexDirection: "row",
-                marginLeft: isMobile ? 0 : isMedium ? "120px" : "270px",
-                marginTop: isMobile ? 0 : 2,
+                marginLeft: isMobile ? 0 : isMedium ? 0 : "20%",
+                marginTop: isMobile ? 0 : isMedium ? 0 : 2.1,
               }}
             >
               <Typography
                 variant="body1"
                 sx={{
                   color: "black",
-                  fontSize: isMobile ? "12px" : "18px",
+                  fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
                   fontWeight: isMobile ? 700 : "bold",
+                  textAlign: "center",
+                  textWrap: "nowrap",
+                  wordWrap: "normal",
+                  wordBreak: "normal",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: isMedium ? "5px" : 0,
                 }}
               >
                 <a
-                  style={{ color: "inherit", textDecoration: "none",display:"flex",justifyContent:"center",alignItems:"center" }}
+                  style={{
+                    color: "inherit",
+                    textDecoration: "none",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
                   href="tel:+15037472049"
                 >
                   <PhoneIcon
                     sx={{
                       color: "#6B0101",
-                      fontSize: isMobile ? "12px" : "18px",
+                      fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
                     }}
                   />
                   <span>&nbsp;Call Us:</span>
                   <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
                 </a>
               </Typography>
-            </Box>
+            </Box>}
           </Grid>
           <Grid
             item
-            xs={2}
+            xs={3}
             sm={3}
             md={2}
             lg={2}
@@ -174,12 +238,15 @@ function Navbar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              // paddingRight: "5px",
             }}
           >
             <Button
+              size={isMobile ? "medium" : "large"}
               sx={{
+                marginRight: isMobile ? "2px" : "10px",
                 backgroundColor: "green",
+                height: isMobile ? "22px" : "40px",
+                width: isMobile ? "80px" : "155px",
                 color: "white",
                 fontWeight: "bold",
                 fontFamily: "PT Sans Regular 400",
@@ -187,7 +254,7 @@ function Navbar() {
                 borderRadius: isMobile ? "10px" : "25px",
                 // padding: isMobile ? "3px" : "7px",
                 textDecoration: "none",
-
+                marginTop: isMobile ? "8px" : "5px",
                 textWrap: "nowrap",
                 "&:hover": {
                   backgroundColor: "green",
@@ -201,9 +268,10 @@ function Navbar() {
             >
               <Typography
                 sx={{
-                  fontSize: isMobile ? "7px" : "17px",
+                  fontSize: isMobile ? "9px" : "15px",
                   fontFamily: "PT Sans Regular 400",
                   fontWeight: "bold",
+                  marginTop: isMobile ? "1.8px" : "3px",
                 }}
               >
                 ORDER ONLINE

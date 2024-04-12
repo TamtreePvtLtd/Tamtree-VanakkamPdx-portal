@@ -233,7 +233,7 @@ const openingHours = [
 
 const Footer = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
-  const isMedium = useMediaQuery("(max-width:1024px)");
+  const isMedium = useMediaQuery("(max-width:1200px)");
 
   return (
     <Box
@@ -252,7 +252,7 @@ const Footer = () => {
           flexDirection="row"
           justifyContent="center"
           alignItems="center"
-          sx={{ marginTop: isMedium ? "20px" : 0 }}
+          sx={{ marginTop: isMedium ? "40px" : 0 }}
         >
           <Grid item xs={12} sm={5.5} lg={2.5}>
             <Animate keyframes={slideInLeft}>
@@ -295,7 +295,7 @@ const Footer = () => {
                     textDecoration: "none",
                   }}
                 >
-                  <p> 14740 Cornell Rd #160, Portland 97229</p>
+                  <p style={{textAlign:"center",wordWrap:"break-word"}}> 14740 Cornell Rd #160, Portland 97229</p>
                   <div
                     style={{
                       display: "flex",
