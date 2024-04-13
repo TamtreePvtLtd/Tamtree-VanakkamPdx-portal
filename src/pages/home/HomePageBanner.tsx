@@ -67,7 +67,7 @@ function HomePageBanner() {
                   fontSize: isMobile ? "20px" : "35px",
                 }}
               >
-                Looking for authentic food flavours?
+                Looking for authentic food flavors?
               </p>
               <p
                 style={{
