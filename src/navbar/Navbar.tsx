@@ -1,14 +1,15 @@
 import { AppBar, Toolbar, Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
-import { paths } from "../router/paths";
 import { useMediaQuery } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
+import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
+import { paths } from "../router/paths";
 
 function Navbar() {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:600px)");
   const isMedium = useMediaQuery("(max-width:1200px)");
+
   const handleLogoClick = () => {
     navigate(paths.ROOT);
   };
@@ -68,7 +69,6 @@ function Navbar() {
                 width: isMobile ? "60px" : "85px",
                 marginRight: isMobile ? 0 : 50,
                 cursor: "pointer",
-                // backgroundColor: "white",
                 borderRadius: "50%",
                 marginTop: 5,
               }}
@@ -94,11 +94,7 @@ function Navbar() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: isMobile
-                  ? "center"
-                  : (isMedium
-                  ? "center"
-                  : "start"),
+                justifyContent: isMobile ? "center" : (isMedium ? "center" : "start"),
                 alignItems: "center",
                 marginRight: isMobile ? 0 : (isMedium ? 0 : "20%"),
                 width: "50%",
@@ -180,11 +176,7 @@ function Navbar() {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: isMobile
-                  ? "center"
-                  : isMedium
-                  ? "center"
-                  : "center",
+                justifyContent: isMobile ? "center" : isMedium ? "center" : "center",
                 flexDirection: "row",
                 marginLeft: isMobile ? 0 : isMedium ? 0 : "20%",
                 marginTop: isMobile ? 0 : isMedium ? 0 : 2.1,
@@ -252,7 +244,6 @@ function Navbar() {
                 fontFamily: "PT Sans Regular 400",
                 cursor: "pointer",
                 borderRadius: isMobile ? "10px" : "25px",
-                // padding: isMobile ? "3px" : "7px",
                 textDecoration: "none",
                 marginTop: isMobile ? "8px" : "4px",
                 textWrap: "nowrap",
