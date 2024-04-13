@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Grid, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -16,16 +16,16 @@ function Navbar() {
 
   return (
     <AppBar
-  position="fixed" 
-  sx={{
-    backgroundColor: "#E4973C",
-    padding: isMobile ? "1px" : isMedium ? "3px" : null,
-    boxShadow: 0,
-    margin: 0,
-    width: "100%",
-    height: "auto", 
-  }}
->
+      position="fixed"
+      sx={{
+        backgroundColor: "#E4973C",
+        padding: isMobile ? "1px" : isMedium ? "3px" : null,
+        boxShadow: 0,
+        margin: 0,
+        width: "100%",
+        height: "auto",
+      }}
+    >
       <Toolbar
         sx={{
           marginBottom: "5px",
@@ -80,7 +80,6 @@ function Navbar() {
             lg={8.5}
             sx={{
               display: "flex",
-              flexDirection: isMobile ? "column" : isMedium ? "column" : "row",
               justifyContent: isMedium ? "center" : "space-between",
               alignItems: isMobile ? "center" : (isMedium ? "center" : "flex-start"),
               textAlign: "center",
@@ -89,16 +88,37 @@ function Navbar() {
               width: "auto",
             }}
           >
-            <Box
+            <Grid container sx={{
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            justifyContent: isMobile ? "center" : "space-between",
+            flexDirection: "row",
+          }}>
+            <Grid item xs={12} sm={12} md={6}
               sx={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: isMobile ? "center" : (isMedium ? "center" : "start"),
-                alignItems: "center",
-                marginRight: isMobile ? 0 : (isMedium ? 0 : "20%"),
-                width: "50%",
+                flexDirection: "row",
+                justifyContent: isMobile ? "center" : (isMedium ? "center" : "flex-start"),
+                alignItems: isMobile ? "center" : (isMedium ? "center" : "start"),
               }}
             >
+              <Grid container sx={{
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            textWrap:"nowrap",
+            justifyContent: isMobile ? "center" : "space-between",
+            flexDirection: "column",
+            marginRight:isMobile ? null : isMedium ? null : 30
+          }}>
+            <Grid item sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",  
+            flexDirection:"row", 
+            textWrap:"nowrap"
+          }}> 
               <Typography
                 variant="h5"
                 component="div"
@@ -116,6 +136,14 @@ function Navbar() {
               >
                 VANAKKAM PDX
               </Typography>
+              </Grid>
+              <Grid  item sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center", 
+            flexDirection:"row" ,
+            textWrap:"nowrap" 
+          }}>
               <Typography
                 variant="subtitle1"
                 sx={{
@@ -131,54 +159,16 @@ function Navbar() {
               >
                 AUTHENTIC INDIAN CUISINE
               </Typography>
-              {
-                isMedium ? <Typography
-                variant="body1"
-                sx={{
-                  color: "black",
-                  fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
-                  fontWeight: isMobile ? 700 : "bold",
-                  textAlign: "center",
-                  textWrap: "nowrap",
-                  wordWrap: "normal",
-                  wordBreak: "normal",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginBottom: isMedium ? "5px" : 0,
-                }}
-              >
-                <a
-                  style={{
-                    color: "inherit",
-                    textDecoration: "none",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  href="tel:+15037472049"
-                >
-                  <PhoneIcon
-                    sx={{
-                      color: "#6B0101",
-                      fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
-                    }}
-                  />
-                  <span>&nbsp;Call Us:</span>
-                  <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
-                </a>
-              </Typography>  : null
-              }
-            </Box>
-            { isMedium ? null :
-            <Box
+              </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} 
               sx={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: isMobile ? "center" : isMedium ? "center" : "center",
+                justifyContent: isMobile ? "center" : isMedium ? "center" : "flex-end",
                 flexDirection: "row",
-                marginLeft: isMobile ? 0 : isMedium ? 0 : "20%",
-                marginTop: isMobile ? 0 : isMedium ? 0 : 2.1,
+                textWrap:"nowrap"
               }}
             >
               <Typography
@@ -217,7 +207,8 @@ function Navbar() {
                   <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
                 </a>
               </Typography>
-            </Box>}
+            </Grid>
+            </Grid>
           </Grid>
           <Grid
             item
