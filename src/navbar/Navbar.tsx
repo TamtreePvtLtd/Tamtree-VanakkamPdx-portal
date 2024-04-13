@@ -16,19 +16,18 @@ function Navbar() {
 
   return (
     <AppBar
-      position="fixed"
-      sx={{
-        backgroundColor: "#E4973C",
-        padding: isMobile ? "1px" : 0,
-        boxShadow: 0,
-        margin: 0,
-        width: "100%",
-        height: isMedium ? "85px" : "80px",
-      }}
-    >
+  position="fixed" 
+  sx={{
+    backgroundColor: "#E4973C",
+    padding: isMobile ? "1px" : isMedium ? "3px" : null,
+    boxShadow: 0,
+    margin: 0,
+    width: "100%",
+    height: "auto", 
+  }}
+>
       <Toolbar
         sx={{
-          padding: isMobile ? 1 : (isMedium ? 1 : 0),
           marginBottom: "5px",
           display: "flex",
           alignItems: "center",
@@ -42,7 +41,6 @@ function Navbar() {
             display: "flex",
             alignItems: "center",
             width: "100%",
-            paddingY: isMobile ? "18px" : 0,
             justifyContent: isMobile ? "center" : "space-between",
             flexDirection: "row",
           }}
@@ -84,8 +82,9 @@ function Navbar() {
               display: "flex",
               flexDirection: isMobile ? "column" : isMedium ? "column" : "row",
               justifyContent: isMedium ? "center" : "space-between",
-              alignItems: isMobile ? "center" : "flex-start",
+              alignItems: isMobile ? "center" : (isMedium ? "center" : "flex-start"),
               textAlign: "center",
+              padding : isMobile ? 1 : 0,
               marginTop: 1,
               width: "auto",
             }}
@@ -264,6 +263,7 @@ function Navbar() {
                   fontFamily: "PT Sans Regular 400",
                   fontWeight: "bold",
                   marginTop: isMobile ? "1.8px" : "3px",
+                  padding:isMobile ? 1 : 0
                 }}
               >
                 ORDER ONLINE
