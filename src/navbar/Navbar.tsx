@@ -1,8 +1,7 @@
 import { AppBar, Toolbar, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
-import VanakkamPdxLogo from "../../src/assets/Vanakkam Pdx Logo.png";
+import PhoneIcon from "@mui/icons-material/Phone"
 import { paths } from "../router/paths";
 
 function Navbar() {
@@ -32,11 +31,11 @@ function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
+          paddingX:"5px"
         }}
       >
         <Grid
           container
-          spacing={1}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -55,7 +54,7 @@ function Navbar() {
               display: "flex",
               alignItems: isMobile ? "center" : "center",
               justifyContent: "center",
-              paddingLeft: isMobile ? 1 : 2,
+             paddingLeft: isMobile ? "10px" : 2,
             }}
           >
             <img
@@ -63,8 +62,8 @@ function Navbar() {
               alt="Logo"
               onClick={handleLogoClick}
               style={{
-                height: "auto",
-                width: isMobile ? "60px" : "85px",
+                height: isMobile ? "70px" : "85px",
+                width: isMobile ? "70px" : "85px",
                 marginRight: isMobile ? 0 : 50,
                 cursor: "pointer",
                 borderRadius: "50%",
@@ -94,6 +93,7 @@ function Navbar() {
             width: "100%",
             justifyContent: isMobile ? "center" : "space-between",
             flexDirection: "row",
+            wordSpacing:0
           }}>
             <Grid item xs={12} sm={12} md={6}
               sx={{
@@ -110,6 +110,7 @@ function Navbar() {
             textWrap:"nowrap",
             justifyContent: isMobile ? "center" : "space-between",
             flexDirection: "column",
+            padding:0,
             marginRight:isMobile ? null : isMedium ? null : 30
           }}>
             <Grid item sx={{
@@ -117,7 +118,8 @@ function Navbar() {
             alignItems: "center",
             justifyContent: "center",  
             flexDirection:"row", 
-            textWrap:"nowrap"
+            textWrap:"nowrap",
+            padding:0,
           }}> 
               <Typography
                 variant="h5"
@@ -129,6 +131,7 @@ function Navbar() {
                   fontWeight: "950",
                   textAlign: "center",
                   cursor: "pointer",
+                  padding:0,
                   textWrap: "nowrap",
                   marginTop: "1px",
                   textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
@@ -142,7 +145,8 @@ function Navbar() {
             alignItems: "center",
             justifyContent: "center", 
             flexDirection:"row" ,
-            textWrap:"nowrap" 
+            textWrap:"nowrap" ,
+            padding:0,
           }}>
               <Typography
                 variant="subtitle1"
@@ -154,6 +158,7 @@ function Navbar() {
                   textAlign: "center",
                   textWrap: "nowrap",
                   marginLeft: isMobile ? 0 : 0,
+                  padding:0,
                   textShadow: "1px 1px 1px rgba(0, 0, 0, 0.9)",
                 }}
               >
@@ -204,7 +209,7 @@ function Navbar() {
                     }}
                   />
                   <span>&nbsp;Call Us:</span>
-                  <span>&nbsp;&nbsp; +1 (503) 747-2049</span>
+                  <span>&nbsp; +1 (503) 747-2049</span>
                 </a>
               </Typography>
             </Grid>
@@ -220,15 +225,19 @@ function Navbar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              textWrap:"nowrap",
+              wordWrap:"normal",
+              flexWrap:"nowrap"
             }}
           >
             <Button
               size={isMobile ? "medium" : "large"}
               sx={{
-                marginRight: isMobile ? "2px" : "10px",
+                marginRight: isMobile ? null : "10px",
+                marginLeft:isMobile ? "3px" : null,
                 backgroundColor: "green",
-                height: isMobile ? "22px" : "45px",
-                width: isMobile ? "80px" : "150px",
+                height: isMobile ? "25px" : "45px",
+                width: isMobile ? "90px" : "165px",
                 color: "white",
                 fontWeight: "bold",
                 fontFamily: "PT Sans Regular 400",
@@ -237,6 +246,8 @@ function Navbar() {
                 textDecoration: "none",
                 marginTop: isMobile ? "8px" : "4px",
                 textWrap: "nowrap",
+                wordWrap:"normal",
+                wordBreak:"keep-all",
                 "&:hover": {
                   backgroundColor: "white",
                   color: "#6B0101",
@@ -250,11 +261,12 @@ function Navbar() {
             >
               <Typography
                 sx={{
-                  fontSize: isMobile ? "9px" : "15px",
+                  fontSize: isMobile ? "9px" : "17px",
                   fontFamily: "PT Sans Regular 400",
                   fontWeight: "bold",
+                  textWrap:"nowrap",
                   marginTop: isMobile ? "1.8px" : "3px",
-                  padding:isMobile ? 1 : 0
+                  padding:isMobile ? "2px" : "3px"
                 }}
               >
                 ORDER ONLINE
