@@ -60,7 +60,9 @@ function Navbar() {
             }}
           >
             <img
-              src={"/src/assets/Vanakkam pdx  logo 2.png"}
+              src={
+                "https://vana-project.s3.ap-south-1.amazonaws.com/Vanakkam+PDX+Logo+3x3+in+transparent-01.png"
+              }
               alt="Logo"
               onClick={handleLogoClick}
               style={{
@@ -277,7 +279,7 @@ function Navbar() {
               sx={{
                 marginRight: isMobile ? null : "10px",
                 marginLeft: isMobile ? "3px" : null,
-                backgroundColor: isHovered ? "white" : "green", 
+                backgroundColor: isHovered ? "white" : "green",
                 height: isMobile ? "25px" : "45px",
                 width: isMobile ? "90px" : "165px",
                 color: isHovered ? "green" : "white",
@@ -294,7 +296,7 @@ function Navbar() {
 
                 "&:hover": {
                   backgroundColor: "white",
-                  color: "green", 
+                  color: "green",
                   boxShadow: "0px 4px 8px rgba(0.1, 0.1, 0.1, 0.5)",
                 },
               }}
