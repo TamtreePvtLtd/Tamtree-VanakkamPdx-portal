@@ -61,7 +61,7 @@ function Navbar() {
           >
             <img
               src={
-                "https://vana-project.s3.ap-south-1.amazonaws.com/Vanakkam+PDX+Logo+3x3+in+transparent-01.png"
+                "https://vanakkampdxlogo.s3.ap-south-1.amazonaws.com/Vanakkam+PDX+Logo+3x3+in+transparent-01.png"
               }
               alt="Logo"
               onClick={handleLogoClick}
