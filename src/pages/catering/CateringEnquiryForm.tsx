@@ -116,11 +116,28 @@ function CateringEnquiryForm() {
     }
   };
 
+// const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
+//   // Convert the date to MM-DD-YYYY format before sending to the backend
+//   const eventDate = new Date(data.eventDate);
+//   const formattedDate = `${
+//     eventDate.getMonth() + 1
+//   }-${eventDate.getDate()}-${eventDate.getFullYear()}`;
+//   data.eventDate = formattedDate;
+//   setFormData(data);
+//   handleOpenDialog();
+  // };
+  
+
   const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
-    // Format the date using date-fns
-    data.eventDate = format(new Date(data.eventDate), "dd-MM-yyyy");
-    setFormData(data);
-    handleOpenDialog();
+    const parsedDate = new Date(data.eventDate);
+
+    if (!isNaN(parsedDate.getTime())) {
+      data.eventDate = format(parsedDate, "MM-dd-yyyy");
+      setFormData(data);
+      handleOpenDialog();
+    } else {
+      console.error("Invalid date format provided:", data.eventDate);
+    }
   };
 
   return (
