@@ -116,16 +116,6 @@ function CateringEnquiryForm() {
     }
   };
 
-// const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {
-//   // Convert the date to MM-DD-YYYY format before sending to the backend
-//   const eventDate = new Date(data.eventDate);
-//   const formattedDate = `${
-//     eventDate.getMonth() + 1
-//   }-${eventDate.getDate()}-${eventDate.getFullYear()}`;
-//   data.eventDate = formattedDate;
-//   setFormData(data);
-//   handleOpenDialog();
-  // };
   
 
   const onSubmitCateringEnquiry = async (data: ICateringEnquiry) => {

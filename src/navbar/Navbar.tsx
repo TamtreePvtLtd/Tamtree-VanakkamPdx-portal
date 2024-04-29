@@ -24,7 +24,7 @@ function Navbar() {
         boxShadow: 0,
         margin: 0,
         width: "100%",
-        height: "auto",
+        
       }}
     >
       <Toolbar
@@ -33,7 +33,7 @@ function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
-          paddingX: "5px",
+          
         }}
       >
         <Grid
@@ -43,7 +43,6 @@ function Navbar() {
             alignItems: "center",
             width: "100%",
             justifyContent: isMobile ? "center" : "space-between",
-            flexDirection: "row",
           }}
         >
           <Grid
@@ -55,8 +54,7 @@ function Navbar() {
             sx={{
               display: "flex",
               alignItems: isMobile ? "center" : "center",
-              justifyContent: "center",
-              paddingLeft: isMobile ? "10px" : 2,
+              justifyContent: "center", 
             }}
           >
             <img
@@ -82,17 +80,11 @@ function Navbar() {
             md={8}
             lg={8.5}
             sx={{
-              display: "flex",
-              justifyContent: isMedium ? "center" : "space-between",
-              alignItems: isMobile
-                ? "center"
-                : isMedium
-                ? "center"
-                : "flex-start",
+             
               textAlign: "center",
               padding: isMobile ? 1 : 0,
               marginTop: 1,
-              width: "auto",
+             
             }}
           >
             <Grid
@@ -100,10 +92,7 @@ function Navbar() {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                width: "100%",
                 justifyContent: isMobile ? "center" : "space-between",
-                flexDirection: "row",
-                wordSpacing: 0,
               }}
             >
               <Grid
@@ -113,17 +102,7 @@ function Navbar() {
                 md={6}
                 sx={{
                   display: "flex",
-                  flexDirection: "row",
-                  justifyContent: isMobile
-                    ? "center"
-                    : isMedium
-                    ? "center"
-                    : "flex-start",
-                  alignItems: isMobile
-                    ? "center"
-                    : isMedium
-                    ? "center"
-                    : "start",
+                  
                 }}
               >
                 <Grid
@@ -131,12 +110,12 @@ function Navbar() {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    width: "100%",
-                    textWrap: "nowrap",
+                    
+                    
                     justifyContent: isMobile ? "center" : "space-between",
                     flexDirection: "column",
                     padding: 0,
-                    marginRight: isMobile ? null : isMedium ? null : 30,
+                    marginRight: isMobile || isMedium ? null : 30,
                   }}
                 >
                   <Grid
@@ -145,9 +124,6 @@ function Navbar() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      flexDirection: "row",
-                      textWrap: "nowrap",
-                      padding: 0,
                     }}
                   >
                     <Typography
@@ -160,7 +136,6 @@ function Navbar() {
                         fontWeight: "950",
                         textAlign: "center",
                         cursor: "pointer",
-                        padding: 0,
                         textWrap: "nowrap",
                         marginTop: "1px",
                         textShadow: "3px 1.5px 1px rgba(0, 0, 0, 0.9)",
@@ -175,9 +150,7 @@ function Navbar() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      flexDirection: "row",
                       textWrap: "nowrap",
-                      padding: 0,
                     }}
                   >
                     <Typography
@@ -189,8 +162,6 @@ function Navbar() {
                         fontFamily: "alfa_slab_one",
                         textAlign: "center",
                         textWrap: "nowrap",
-                        marginLeft: isMobile ? 0 : 0,
-                        padding: 0,
                         textShadow: "1px 1px 1px rgba(0, 0, 0, 0.9)",
                       }}
                     >
@@ -212,8 +183,7 @@ function Navbar() {
                     : isMedium
                     ? "center"
                     : "flex-end",
-                  flexDirection: "row",
-                  textWrap: "nowrap",
+                  
                 }}
               >
                 <Typography
@@ -223,9 +193,6 @@ function Navbar() {
                     fontSize: isMobile ? "12px" : isMedium ? "16px" : "18px",
                     fontWeight: isMobile ? 700 : "bold",
                     textAlign: "center",
-                    textWrap: "nowrap",
-                    wordWrap: "normal",
-                    wordBreak: "normal",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
@@ -269,9 +236,6 @@ function Navbar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              textWrap: "nowrap",
-              wordWrap: "normal",
-              flexWrap: "nowrap",
             }}
           >
             <Button

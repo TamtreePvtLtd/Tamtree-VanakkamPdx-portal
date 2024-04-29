@@ -39,7 +39,7 @@ function AboutUs() {
         alignItems={"center"}
         height={"auto"}
         paddingBottom={1}
-        sx={{ marginRight: isMobile ? "null" : 8, paddingX: 2.5 }}
+        sx={{ marginRight: isMobile ? null : 8, paddingX: 2.5 }}
       >
         <Grid
           item
@@ -104,7 +104,6 @@ function AboutUs() {
                 color: "#333",
                 fontFamily: "Arial, sans-serif",
                 textAlign: "center",
-                padding: 0,
                 fontSize: "18px",
                 lineHeight: "2rem",
               }}

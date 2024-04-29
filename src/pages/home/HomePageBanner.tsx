@@ -180,57 +180,6 @@ function HomePageBanner() {
               </Animate>
             </Typography>
           </Box>
-
-          {/* <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              gap: 2,
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                color: "white",
-                zIndex: 1,
-                display: "inline-block",
-                marginTop: "50px",
-              }}
-            >
-              CHOOSE YOUR EXPERIENCE
-            </Typography>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                marginTop: "50px",
-                color: "white",
-                backgroundColor: "#6B0101",
-                "&:hover": {
-                  backgroundColor: "#6B0101",
-                },
-                zIndex: 1,
-              }}
-            >
-              Book Table
-            </Button>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                marginTop: "50px",
-                color: "white",
-                backgroundColor: "#6B0101",
-                "&:hover": {
-                  backgroundColor: "#6B0101",
-                },
-                zIndex: 1,
-              }}
-            >
-              Order Now
-            </Button>
-          </Box> */}
         </Box>
       </Grid>
     </Grid>
