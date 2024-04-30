@@ -30,7 +30,7 @@ function CateringCard() {
               display: "flex",
               justifyContent: "center",
               color: "#6B0101",
-              padding: "10px",
+              padding: "11px",
             }}
           >
             Elevating Every Event with Our Exquisite Cuisine!
