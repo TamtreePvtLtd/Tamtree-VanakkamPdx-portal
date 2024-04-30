@@ -7,3 +7,9 @@ export interface ICateringEnquiry {
   message?: string;
   eventDate: string; 
 }
+export interface IDiscountPage {
+  firstName: string;
+  lastName: string;
+  email: string;
+  mobileNumber: string;
+}
