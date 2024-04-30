@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/system";
+import { Box } from "@mui/material";
 import CommonProductCard from "../../common/components/CommonCard";
 import seedData from "../../seed-data/Seed-Data";
 import { Typography } from "@mui/material";
@@ -17,7 +17,6 @@ const slideInLeft = keyframes`
 `;
 
 function CateringCard() {
-  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box>
@@ -31,7 +30,7 @@ function CateringCard() {
               display: "flex",
               justifyContent: "center",
               color: "#6B0101",
-              padding: "10px",
+              padding: "11px",
             }}
           >
             Elevating Every Event with Our Exquisite Cuisine!

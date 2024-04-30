@@ -13,9 +13,9 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   button: {
-    backgroundColor: "transparent", // Set the background color to transparent
+    backgroundColor: "transparent", 
     "&:hover": {
-      backgroundColor: "transparent !important", // Set the background color to transparent on hover
+      backgroundColor: "transparent !important", 
     },
   },
 });
@@ -254,35 +254,6 @@ const SecNavbar = () => {
               </Typography>
             </Button>
           </Grid>
-          {/* <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        /> */}
-
-          {/* <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={() => navigate(paths.CONTACTUS)}
-            sx={commonButtonStyles}
-          >
-            CONTACT US
-          </Button>
-        </Grid> */}
         </Grid>
       </Toolbar>
     </AppBar>
