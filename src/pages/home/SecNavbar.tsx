@@ -115,7 +115,7 @@ const SecNavbar = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginX:2
+              marginX: 2,
             }}
           >
             <Button
@@ -129,7 +129,7 @@ const SecNavbar = () => {
                   fontSize: "19px",
                   fontWeight: "bold",
                   fontFamily: "Acme",
-                  textWrap:"nowrap",
+                  textWrap: "nowrap",
                   "&:hover": { color: "green", textDecoration: "none" },
                 }}
               >
@@ -254,35 +254,45 @@ const SecNavbar = () => {
               </Typography>
             </Button>
           </Grid>
-          {/* <Divider
-          sx={{
-            ...commonDividerStyles,
-            marginTop: "5px",
-            height: isMobile ? "1px" : "25px",
-          }}
-          orientation="vertical"
-          flexItem
-        /> */}
+          <Divider
+            sx={{
+              ...commonDividerStyles,
+              marginTop: "5px",
+              height: isMobile ? "1px" : "25px",
+            }}
+            orientation="vertical"
+            flexItem
+          />
 
-          {/* <Grid
-          item
-          xs={12}
-          lg={1.8}
-          md={1.8}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            color="inherit"
-            onClick={() => navigate(paths.CONTACTUS)}
-            sx={commonButtonStyles}
+          <Grid
+            item
+            xs={12}
+            lg={1.8}
+            md={1.8}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            CONTACT US
-          </Button>
-        </Grid> */}
+            <Button
+              color="inherit"
+              className={classes.button}
+              onClick={() => navigate(paths.DISCOUNT)}
+              sx={commonButtonStyles}
+            >
+              <Typography
+                sx={{
+                  fontSize: "19px",
+                  fontWeight: "bold",
+                  fontFamily: "Acme",
+                  "&:hover": { color: "green", textDecoration: "none" },
+                }}
+              >
+                DISCOUNT
+              </Typography>
+            </Button>
+          </Grid>
         </Grid>
       </Toolbar>
     </AppBar>

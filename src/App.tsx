@@ -5,6 +5,7 @@ import { paths } from "./router/paths";
 import Home from "./pages/home/Home";
 import CateringPage from "./pages/catering/CateringPage";
 import AboutUs from "./pages/about us/AboutUs";
+import DiscountPage from "./pages/discount page/DiscountPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path={paths.HOME} element={<Home />} />
             <Route path={paths.CATERING} element={<CateringPage />} />
             <Route path={paths.ABOUTUS} element={<AboutUs />} />
+            <Route path={paths.DISCOUNT} element={<DiscountPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

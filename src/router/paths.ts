@@ -3,5 +3,6 @@ export enum paths {
     HOME = "/home",
     ABOUTUS = "/aboutus",
     CATERING = "/catering",
-    CONTACTUS = "/contactus"
+  CONTACTUS = "/contactus",
+  DISCOUNT="/discount"
   }
