@@ -222,7 +222,7 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
 );
 
 const openingHours = [
-  { day: "Monday", timing: "11 AM - 9.30 PM" },
+  { day: "Monday", timing: "5 PM - 9.30 PM" },
   { day: "Tuesday", timing: "11 AM - 9.30 PM" },
   { day: "Wednesday", timing: "11 AM - 9.30 PM" },
   { day: "Thursday", timing: "11 AM - 9.30 PM" },
