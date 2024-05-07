@@ -13,3 +13,8 @@ export interface IDiscountPage {
   email: string;
   mobileNumber: string;
 }
+
+export interface ILoginFormInputs {
+  email: string;
+  password: string;
+}
