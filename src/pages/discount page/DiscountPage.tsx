@@ -276,7 +276,7 @@ function DiscountPage() {
                 sx={{
                   marginBottom: isSmallScreen ? 0 : 2,
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent:"center"
                 }}
               >
                 <Button
@@ -286,6 +286,7 @@ function DiscountPage() {
                     boxShadow: "none",
                     backgroundColor: "green",
                     borderRadius: "20px",
+                    marginRight: 2,
                     "&:hover": {
                       backgroundColor: "green",
                       boxShadow: "none",
@@ -296,7 +297,13 @@ function DiscountPage() {
                   Submit
                 </Button>
                 <Button
-                  variant="outlined"                  
+                  variant="outlined"
+                  sx={{
+                    boxShadow: "none",
+                    borderRadius: "20px",
+                    color: "green", // Set text color to green
+                    borderColor: "green", // Set border color to green
+                  }}
                   onClick={() => {
                     reset(); // Reset the form
                     setCurrency("percentage"); // Reset currency selection to default
