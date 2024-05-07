@@ -7,6 +7,7 @@ import CateringPage from "./pages/catering/CateringPage";
 import AboutUs from "./pages/about us/AboutUs";
 import Login from "./pages/discount page/Login";
 import SnackBarProvider from "./context/SnackBarContext";
+import CustomSnackBar from "./common/components/CustomSnackbar";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <CustomSnackBar />
       </SnackBarProvider>
     </>
   );

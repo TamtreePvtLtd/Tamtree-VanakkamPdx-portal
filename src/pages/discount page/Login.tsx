@@ -37,16 +37,14 @@ function Login() {
     mode: "all",
   });
 
-  const handleLogin = () => {
-    if (CONSTANT_EMAIL === "vanakkampdx@gmail.com" && CONSTANT_PASSWORD === "vanakkampdx") {
-      updateSnackBarState(true, "Login Successfully", "success")
-      setIsLoggedIn(true)
-    } else {
-      updateSnackBarState(true, "Login failed", "error")
-      setIsLoggedIn(false)
-    }
-    
-  };
+  const handleLogin = (data: ILoginFormInputs) => {
+  if (data.email === CONSTANT_EMAIL && data.password === CONSTANT_PASSWORD) {
+    updateSnackBarState(true, "Login Successfully", "success");
+    setIsLoggedIn(true);
+  } else {
+    updateSnackBarState(true, "Incorrect email or password", "error");
+  }
+};
 
   return (
     <>
