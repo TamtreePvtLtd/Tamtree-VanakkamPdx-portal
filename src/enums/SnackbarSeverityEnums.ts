@@ -1,4 +1,4 @@
-export enum SnackbarSeverityEnum {
-  SUCCESS = "success",
-  ERROR = "error",
+export enum SnackbarSeverityEnums {
+    SUCCESS = "success",
+    ERROR = "error",
 }

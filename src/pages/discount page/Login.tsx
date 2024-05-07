@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ILoginFormInputs } from "../../interface/types";
-import theme from "../../theme/theme";
 import { useSnackBar } from "../../context/SnackBarContext";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
@@ -64,8 +63,7 @@ function Login() {
             variant="h5"
             align="center"
             gutterBottom
-            color={theme.palette.primary.main}
-            sx={{ fontFamily: "Sindhus-Logo-Font", fontWeight: 700 }}
+            sx={{ fontFamily: "alfa_slab_one", fontWeight: 700,color:"green" }}
           >
             Welcome to VANAKKAM PDX
           </Typography>

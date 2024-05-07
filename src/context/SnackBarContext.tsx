@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { useState, createContext } from "react";
 import { ISnackBarContextType, ISnackbarState } from "../interface/snackBar";
-import { SnackbarSeverityEnum } from "../enums/SnackbarSeverityEnums";
+import { SnackbarSeverityEnums } from "../enums/SnackbarSeverityEnums";
 
 const SnackBarContext = createContext<ISnackBarContextType>({
   snackBarState: {
     snackbarOpen: false,
     snackbarMessage: "",
-    snackbarSeverity: SnackbarSeverityEnum.SUCCESS,
+    snackbarSeverity: SnackbarSeverityEnums.SUCCESS,
   },
   updateSnackBarState: () => {},
 });
@@ -16,7 +16,7 @@ function SnackBarProvider({ children }) {
   const [snackBarState, setSnackBarstate] = useState<ISnackbarState>({
     snackbarOpen: false,
     snackbarMessage: "",
-    snackbarSeverity: SnackbarSeverityEnum.SUCCESS,
+    snackbarSeverity: SnackbarSeverityEnums.SUCCESS,
   });
 
   const updateSnackBarState = (

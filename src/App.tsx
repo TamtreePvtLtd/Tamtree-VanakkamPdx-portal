@@ -7,13 +7,10 @@ import CateringPage from "./pages/catering/CateringPage";
 import AboutUs from "./pages/about us/AboutUs";
 import Login from "./pages/discount page/Login";
 import SnackBarProvider from "./context/SnackBarContext";
-import { ThemeProvider } from "@mui/material";
-import theme from "./theme/theme";
 
 function App() {
   return (
     <>
-    <ThemeProvider theme={theme}>
           <SnackBarProvider>
       <BrowserRouter>
         <Routes>
@@ -27,7 +24,6 @@ function App() {
         </Routes>
       </BrowserRouter>
       </SnackBarProvider>
-      </ThemeProvider>
     </>
   );
 }
