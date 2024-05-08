@@ -15,3 +15,8 @@ export interface IDiscountPage {
   percentage?: string; // Define percentage field as optional
   rupees?: string; // Define rupees field as optional
 }
+
+export interface ILoginFormInputs {
+  email: string;
+  password: string;
+}

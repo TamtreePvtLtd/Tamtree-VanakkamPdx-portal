@@ -108,7 +108,6 @@ function DiscountPage() {
       setPercentageValue(event.target.value);
     };
 
-
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
