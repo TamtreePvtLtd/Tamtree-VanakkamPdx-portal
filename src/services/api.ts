@@ -1,4 +1,4 @@
-import { ICateringEnquiry } from "../interface/types";
+import { ICateringEnquiry, IDiscountPage } from "../interface/types";
 import { httpWithoutCredentials } from "./http";
 
 const createCateringEnquiry = async (data: ICateringEnquiry) => {
@@ -13,5 +13,18 @@ const createCateringEnquiry = async (data: ICateringEnquiry) => {
     throw error;
   }
 };
+const createDiscount = async (data: IDiscountPage) => {
+  try {
+    const response = await httpWithoutCredentials.post(
+      "discount/createDiscount",
+      data
+    );
 
-export { createCateringEnquiry}
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+export { createCateringEnquiry,createDiscount };

@@ -12,4 +12,6 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
+  percentage?: string; // Define percentage field as optional
+  rupees?: string; // Define rupees field as optional
 }

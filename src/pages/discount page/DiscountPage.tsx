@@ -25,14 +25,11 @@ import {
   InputAdornment,
 } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
-import { ICateringEnquiry } from "../../interface/types";
-import { createCateringEnquiry } from "../../services/api";
-import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import { createDiscount } from "../../services/api";
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
@@ -55,6 +52,10 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
+  // currency: yup
+  //   .string()
+  //   .required("Select currency")
+  //   .oneOf(["percentage", "rupees"]),
 });
 const slideInLeft = keyframes`
   from {
@@ -72,7 +73,8 @@ function DiscountPage() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<IDiscountPage | null>(null);
-  const [currency, setCurrency] = useState("percentage"); // State variable for selected currency
+  const [currency, setCurrency] = useState("percentage");
+  const [percentageValue, setPercentageValue] = useState(""); // State to capture percentage value
 
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -102,12 +104,30 @@ function DiscountPage() {
     setCurrency(event.target.value); // Update selected currency state
   };
 
+    const handlePercentageChange = (event) => {
+      setPercentageValue(event.target.value);
+    };
+
+
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        // await createCateringEnquiry(formData);
+        // Include the currency value in the formData object
+        let formDataWithCurrency = { ...formData, currency };
+
+        if (currency === "percentage") {
+          formDataWithCurrency = {
+            ...formDataWithCurrency,
+            percentage: percentageValue,
+          };
+        } else if (currency === "rupees") {
+          formDataWithCurrency = { ...formDataWithCurrency, rupees: currency };
+        }
+        await createDiscount(formDataWithCurrency);
         reset();
         setFormData(null);
+        setCurrency("percentage"); // Reset currency to default
+        setPercentageValue(""); // Clear percentage value
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -246,6 +266,8 @@ function DiscountPage() {
                         type="number"
                         inputProps={{ maxLength: 3 }}
                         label="Percentage"
+                        value={percentageValue}
+                        onChange={handlePercentageChange}
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="end">%</InputAdornment>
@@ -263,6 +285,8 @@ function DiscountPage() {
                       <TextField
                         type="number"
                         inputProps={{ maxLength: 8 }}
+                        value={currency}
+                        onChange={handleCurrencyChange}
                         label="Rupees"
                       />
                     )}
@@ -276,7 +300,7 @@ function DiscountPage() {
                 sx={{
                   marginBottom: isSmallScreen ? 0 : 2,
                   display: "flex",
-                  justifyContent:"center"
+                  justifyContent: "center",
                 }}
               >
                 <Button
@@ -307,6 +331,7 @@ function DiscountPage() {
                   onClick={() => {
                     reset(); // Reset the form
                     setCurrency("percentage"); // Reset currency selection to default
+                    setPercentageValue(""); // Clear percentage value
                   }}
                 >
                   Clear
