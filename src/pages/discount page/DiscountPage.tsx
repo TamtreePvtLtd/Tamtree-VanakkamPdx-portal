@@ -33,15 +33,12 @@ import * as yup from "yup";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
-import emailjs from '@emailjs/browser';
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
   lastName: "",
   email: "",
   mobileNumber: "",
-  currency:"",
-  currencyValue:0
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -58,8 +55,6 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
-  currency:yup.string().required(),
-  currencyValue:yup.number().required(),
 });
 const slideInLeft = keyframes`
   from {
@@ -71,7 +66,6 @@ const slideInLeft = keyframes`
     transform: translateX(0);
   }
 `;
-emailjs.init("iXT3ojcSV-nuqolSJ")
 function DiscountPage() {
   const classes = useStyles();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -88,7 +82,7 @@ function DiscountPage() {
   } = useForm<IDiscountPage>({
     resolver: yupResolver(schema),
     mode: "all",
-    defaultValues: DiscountFormIniialValue as IDiscountPage,
+    defaultValues: DiscountFormIniialValue ,
   });
 
   const handleOpenDialog = () => {
@@ -109,20 +103,7 @@ function DiscountPage() {
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        const templateParams = {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          mobileNumber: formData.mobileNumber,
-          currency: formData.currency === "percentage" ? "Percentage" : "Rupees",
-          currencyValue: formData.currencyValue,
-        };
-        await emailjs.send(
-          'service_63ydi09', 
-          'template_kkftlss', 
-          templateParams, "iXT3ojcSV-nuqolSJ"
-        );
-        console.log(templateParams);
+        // await createCateringEnquiry(formData);
         reset();
         setFormData(null);
       }
@@ -238,7 +219,7 @@ function DiscountPage() {
                 <RadioGroup
                   aria-label="currency"
                   name="currency"
-                  value={formData?.currency}
+                  value={currency}
                   onChange={handleCurrencyChange}
                 >
                   <Box
@@ -262,7 +243,6 @@ function DiscountPage() {
                       <TextField
                         type="number"
                         inputProps={{ maxLength: 3 }}
-                        {...register("currencyValue")}
                         label="Percentage"
                         InputProps={{
                           endAdornment: (
@@ -280,7 +260,6 @@ function DiscountPage() {
                     {currency === "rupees" && (
                       <TextField
                         type="number"
-                        {...register("currencyValue")}
                         inputProps={{ maxLength: 8 }}
                         label="Rupees"
                       />
@@ -292,6 +271,7 @@ function DiscountPage() {
               <Grid
                 item
                 xs={12}
+                gap={2}
                 sx={{
                   marginBottom: isSmallScreen ? 0 : 2,
                   display: "flex",
