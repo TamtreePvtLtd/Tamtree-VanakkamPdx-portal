@@ -12,4 +12,11 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
+  currency :string;
+  currencyValue: number;
+}
+
+export interface ILoginFormInputs {
+  email: string;
+  password: string;
 }

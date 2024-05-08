@@ -1,10 +1,10 @@
 import React from "react";
 import { IDiscountPage } from "../../interface/types";
 import { useRef, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import {  useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
   TextField,
   Button,
@@ -16,8 +16,8 @@ import {
   DialogContent,
   DialogActions,
   Divider,
-  FormControl,
-  FormHelperText,
+  // FormControl,
+  // FormHelperText,
   FormControlLabel,
   RadioGroup,
   FormLabel,
@@ -25,20 +25,23 @@ import {
   InputAdornment,
 } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
-import { ICateringEnquiry } from "../../interface/types";
-import { createCateringEnquiry } from "../../services/api";
-import { format } from "date-fns";
+// import { ICateringEnquiry } from "../../interface/types";
+// import { createCateringEnquiry } from "../../services/api";
+// import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import emailjs from '@emailjs/browser';
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
   lastName: "",
   email: "",
   mobileNumber: "",
+  currency:"",
+  currencyValue:0
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -55,6 +58,8 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
+  currency:yup.string().required(),
+  currencyValue:yup.number().required(),
 });
 const slideInLeft = keyframes`
   from {
@@ -66,7 +71,7 @@ const slideInLeft = keyframes`
     transform: translateX(0);
   }
 `;
-
+emailjs.init("iXT3ojcSV-nuqolSJ")
 function DiscountPage() {
   const classes = useStyles();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -80,11 +85,10 @@ function DiscountPage() {
     formState: { errors },
     register,
     reset,
-    control,
   } = useForm<IDiscountPage>({
     resolver: yupResolver(schema),
     mode: "all",
-    defaultValues: DiscountFormIniialValue,
+    defaultValues: DiscountFormIniialValue as IDiscountPage,
   });
 
   const handleOpenDialog = () => {
@@ -98,14 +102,27 @@ function DiscountPage() {
     }
   };
 
-  const handleCurrencyChange = (event) => {
+  const handleCurrencyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value); // Update selected currency state
   };
 
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        // await createCateringEnquiry(formData);
+        const templateParams = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          currency: formData.currency === "percentage" ? "Percentage" : "Rupees",
+          currencyValue: formData.currencyValue,
+        };
+        await emailjs.send(
+          'service_63ydi09', 
+          'template_kkftlss', 
+          templateParams, "iXT3ojcSV-nuqolSJ"
+        );
+        console.log(templateParams);
         reset();
         setFormData(null);
       }
@@ -221,7 +238,7 @@ function DiscountPage() {
                 <RadioGroup
                   aria-label="currency"
                   name="currency"
-                  value={currency}
+                  value={formData?.currency}
                   onChange={handleCurrencyChange}
                 >
                   <Box
@@ -245,6 +262,7 @@ function DiscountPage() {
                       <TextField
                         type="number"
                         inputProps={{ maxLength: 3 }}
+                        {...register("currencyValue")}
                         label="Percentage"
                         InputProps={{
                           endAdornment: (
@@ -262,6 +280,7 @@ function DiscountPage() {
                     {currency === "rupees" && (
                       <TextField
                         type="number"
+                        {...register("currencyValue")}
                         inputProps={{ maxLength: 8 }}
                         label="Rupees"
                       />
