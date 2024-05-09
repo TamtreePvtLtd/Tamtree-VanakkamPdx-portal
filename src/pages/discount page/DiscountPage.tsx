@@ -1,41 +1,48 @@
 import React from "react";
 import { IDiscountPage } from "../../interface/types";
 import { useRef, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import {  useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
   TextField,
   Button,
   Grid,
-  Box,
   Typography,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   Divider,
-  FormControl,
-  FormHelperText,
+  // FormControl,
+  // FormHelperText,
   FormControlLabel,
   RadioGroup,
   FormLabel,
   Radio,
   InputAdornment,
 } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useMediaQuery } from "@mui/material";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
+// import { ICateringEnquiry } from "../../interface/types";
+// import { createCateringEnquiry } from "../../services/api";
+// import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
-import { createDiscount } from "../../services/api";
+import emailjs from '@emailjs/browser';
+import { useSnackBar } from "../../context/SnackBarContext";
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
   lastName: "",
   email: "",
   mobileNumber: "",
+  percentageValue: 0,
+  rupeesValue: 0,
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -52,10 +59,8 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
-  // currency: yup
-  //   .string()
-  //   .required("Select currency")
-  //   .oneOf(["percentage", "rupees"]),
+  percentageValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
+  rupeesValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
 });
 const slideInLeft = keyframes`
   from {
@@ -67,14 +72,13 @@ const slideInLeft = keyframes`
     transform: translateX(0);
   }
 `;
-
 function DiscountPage() {
   const classes = useStyles();
+  const { updateSnackBarState } = useSnackBar();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<IDiscountPage | null>(null);
-  const [currency, setCurrency] = useState("percentage");
-  const [percentageValue, setPercentageValue] = useState(""); // State to capture percentage value
+  const [currency, setCurrency] = useState(""); 
 
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -82,11 +86,10 @@ function DiscountPage() {
     formState: { errors },
     register,
     reset,
-    control,
   } = useForm<IDiscountPage>({
     resolver: yupResolver(schema),
     mode: "all",
-    defaultValues: DiscountFormIniialValue,
+    defaultValues: DiscountFormIniialValue ,
   });
 
   const handleOpenDialog = () => {
@@ -100,36 +103,52 @@ function DiscountPage() {
     }
   };
 
-  const handleCurrencyChange = (event) => {
+  const handleCurrencyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value); // Update selected currency state
   };
-
-    const handlePercentageChange = (event) => {
-      setPercentageValue(event.target.value);
-    };
 
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        // Include the currency value in the formData object
-        let formDataWithCurrency = { ...formData, currency };
+        let currencyValue: string | undefined;
 
         if (currency === "percentage") {
-          formDataWithCurrency = {
-            ...formDataWithCurrency,
-            percentage: percentageValue,
-          };
+          currencyValue = formData.percentageValue !== undefined ? formData.percentageValue.toString() + "%" : undefined;
         } else if (currency === "rupees") {
-          formDataWithCurrency = { ...formDataWithCurrency, rupees: currency };
+          currencyValue = formData.rupeesValue !== undefined ? "Rs."+formData.rupeesValue.toString() : undefined;
         }
-        await createDiscount(formDataWithCurrency);
+        const templateParams = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          currency: currency === "percentage" ? "Discount in (%)" : "Discount in (Rs)",
+          currencyValue: currencyValue !== undefined ? currencyValue : "",
+        };
+
+
+        await emailjs.send(
+          'service_63ydi09',
+          'template_kkftlss',
+          templateParams,
+          {
+            publicKey: 'iXT3ojcSV-nuqolSJ',
+          }
+        );
+
+        
+
+        console.log(formData);
+        updateSnackBarState(true, "Email sent Successfully", "success");
+
+
+        
         reset();
         setFormData(null);
-        setCurrency("percentage"); // Reset currency to default
-        setPercentageValue(""); // Clear percentage value
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      updateSnackBarState(true, "Error in Sending Email", "error");
     } finally {
       handleCloseDialog(true)();
     }
@@ -265,14 +284,14 @@ function DiscountPage() {
                         type="number"
                         inputProps={{ maxLength: 3 }}
                         label="Percentage"
-                        value={percentageValue}
-                        onChange={handlePercentageChange}
+                        {...register("percentageValue")}
+                        onChange={handleInputChange}
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="end">%</InputAdornment>
                           ),
                         }}
-                        onInput={(e) => {
+                        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.target.value = Math.max(0, parseInt(e.target.value))
                             .toString()
                             .slice(0, 3);
@@ -283,9 +302,9 @@ function DiscountPage() {
                     {currency === "rupees" && (
                       <TextField
                         type="number"
+                        {...register("rupeesValue")}
+                        onChange={handleInputChange}
                         inputProps={{ maxLength: 8 }}
-                        value={currency}
-                        onChange={handleCurrencyChange}
                         label="Rupees"
                       />
                     )}
@@ -296,6 +315,7 @@ function DiscountPage() {
               <Grid
                 item
                 xs={12}
+                gap={2}
                 sx={{
                   marginBottom: isSmallScreen ? 0 : 2,
                   display: "flex",
@@ -309,7 +329,6 @@ function DiscountPage() {
                     boxShadow: "none",
                     backgroundColor: "green",
                     borderRadius: "20px",
-                    marginRight: 2,
                     "&:hover": {
                       backgroundColor: "green",
                       boxShadow: "none",
@@ -320,17 +339,10 @@ function DiscountPage() {
                   Submit
                 </Button>
                 <Button
-                  variant="outlined"
-                  sx={{
-                    boxShadow: "none",
-                    borderRadius: "20px",
-                    color: "green", // Set text color to green
-                    borderColor: "green", // Set border color to green
-                  }}
+                  variant="outlined"                  
                   onClick={() => {
                     reset(); // Reset the form
                     setCurrency("percentage"); // Reset currency selection to default
-                    setPercentageValue(""); // Clear percentage value
                   }}
                 >
                   Clear

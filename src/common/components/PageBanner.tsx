@@ -1,4 +1,5 @@
-import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useRef } from "react";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";

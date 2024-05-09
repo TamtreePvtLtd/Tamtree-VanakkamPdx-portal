@@ -1,4 +1,5 @@
-import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
+import { Button, IconButton, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -31,6 +32,7 @@ function Login() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ILoginFormInputs>({
     resolver: yupResolver(schema),
@@ -44,6 +46,9 @@ function Login() {
   } else {
     updateSnackBarState(true, "Incorrect email or password", "error");
   }
+};
+const handleClearForm = () => {
+  reset(); // Reset form fields to default values
 };
 
   return (
@@ -126,6 +131,16 @@ function Login() {
               type="submit"
             >
               Login
+            </Button>
+            <Button
+              variant="outlined"
+              fullWidth
+              sx={{ marginTop: 3,bgcolor:"white", "&:hover": {
+                bgcolor: "white",
+              }, }}
+              onClick={handleClearForm}
+            >
+              Clear
             </Button>
           </form>
         </Box>

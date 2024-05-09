@@ -1,4 +1,5 @@
-import { Grid, Typography, Box, useMediaQuery } from "@mui/material";
+import { Grid, Typography,useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useStyles } from "../../styles/HomePageBannerStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
