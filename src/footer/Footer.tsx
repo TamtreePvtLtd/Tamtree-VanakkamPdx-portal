@@ -1,5 +1,4 @@
 import {
-  Box,
   Divider,
   Grid,
   Table,
@@ -10,6 +9,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import Box from "@mui/material/Box";
 import React from "react";
 import Qrcode from "../../src/assets/WhatsApp Qr code .jpg";
 import Animate from "react-awesome-reveal";

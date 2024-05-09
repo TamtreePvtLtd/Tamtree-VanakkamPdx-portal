@@ -9,7 +9,6 @@ import {
   TextField,
   Button,
   Grid,
-  Box,
   Typography,
   Dialog,
   DialogTitle,
@@ -24,6 +23,7 @@ import {
   Radio,
   InputAdornment,
 } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useMediaQuery } from "@mui/material";
 // import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
@@ -33,12 +33,16 @@ import * as yup from "yup";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import emailjs from '@emailjs/browser';
+import { useSnackBar } from "../../context/SnackBarContext";
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
   lastName: "",
   email: "",
   mobileNumber: "",
+  percentageValue: 0,
+  rupeesValue: 0,
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -55,6 +59,8 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
+  percentageValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
+  rupeesValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
 });
 const slideInLeft = keyframes`
   from {
@@ -68,6 +74,7 @@ const slideInLeft = keyframes`
 `;
 function DiscountPage() {
   const classes = useStyles();
+  const { updateSnackBarState } = useSnackBar();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<IDiscountPage | null>(null);
@@ -103,12 +110,45 @@ function DiscountPage() {
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        // await createCateringEnquiry(formData);
+        let currencyValue: string | undefined;
+
+        if (currency === "percentage") {
+          currencyValue = formData.percentageValue !== undefined ? formData.percentageValue.toString() + "%" : undefined;
+        } else if (currency === "rupees") {
+          currencyValue = formData.rupeesValue !== undefined ? "Rs."+formData.rupeesValue.toString() : undefined;
+        }
+        const templateParams = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          currency: currency === "percentage" ? "Discount in (%)" : "Discount in (Rs)",
+          currencyValue: currencyValue !== undefined ? currencyValue : "",
+        };
+
+
+        await emailjs.send(
+          'service_63ydi09',
+          'template_kkftlss',
+          templateParams,
+          {
+            publicKey: 'iXT3ojcSV-nuqolSJ',
+          }
+        );
+
+        
+
+        console.log(formData);
+        updateSnackBarState(true, "Email sent Successfully", "success");
+
+
+        
         reset();
         setFormData(null);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      updateSnackBarState(true, "Error in Sending Email", "error");
     } finally {
       handleCloseDialog(true)();
     }
@@ -244,12 +284,14 @@ function DiscountPage() {
                         type="number"
                         inputProps={{ maxLength: 3 }}
                         label="Percentage"
+                        {...register("percentageValue")}
+                        onChange={handleInputChange}
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="end">%</InputAdornment>
                           ),
                         }}
-                        onInput={(e) => {
+                        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.target.value = Math.max(0, parseInt(e.target.value))
                             .toString()
                             .slice(0, 3);
@@ -260,6 +302,8 @@ function DiscountPage() {
                     {currency === "rupees" && (
                       <TextField
                         type="number"
+                        {...register("rupeesValue")}
+                        onChange={handleInputChange}
                         inputProps={{ maxLength: 8 }}
                         label="Rupees"
                       />

@@ -12,6 +12,8 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
+  percentageValue?: number; 
+  rupeesValue?: number;
 }
 
 export interface ILoginFormInputs {

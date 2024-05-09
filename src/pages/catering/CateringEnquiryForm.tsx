@@ -7,7 +7,6 @@ import {
   TextField,
   Button,
   Grid,
-  Box,
   Typography,
   Dialog,
   DialogTitle,
@@ -17,6 +16,7 @@ import {
   FormControl,
   FormHelperText,
 } from "@mui/material";
+import Box from "@mui/material/Box";
 import { useMediaQuery } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";

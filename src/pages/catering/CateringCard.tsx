@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/system";
+import { Box, useMediaQuery } from "@mui/material";
 import CommonProductCard from "../../common/components/CommonCard";
 import seedData from "../../seed-data/Seed-Data";
 import { Typography } from "@mui/material";

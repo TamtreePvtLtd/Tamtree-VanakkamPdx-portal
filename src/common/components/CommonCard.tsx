@@ -1,4 +1,5 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
