@@ -12,8 +12,8 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
-  currency :string;
-  currencyValue: number;
+  percentage?: string; // Define percentage field as optional
+  rupees?: string; // Define rupees field as optional
 }
 
 export interface ILoginFormInputs {

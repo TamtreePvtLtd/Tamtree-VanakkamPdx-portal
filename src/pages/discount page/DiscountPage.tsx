@@ -1,10 +1,10 @@
 import React from "react";
 import { IDiscountPage } from "../../interface/types";
 import { useRef, useState } from "react";
-import {  useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
   TextField,
   Button,
@@ -16,8 +16,8 @@ import {
   DialogContent,
   DialogActions,
   Divider,
-  // FormControl,
-  // FormHelperText,
+  FormControl,
+  FormHelperText,
   FormControlLabel,
   RadioGroup,
   FormLabel,
@@ -25,23 +25,17 @@ import {
   InputAdornment,
 } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
-// import { ICateringEnquiry } from "../../interface/types";
-// import { createCateringEnquiry } from "../../services/api";
-// import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
-import emailjs from '@emailjs/browser';
+import { createDiscount } from "../../services/api";
 
 const DiscountFormIniialValue: IDiscountPage = {
   firstName: "",
   lastName: "",
   email: "",
   mobileNumber: "",
-  currency:"",
-  currencyValue:0
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -58,8 +52,10 @@ const schema = yup.object().shape({
     .email("Invalid email address")
     .required("Email is required"),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
-  currency:yup.string().required(),
-  currencyValue:yup.number().required(),
+  // currency: yup
+  //   .string()
+  //   .required("Select currency")
+  //   .oneOf(["percentage", "rupees"]),
 });
 const slideInLeft = keyframes`
   from {
@@ -71,13 +67,14 @@ const slideInLeft = keyframes`
     transform: translateX(0);
   }
 `;
-emailjs.init("iXT3ojcSV-nuqolSJ")
+
 function DiscountPage() {
   const classes = useStyles();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<IDiscountPage | null>(null);
-  const [currency, setCurrency] = useState("percentage"); // State variable for selected currency
+  const [currency, setCurrency] = useState("percentage");
+  const [percentageValue, setPercentageValue] = useState(""); // State to capture percentage value
 
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -85,10 +82,11 @@ function DiscountPage() {
     formState: { errors },
     register,
     reset,
+    control,
   } = useForm<IDiscountPage>({
     resolver: yupResolver(schema),
     mode: "all",
-    defaultValues: DiscountFormIniialValue as IDiscountPage,
+    defaultValues: DiscountFormIniialValue,
   });
 
   const handleOpenDialog = () => {
@@ -102,29 +100,33 @@ function DiscountPage() {
     }
   };
 
-  const handleCurrencyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCurrencyChange = (event) => {
     setCurrency(event.target.value); // Update selected currency state
   };
+
+    const handlePercentageChange = (event) => {
+      setPercentageValue(event.target.value);
+    };
 
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        const templateParams = {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          mobileNumber: formData.mobileNumber,
-          currency: formData.currency === "percentage" ? "Percentage" : "Rupees",
-          currencyValue: formData.currencyValue,
-        };
-        await emailjs.send(
-          'service_63ydi09', 
-          'template_kkftlss', 
-          templateParams, "iXT3ojcSV-nuqolSJ"
-        );
-        console.log(templateParams);
+        // Include the currency value in the formData object
+        let formDataWithCurrency = { ...formData, currency };
+
+        if (currency === "percentage") {
+          formDataWithCurrency = {
+            ...formDataWithCurrency,
+            percentage: percentageValue,
+          };
+        } else if (currency === "rupees") {
+          formDataWithCurrency = { ...formDataWithCurrency, rupees: currency };
+        }
+        await createDiscount(formDataWithCurrency);
         reset();
         setFormData(null);
+        setCurrency("percentage"); // Reset currency to default
+        setPercentageValue(""); // Clear percentage value
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -238,7 +240,7 @@ function DiscountPage() {
                 <RadioGroup
                   aria-label="currency"
                   name="currency"
-                  value={formData?.currency}
+                  value={currency}
                   onChange={handleCurrencyChange}
                 >
                   <Box
@@ -262,8 +264,9 @@ function DiscountPage() {
                       <TextField
                         type="number"
                         inputProps={{ maxLength: 3 }}
-                        {...register("currencyValue")}
                         label="Percentage"
+                        value={percentageValue}
+                        onChange={handlePercentageChange}
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="end">%</InputAdornment>
@@ -280,8 +283,9 @@ function DiscountPage() {
                     {currency === "rupees" && (
                       <TextField
                         type="number"
-                        {...register("currencyValue")}
                         inputProps={{ maxLength: 8 }}
+                        value={currency}
+                        onChange={handleCurrencyChange}
                         label="Rupees"
                       />
                     )}
@@ -305,6 +309,7 @@ function DiscountPage() {
                     boxShadow: "none",
                     backgroundColor: "green",
                     borderRadius: "20px",
+                    marginRight: 2,
                     "&:hover": {
                       backgroundColor: "green",
                       boxShadow: "none",
@@ -315,10 +320,17 @@ function DiscountPage() {
                   Submit
                 </Button>
                 <Button
-                  variant="outlined"                  
+                  variant="outlined"
+                  sx={{
+                    boxShadow: "none",
+                    borderRadius: "20px",
+                    color: "green", // Set text color to green
+                    borderColor: "green", // Set border color to green
+                  }}
                   onClick={() => {
                     reset(); // Reset the form
                     setCurrency("percentage"); // Reset currency selection to default
+                    setPercentageValue(""); // Clear percentage value
                   }}
                 >
                   Clear
