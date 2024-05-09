@@ -342,7 +342,7 @@ function DiscountPage() {
                   variant="outlined"                  
                   onClick={() => {
                     reset(); // Reset the form
-                    setCurrency("percentage"); // Reset currency selection to default
+                    setCurrency(""); 
                   }}
                 >
                   Clear
