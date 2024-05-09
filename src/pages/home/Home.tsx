@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import  Box  from "@mui/material/Box";
 import HomePageBanner from "./HomePageBanner";
 import { useEffect } from "react";
 
