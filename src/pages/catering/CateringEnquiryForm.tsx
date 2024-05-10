@@ -21,7 +21,7 @@ import { useMediaQuery } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import * as yup from "yup";
 import { ICateringEnquiry } from "../../interface/types";
-import { createCateringEnquiry } from "../../services/api";
+import emailjs from '@emailjs/browser';
 import { format } from "date-fns";
 import { useStyles } from "../../styles/CateringFormStyle";
 import Animate from "react-awesome-reveal";
@@ -97,7 +97,26 @@ function CateringEnquiryForm() {
   const handleConfirmSubmit = async () => {
     try {
       if (formData) {
-        await createCateringEnquiry(formData);
+        const formattedEventDate = format(new Date(formData.eventDate), 'dd/MM/yyyy')
+
+        const templateParams = {
+          fullName: formData.fullName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          typeOfEvent: formData.typeOfEvent,
+          guestCount: formData.guestCount,
+          eventDate: formattedEventDate,
+          message: formData.message,
+        };
+
+        await emailjs.send(
+          'service_13y0xcl',
+          'template_vfi27qw',
+          templateParams,
+          {
+            publicKey: 'un8nmy1EY_VJujG7n',
+          }
+        );
         reset();
         setFormData(null);
       }
