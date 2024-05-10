@@ -66,7 +66,11 @@ const handleClearForm = () => {
             variant="h5"
             align="center"
             gutterBottom
-            sx={{ fontFamily: "alfa_slab_one", fontWeight: 700,color:"green" }}
+            sx={{
+              fontFamily: "alfa_slab_one",
+              fontWeight: 700,
+              color: "green",
+            }}
           >
             Welcome to VANAKKAM PDX
           </Typography>
@@ -125,9 +129,13 @@ const handleClearForm = () => {
             <Button
               variant="contained"
               fullWidth
-              sx={{ marginTop: 3,bgcolor:"green", "&:hover": {
+              sx={{
+                marginTop: 3,
                 bgcolor: "green",
-              }, }}
+                "&:hover": {
+                  bgcolor: "green",
+                },
+              }}
               type="submit"
             >
               Login
@@ -135,9 +143,16 @@ const handleClearForm = () => {
             <Button
               variant="outlined"
               fullWidth
-              sx={{ marginTop: 3,bgcolor:"white", "&:hover": {
+              sx={{
+                marginTop: 3,
                 bgcolor: "white",
-              }, }}
+                borderColor: "green",
+                color: "green",
+                "&:hover": {
+                  bgcolor: "white",
+                  borderColor: "green",
+                },
+              }}
               onClick={handleClearForm}
             >
               Clear
