@@ -1,7 +1,12 @@
-import { useContext } from "react";
+import { useContext, ReactNode } from "react";
 import { useState, createContext } from "react";
 import { ISnackBarContextType, ISnackbarState } from "../interface/snackBar";
 import { SnackbarSeverityEnums } from "../enums/SnackbarSeverityEnums";
+
+interface SnackBarProviderProps {
+  children: ReactNode;
+}
+
 
 const SnackBarContext = createContext<ISnackBarContextType>({
   snackBarState: {
@@ -12,7 +17,7 @@ const SnackBarContext = createContext<ISnackBarContextType>({
   updateSnackBarState: () => {},
 });
 
-function SnackBarProvider({ children }) {
+function SnackBarProvider({ children }: SnackBarProviderProps) {
   const [snackBarState, setSnackBarstate] = useState<ISnackbarState>({
     snackbarOpen: false,
     snackbarMessage: "",

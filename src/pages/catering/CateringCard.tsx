@@ -1,4 +1,3 @@
-import useMediaQuery  from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box"
 import CommonProductCard from "../../common/components/CommonCard";
 import seedData from "../../seed-data/Seed-Data";
@@ -18,7 +17,6 @@ const slideInLeft = keyframes`
 `;
 
 function CateringCard() {
-  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box>
