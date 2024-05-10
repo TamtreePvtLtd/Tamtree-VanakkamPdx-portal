@@ -306,6 +306,11 @@ function DiscountPage() {
                         onChange={handleInputChange}
                         inputProps={{ maxLength: 8 }}
                         label="Dollars"
+                        InputProps={{
+                          startAdornment: (
+                            <InputAdornment position="start">$</InputAdornment>
+                          ),
+                        }}
                       />
                     )}
                   </Box>
