@@ -42,7 +42,7 @@ const DiscountFormIniialValue: IDiscountPage = {
   email: "",
   mobileNumber: "",
   percentageValue: 0,
-  rupeesValue: 0,
+  dollarsValue: 0,
 };
 const schema = yup.object().shape({
   firstName: yup
@@ -114,15 +114,15 @@ function DiscountPage() {
 
         if (currency === "percentage") {
           currencyValue = formData.percentageValue !== undefined ? formData.percentageValue.toString() + "%" : undefined;
-        } else if (currency === "rupees") {
-          currencyValue = formData.rupeesValue !== undefined ? "Rs."+formData.rupeesValue.toString() : undefined;
+        } else if (currency === "dollars") {
+          currencyValue = formData.dollarsValue !== undefined ? "$"+formData.dollarsValue.toString() : undefined;
         }
         const templateParams = {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           mobileNumber: formData.mobileNumber,
-          currency: currency === "percentage" ? "Discount in (%)" : "Discount in (Rs)",
+          currency: currency === "percentage" ? "Discount in (%)" : "Discount in ($)",
           currencyValue: currencyValue !== undefined ? currencyValue : "",
         };
 
@@ -275,9 +275,9 @@ function DiscountPage() {
                       label="Percentage"
                     />
                     <FormControlLabel
-                      value="rupees"
+                      value="dollars"
                       control={<Radio />}
-                      label="Rupees"
+                      label="Dollars"
                     />
                     {currency === "percentage" && (
                       <TextField
@@ -299,13 +299,18 @@ function DiscountPage() {
                       />
                     )}
 
-                    {currency === "rupees" && (
+                    {currency === "dollars" && (
                       <TextField
                         type="number"
-                        {...register("rupeesValue")}
+                        {...register("dollarsValue")}
                         onChange={handleInputChange}
                         inputProps={{ maxLength: 8 }}
-                        label="Rupees"
+                        label="Dollars"
+                        InputProps={{
+                          startAdornment: (
+                            <InputAdornment position="start">$</InputAdornment>
+                          ),
+                        }}
                       />
                     )}
                   </Box>
@@ -339,7 +344,14 @@ function DiscountPage() {
                   Submit
                 </Button>
                 <Button
-                  variant="outlined"                  
+                  variant="outlined"
+                  sx={{
+                    color: "green",
+                    borderColor: "green",
+                    "&:hover": {
+                      borderColor: "green",
+                    },
+                  }}                  
                   onClick={() => {
                     reset(); // Reset the form
                     setCurrency(""); 

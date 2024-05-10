@@ -13,7 +13,7 @@ export interface IDiscountPage {
   email: string;
   mobileNumber: string;
   percentageValue?: number; 
-  rupeesValue?: number;
+  dollarsValue?: number;
 }
 
 export interface ILoginFormInputs {
