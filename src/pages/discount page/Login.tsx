@@ -149,7 +149,6 @@ const handleClearForm = () => {
                 borderColor: "green",
                 color: "green",
                 "&:hover": {
-                  bgcolor: "white",
                   borderColor: "green",
                 },
               }}
