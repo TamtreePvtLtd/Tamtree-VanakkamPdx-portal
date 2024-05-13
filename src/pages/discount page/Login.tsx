@@ -1,4 +1,4 @@
-import { Button, IconButton, TextField, Typography } from "@mui/material";
+import { Button, Grid, IconButton, TextField, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,12 +8,18 @@ import { useSnackBar } from "../../context/SnackBarContext";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import DiscountPage from "./DiscountPage";
+import bcrypt from 'bcryptjs';
+
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const schema = yup.object().shape({
   email: yup
     .string()
+    .required("Email is required")
     .email("Please enter a valid email address")
-    .required("Email is required"),
+    .matches(emailRegex, 'Invalid email format'),
+    
   password: yup.string().required("Password is required"),
 });
 
@@ -40,12 +46,14 @@ function Login() {
   });
 
   const handleLogin = (data: ILoginFormInputs) => {
-  if (data.email === CONSTANT_EMAIL && data.password === CONSTANT_PASSWORD) {
-    updateSnackBarState(true, "Login Successfully", "success");
-    setIsLoggedIn(true);
-  } else {
-    updateSnackBarState(true, "Incorrect email or password", "error");
-  }
+    const hashedPassword = bcrypt.hashSync(data.password, 10);
+
+    if (data.email === CONSTANT_EMAIL && bcrypt.compareSync(CONSTANT_PASSWORD, hashedPassword)) {
+      updateSnackBarState(true, "Login Successfully", "success");
+      setIsLoggedIn(true);
+    } else {
+      updateSnackBarState(true, "Incorrect email or password", "error");
+    }
 };
 const handleClearForm = () => {
   reset(); // Reset form fields to default values
@@ -58,7 +66,8 @@ const handleClearForm = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          minHeight: "70vh",
+          minHeight: "65vh",
+          margin: "auto",
         }}
       >
         <Box>
@@ -126,36 +135,46 @@ const handleClearForm = () => {
                 ),
               }}
             />
-            <Button
-              variant="contained"
-              fullWidth
-              sx={{
-                marginTop: 3,
-                bgcolor: "green",
-                "&:hover": {
-                  bgcolor: "green",
-                },
-              }}
-              type="submit"
-            >
-              Login
-            </Button>
-            <Button
-              variant="outlined"
-              fullWidth
-              sx={{
-                marginTop: 3,
-                bgcolor: "white",
-                borderColor: "green",
-                color: "green",
-                "&:hover": {
-                  borderColor: "green",
-                },
-              }}
-              onClick={handleClearForm}
-            >
-              Clear
-            </Button>
+              <Grid
+                item
+                xs={12}
+                gap={2}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop:3
+                }}
+              >
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    boxShadow: "none",
+                    backgroundColor: "green",
+                    borderRadius: "20px",
+                    "&:hover": {
+                      backgroundColor: "green",
+                      boxShadow: "none",
+                      borderRadius: "20px",
+                    },
+                  }}
+                >
+                  Submit
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    color: "green",
+                    borderColor: "green",
+                    "&:hover": {
+                      borderColor: "green",
+                    },
+                  }}                  
+                  onClick={handleClearForm}
+                >
+                  Clear
+                </Button>
+              </Grid>
           </form>
         </Box>
       </Box>

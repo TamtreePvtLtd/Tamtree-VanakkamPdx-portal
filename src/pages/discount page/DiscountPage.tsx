@@ -44,20 +44,24 @@ const DiscountFormIniialValue: IDiscountPage = {
   percentageValue: 0,
   dollarsValue: 0,
 };
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const schema = yup.object().shape({
   firstName: yup
     .string()
-    .required("Name is required")
+    .required("First Name is required")
     .max(30, "Maximum 30 characters allowed"),
   lastName: yup
     .string()
-    .required("Name is required")
+    .required("Last Name is required")
     .max(30, "Maximum 30 characters allowed"),
 
-  email: yup
+    email: yup
     .string()
-    .email("Invalid email address")
-    .required("Email is required"),
+    .required("Email is required")
+    .email("Please enter a valid email address")
+    .matches(emailRegex, 'Invalid email format'),
   mobileNumber: yup.string().required("Mobile number is required").max(10),
   percentageValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
   rupeesValue: yup.number().typeError("Value must be a number").min(0, "Value must be non-negative"),
@@ -121,7 +125,7 @@ function DiscountPage() {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
-          mobileNumber: formData.mobileNumber,
+          mobileNumber: "+1 " + formData.mobileNumber,
           currency: currency === "percentage" ? "Discount in (%)" : "Discount in ($)",
           currencyValue: currencyValue !== undefined ? currencyValue : "",
         };
@@ -255,7 +259,7 @@ function DiscountPage() {
                 />
               </Grid>
               <Grid item xs={12} lg={12}>
-                <FormLabel>Select Units</FormLabel>
+                <FormLabel>Select Units *</FormLabel>
                 <RadioGroup
                   aria-label="currency"
                   name="currency"
@@ -282,6 +286,7 @@ function DiscountPage() {
                     {currency === "percentage" && (
                       <TextField
                         type="number"
+                        sx={{width:100}}
                         inputProps={{ maxLength: 3 }}
                         label="Percentage"
                         {...register("percentageValue")}
