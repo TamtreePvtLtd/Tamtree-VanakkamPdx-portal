@@ -82,7 +82,7 @@ const schema = yup.object().shape({
     .typeError("Value must be a number")
     .min(0, "Value must be non-negative")
     .max(100),
-  rupeesValue: yup
+  dollarsValue: yup
     .number()
     .typeError("Value must be a number")
     .min(0, "Value must be non-negative"),
