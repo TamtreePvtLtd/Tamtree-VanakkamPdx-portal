@@ -46,8 +46,7 @@ const DiscountFormIniialValue: IDiscountPage = {
   lastName: "",
   email: "",
   mobileNumber: "",
-  percentageValue: 0,
-  dollarsValue: 0,
+  discountValue: 0,
   currency: "",
 };
 
@@ -77,15 +76,10 @@ const schema = yup.object().shape({
     .string()
     .required("Select Units is required")
     .oneOf(Object.values(CurrencyType), "Select Units is required"),
-  percentageValue: yup
+  discountValue: yup
     .number()
     .typeError("Value must be a number")
-    .min(0, "Value must be non-negative")
-    .max(100),
-  dollarsValue: yup
-    .number()
-    .typeError("Value must be a number")
-    .min(0, "Value must be non-negative"),
+    .min(1, "Value must be greater than one"),
 });
 const slideInLeft = keyframes`
   from {
@@ -103,6 +97,7 @@ function DiscountPage() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<IDiscountPage | null>(null);
+  const [selectedCurrency, setSelectedCurrency] = useState<CurrencyType | null>(null);
 
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -111,7 +106,7 @@ function DiscountPage() {
     register,
     reset,
   } = useForm<IDiscountPage>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as any,
     mode: "all",
     defaultValues: DiscountFormIniialValue,
   });
@@ -133,15 +128,9 @@ function DiscountPage() {
         let currencyValue: string | undefined;
 
         if (formData.currency === CurrencyType.Percentage) {
-          currencyValue =
-            formData.percentageValue !== undefined
-              ? formData.percentageValue.toString() + "%"
-              : undefined;
+          currencyValue = `${formData.discountValue.toString()}%`;
         } else if (formData.currency === CurrencyType.Dollars) {
-          currencyValue =
-            formData.dollarsValue !== undefined
-              ? "$" + formData.dollarsValue.toString()
-              : undefined;
+          currencyValue = `$${formData.discountValue.toString()}`;
         }
         const templateParams = {
           firstName: formData.firstName,
@@ -187,18 +176,11 @@ function DiscountPage() {
   };
 
   const handleCurrencyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedCurrency = e.target.value as CurrencyType;
+    const selectCurrency = e.target.value as CurrencyType;
+    setSelectedCurrency(selectCurrency);
     setFormData((prevData) => ({
       ...(prevData || DiscountFormIniialValue),
-      currency: selectedCurrency,
-      percentageValue:
-        selectedCurrency === CurrencyType.Percentage
-          ? undefined
-          : prevData?.percentageValue ?? 0,
-      dollarsValue:
-        selectedCurrency === CurrencyType.Dollars
-          ? undefined
-          : prevData?.dollarsValue ?? 0,
+      currency: selectCurrency,
     }));
   };
 
@@ -299,7 +281,7 @@ function DiscountPage() {
                 <RadioGroup
                   aria-label="currency"
                   name="currency"
-                  value={formData?.currency ?? ""}
+                  value={selectedCurrency}
                   onChange={handleCurrencyChange}
                 >
                   <Box
@@ -328,44 +310,48 @@ function DiscountPage() {
                         </Typography>
                       )}
                     </Box>
-                    {formData?.currency === CurrencyType.Percentage && (
-                      <TextField
-                        type="number"
-                        sx={{ width: 100 }}
-                        inputProps={{ maxLength: 3 }}
-                        label="Percentage"
-                        {...register("percentageValue")}
-                        error={!!errors.percentageValue}
-                        helperText={errors.percentageValue ? errors.percentageValue.message : ""}
-                        onChange={handleInputChange}
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">%</InputAdornment>
-                          ),
-                        }}
-                        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
-                          e.target.value = Math.max(0, parseInt(e.target.value))
-                            .toString()
-                            .slice(0, 3);
-                        }}
-                      />
-                    )}
-
-                    {formData?.currency === CurrencyType.Dollars && (
-                      <TextField
-                        type="number"
-                        {...register("dollarsValue")}
-                        onChange={handleInputChange}
-                        inputProps={{ maxLength: 8 }}
-                        label="Dollars"
-                        error={!!errors.dollarsValue}
-                        helperText={errors.dollarsValue ? errors.dollarsValue.message : ""}
-                        InputProps={{
-                          startAdornment: (
+                    {selectedCurrency && (
+                    <TextField
+                      type="number"
+                      label={
+                        formData?.currency === CurrencyType.Percentage
+                          ? "Percentage"
+                          : "Dollars"
+                      }
+                      {...register("discountValue")}
+                      onChange={handleInputChange}
+                      sx={{
+                        width: formData?.currency === CurrencyType.Percentage ? 100 : "auto", 
+                      }}
+                      inputProps={{
+                        maxLength:
+                          formData?.currency === CurrencyType.Percentage
+                            ? 3
+                            : 8,
+                      }}
+                      error={!!errors.discountValue}
+                      helperText={errors.discountValue?.message}
+                      InputProps={{
+                        startAdornment:
+                          formData?.currency === CurrencyType.Percentage ? null : (
                             <InputAdornment position="start">$</InputAdornment>
                           ),
-                        }}
-                      />
+                        endAdornment:
+                          formData?.currency === CurrencyType.Percentage ? (
+                            <InputAdornment position="end">%</InputAdornment>
+                          ) : null,
+                      }}
+                      onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        e.target.value = Math.max(0, parseInt(e.target.value))
+                          .toString()
+                          .slice(
+                            0,
+                            formData?.currency === CurrencyType.Percentage
+                              ? 3
+                              : 8
+                          );
+                      }}
+                    />
                     )}
                   </Box>
                 </RadioGroup>
@@ -407,7 +393,8 @@ function DiscountPage() {
                     },
                   }}
                   onClick={() => {
-                    reset({ ...DiscountFormIniialValue, currency: '' });
+                    reset({ ...DiscountFormIniialValue ,currency: ""});
+                    setSelectedCurrency(null);
                     setFormData(null);
                   }}
                 >

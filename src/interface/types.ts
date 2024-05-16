@@ -14,8 +14,7 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
-  percentageValue?: number; 
-  dollarsValue?: number;
+  discountValue:number;
   currency: CurrencyType | string;
 }
 
