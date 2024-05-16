@@ -1,3 +1,5 @@
+import { CurrencyType } from "../pages/discount page/DiscountPage";
+
 export interface ICateringEnquiry {
   fullName: string;
   email: string;
@@ -12,8 +14,8 @@ export interface IDiscountPage {
   lastName: string;
   email: string;
   mobileNumber: string;
-  percentageValue?: number; 
-  dollarsValue?: number;
+  discountValue:number;
+  currency: CurrencyType | string;
 }
 
 export interface ILoginFormInputs {
