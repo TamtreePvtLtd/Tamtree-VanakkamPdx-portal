@@ -222,13 +222,13 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
 );
 
 const openingHours = [
-  { day: "Monday", timing: "5 PM - 9.30 PM" },
-  { day: "Tuesday", timing: "11 AM - 9.30 PM" },
-  { day: "Wednesday", timing: "11 AM - 9.30 PM" },
-  { day: "Thursday", timing: "11 AM - 9.30 PM" },
-  { day: "Friday", timing: "11 AM - 12 AM" },
-  { day: "Saturday", timing: "11 AM - 12 AM" },
-  { day: "Sunday", timing: "11 AM - 9.30 PM" },
+  { day: "Monday",timings: ["5 PM - 9:30 PM"], },
+  { day: "Tuesday", timings: ["11 AM - 2:30 PM", "5 PM - 9:30 PM"] },
+  { day: "Wednesday", timings: ["11 AM - 2:30 PM", "5 PM - 9:30 PM"] },
+  { day: "Thursday", timings: ["11 AM - 2:30 PM", "5 PM - 9:30 PM"] },
+  { day: "Friday", timings: ["11 AM - 2:30 PM", "5 PM - 12 AM"] },
+  { day: "Saturday", timings: ["11 AM - 12 AM"] },
+  { day: "Sunday", timings: ["12 PM - 9:30PM"] },
 ];
 
 const Footer = () => {
@@ -295,7 +295,9 @@ const Footer = () => {
                     textDecoration: "none",
                   }}
                 >
-                  <p style={{textAlign:"center",wordWrap:"break-word"}}> 14740 Cornell Rd #160, Portland 97229</p>
+                  <p style={{ textAlign: "center", wordWrap: "break-word" }}>
+                    14740 Cornell Rd #160, Portland 97229
+                  </p>
                   <div
                     style={{
                       display: "flex",
@@ -497,7 +499,7 @@ const Footer = () => {
               justifyContent: "center",
             }}
           >
-            <Box sx={{ my: 1 }}>
+            <Box sx={{ my: 1, marginTop: "-30px" }}>
               <Animate>
                 <Typography
                   variant="h6"
@@ -529,7 +531,16 @@ const Footer = () => {
                               color: "#d4d4d4",
                             }}
                           >
-                            {item.timing}
+                            {item.timings.map((time, index) => (
+                              <div
+                                key={index}
+                                style={{
+                                  color: "#d4d4d4",
+                                }}
+                              >
+                                {time}
+                              </div>
+                            ))}
                           </TableCell>
                         </TableRow>
                       ))}
@@ -550,8 +561,8 @@ const Footer = () => {
           padding: "10px",
         }}
       >
-        CopyRights©{new Date().getFullYear()}. All rights reserved by VANAKKAM
-        PDX.
+        CopyRights©{new Date().getFullYear()}. Developed by Tamtree India
+        Private Limited.
       </Typography>
     </Box>
   );
