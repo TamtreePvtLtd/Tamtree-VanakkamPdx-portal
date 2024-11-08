@@ -220,7 +220,7 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
     </svg>
   </a>
 );
-
+// New timing
 const openingHours = [
   { day: "Monday",timings: ["5 PM - 9:30 PM"], },
   { day: "Tuesday", timings: ["11 AM - 2:30 PM", "5 PM - 9:30 PM"] },
