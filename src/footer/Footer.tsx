@@ -23,6 +23,7 @@ const ourTimingStyles = {
   color: "white",
   fontSize: "14px",
 };
+
 const slideInLeft = keyframes`
   from {
     opacity: 0;
@@ -220,7 +221,7 @@ export const LocationIcon: React.FC<IconProps> = ({ style, ...props }) => (
     </svg>
   </a>
 );
-//New time Changes
+
 const openingHours = [
   { day: "Monday", timings: ["5 PM - 9:30 PM"] },
   { day: "Tuesday", timings: ["11 AM - 2:30 PM", "5 PM - 9:30 PM"] },
